@@ -28,4 +28,5 @@ Run maven verify for the top level pom (in ```org.csstudio.ess.product```)
 mvn clean verify
 ```
 
-#### Status [![Build Status](https://travis-ci.org/ControlSystemStudio/org.csstudio.ess.product.svg?branch=master)](https://travis-ci.org/ControlSystemStudio/org.csstudio.ess.product)
+#### Status
+Master [![Build Status](https://travis-ci.org/ControlSystemStudio/org.csstudio.ess.product.svg?branch=master)](https://travis-ci.org/ControlSystemStudio/org.csstudio.ess.product)
