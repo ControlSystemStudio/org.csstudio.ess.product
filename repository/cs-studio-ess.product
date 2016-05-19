@@ -92,11 +92,13 @@
       <feature id="org.csstudio.applications.utility.feature"/>
       <feature id="org.csstudio.display.pvtable.feature"/>
       <feature id="org.csstudio.applications.pvmanager.diag.feature"/>
-      <feature id="mercurialeclipse"/>
       <feature id="org.csstudio.graphene.feature"/>
       <feature id="org.csstudio.graphene.opiwidgets.feature"/>
       <feature id="org.eclipse.egit"/>
       <feature id="org.eclipse.mylyn.github.feature"/>
+      <feature id="org.csstudio.alarm.beast.ui.feature"/>
+      <feature id="org.csstudio.alarm.diirt.datasource.feature"/>
+      <feature id="org.csstudio.archive.diirt.datasource.feature"/>
    </features>
 
    <configurations>
