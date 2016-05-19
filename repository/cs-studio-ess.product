@@ -19,7 +19,6 @@
       </programArgsLin>
       <vmArgs>-Xmx1024m
 -Xms128m
--XX:MaxPermSize=256M
 -Dosgi.configuration.cascaded=true
 -Dosgi.sharedConfiguration.area.readOnly=true
 -Dosgi.install.area.readOnly=true
@@ -97,6 +96,7 @@
       <feature id="org.eclipse.egit"/>
       <feature id="org.eclipse.mylyn.github.feature"/>
       <feature id="org.csstudio.alarm.beast.ui.feature"/>
+      <feature id="org.csstudio.alarm.diirt.datasource.feature"/>
    </features>
 
    <configurations>
