@@ -1,0 +1,19 @@
+langauge: java
+
+sudo: false
+
+dist: trusty
+
+addons:
+  apt:
+    packages:
+      - oracle-java8-installer
+jdk:
+  - oraclejdk8
+
+before_script:
+ - chmod +x build/travis.sh
+ - echo "MAVEN_OPTS='-Xmx2g -Xms1g'" > ~/.mavenrc
+
+script:
+ - mvn clean verify
