@@ -97,8 +97,6 @@
       <feature id="org.eclipse.egit"/>
       <feature id="org.eclipse.mylyn.github.feature"/>
       <feature id="org.csstudio.alarm.beast.ui.feature"/>
-      <feature id="org.csstudio.alarm.diirt.datasource.feature"/>
-      <feature id="org.csstudio.archive.diirt.datasource.feature"/>
    </features>
 
    <configurations>
