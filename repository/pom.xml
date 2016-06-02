@@ -44,7 +44,7 @@
             <configuration>
               <products>
                 <product>
-                  <id>cs-studio</id>
+                  <id>${product.name}</id>
                   <rootFolder>cs-studio</rootFolder>
                   <rootFolders>
                     <macosx>Cs-studio.app</macosx>
