@@ -8,8 +8,8 @@
   <artifactId>features</artifactId>
   <packaging>pom</packaging>
   <modules>
-      <module>
-          org.csstudio.ess.product.configuration.feature
-      </module>
+      <module>org.csstudio.ess.product.configuration.feature</module>
+      <module>org.csstudio.ess.product.eclipse.feature</module>
+      <module>org.csstudio.ess.product.core.feature</module>
   </modules>
 </project>
