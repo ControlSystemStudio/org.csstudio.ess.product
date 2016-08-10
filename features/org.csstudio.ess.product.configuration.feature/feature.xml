@@ -2,7 +2,8 @@
 <feature
       id="org.csstudio.ess.product.configuration.feature"
       label="Product configuration feature"
-      version="0.0.1.qualifier">
+      version="0.0.1.qualifier"
+      provider-name="European Spallation Source ERIC">
 
    <description url="http://www.example.com/description">
       ESS CS-Studio Product Configuration.
