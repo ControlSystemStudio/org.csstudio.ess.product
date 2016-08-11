@@ -12,6 +12,7 @@
   <modules>
     <module>repository</module>
     <module>features</module>
+    <module>platform-plugins</module>
   </modules>
 
   <!-- USE MAVEN 3.0 -->
