@@ -40,7 +40,7 @@
       startupProgressRect="5,222,470,15"
       startupMessageRect="7,200,466,20"
       startupForegroundColor="FFFFFF" />
-   <launcher name="cs-studio">
+   <launcher name="ESS CS-Studio">
       <linux icon="/icons/css48.xpm"/>
       <macosx icon="/icons/css.icns"/>
       <solaris/>

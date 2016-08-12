@@ -47,7 +47,7 @@
                   <id>${product.name}</id>
                   <rootFolder>cs-studio</rootFolder>
                   <rootFolders>
-                    <macosx>Cs-studio.app</macosx>
+                    <macosx>ESS CS-Studio.app</macosx>
                   </rootFolders>
                 </product>
               </products>
