@@ -1,6 +1,6 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: JRE6 Fragment
+Bundle-Name: Packages included in JRE1.6+ (W3C, XML, Activator)
 Bundle-SymbolicName: org.csstudio.jre6.fragment
 Fragment-Host: system.bundle
 Bundle-Version: 1.0.0.qualifier
@@ -58,4 +58,3 @@ Export-Package: javax.transaction,
  org.xml.sax;version="1.3.4",
  org.xml.sax.ext;version="1.3.4",
  org.xml.sax.helpers;version="1.3.4"
- 

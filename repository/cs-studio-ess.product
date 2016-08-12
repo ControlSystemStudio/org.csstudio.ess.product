@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?pde version="3.5"?>
 
-<product name="ESS CS-Studio" uid="cs-studio-ess" id="org.csstudio.product.product" application="org.csstudio.product.application" version="4.2.0" useFeatures="true" includeLaunchers="true">
+<product name="ESS CS-Studio" uid="cs-studio-ess" id="se.ess.ics.csstudio.product.product" application="se.ess.ics.csstudio.product.application" version="4.2.0" useFeatures="true" includeLaunchers="true">
 
    <aboutInfo>
       <image path="/org.csstudio.product/icons/cs-studio-about.png"/>
@@ -33,7 +33,7 @@
       </vmArgsMac>
    </launcherArgs>
 
-   <windowImages i16="/ess-product/repository/icons/css16.png" i32="/ess-product/repository/icons/css32.png" i48="/ess-product/repository/icons/css48.png" i64="/ess-product/repository/icons/css64.png" i128="/ess-product/repository/icons/css128.png" i256="/ess-product/repository/icons/css256.png"/>
+   <windowImages i16="/se.ess.ics.csstudio.product/icons/css16.png" i32="/se.ess.ics.csstudio.product/icons/css32.png" i48="/se.ess.ics.csstudio.product/icons/css48.png" i64="/se.ess.ics.csstudio.product/icons/css64.png" i128="/se.ess.ics.csstudio.product/icons/css128.png" i256="/se.ess.ics.csstudio.product/icons/css256.png"/>
 
    <splash
       location="org.csstudio.product"
