@@ -45,7 +45,7 @@
       <macosx icon="/icons/css.icns"/>
       <solaris/>
       <win useIco="true">
-         <ico path="/icons/css.ico"/>
+         <ico path="/ess-product/repository/icons/css.ico"/>
          <bmp/>
       </win>
    </launcher>

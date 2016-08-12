@@ -1,9 +1,0 @@
-Manifest-Version: 1.0
-Bundle-SymbolicName: org.csstudio.jre6.fragment
-Bundle-Name: JRE6 Fragment
-Bundle-Version: 1.0.0.201608111324
-Bundle-ManifestVersion: 2
-Bundle-RequiredExecutionEnvironment: JavaSE-1.8
-Bundle-Vendor: Jaka Bobnar
-Fragment-Host: system.bundle
-
