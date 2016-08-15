@@ -41,7 +41,6 @@
       startupMessageRect="7,200,466,20"
       startupForegroundColor="FFFFFF" />
    <launcher name="ESS CS-Studio">
-      <linux icon="/icons/css48.xpm"/>
       <macosx icon="/icons/css.icns"/>
       <solaris/>
       <win useIco="true">
