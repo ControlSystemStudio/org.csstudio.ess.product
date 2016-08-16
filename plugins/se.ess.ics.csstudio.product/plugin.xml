@@ -76,15 +76,6 @@
       </product>
    </extension>
    <extension
-         point="org.eclipse.ui.preferencePages">
-      <page
-            category="org.eclipse.ui.preferencePages.Workbench"
-            class="org.eclipse.ui.internal.intro.universal.WelcomeCustomizationPreferencePage"
-            id="org.csstudio.product.introCustomization"
-            name="introCustomizationPreference">
-      </page>
-   </extension>
-   <extension
          point="org.eclipse.ui.intro">
       <introProductBinding
             introId="org.eclipse.ui.intro.universal"

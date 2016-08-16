@@ -14,6 +14,9 @@
    </configIni>
 
    <launcherArgs>
+      <programArgs>-data @user.home/.ess-cs-studio
+-pluginCustomization ../Eclipse/configuration/plugin_customization.ini
+      </programArgs>
       <programArgsLin>--launcher.GTK_version
 2
       </programArgsLin>
@@ -110,5 +113,12 @@
       <plugin id="org.eclipse.equinox.p2.reconciler.dropins" autoStart="true" startLevel="0" />
       <plugin id="org.eclipse.equinox.simpleconfigurator" autoStart="true" startLevel="1" />
    </configurations>
+
+   <preferencesInfo>
+      <targetfile overwrite="false"/>
+   </preferencesInfo>
+
+   <cssInfo>
+   </cssInfo>
 
 </product>
