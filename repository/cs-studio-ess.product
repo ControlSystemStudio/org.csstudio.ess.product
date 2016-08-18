@@ -15,7 +15,6 @@
 
    <launcherArgs>
       <programArgs>-data @user.home/.ess-cs-studio
--pluginCustomization ../Eclipse/configuration/plugin_customization.ini
       </programArgs>
       <programArgsLin>--launcher.GTK_version
 2
