@@ -2,10 +2,10 @@
   <modelVersion>4.0.0</modelVersion>
   <parent>
     <groupId>org.csstudio</groupId>
-    <artifactId>ess-product</artifactId>
+    <artifactId>se.ess.ics.csstudio</artifactId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>
-  <artifactId>plugins</artifactId>
+  <artifactId>se.ess.ics.csstudio.plugins</artifactId>
   <packaging>pom</packaging>
   <modules>
       <module>se.ess.ics.csstudio.product</module>

@@ -1,0 +1,15 @@
+Product Release Procedure
+------------------------------------------------------------
+
+From a terminal window
+
+1. cd into the org.csstudio.ess.product folder
+2. execute the following commands
+
+  source prepare-release.sh 3.3.1 "https://github.com/ControlSystemStudio/cs-studio/wiki/Compatibility" "https://github.com/ControlSystemStudio/cs-studio/issues?milestone=10&page=1&state=closed" "First release of single product"
+
+  mvn clean verify
+
+  source package.sh 3.3.1
+
+
