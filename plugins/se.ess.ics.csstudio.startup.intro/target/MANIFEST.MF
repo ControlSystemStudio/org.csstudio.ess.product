@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Bundle-SymbolicName: se.ess.ics.csstudio.startup.intro;singleton:=true
+Bundle-Name: ESS CS-Studio Intro
+Bundle-Version: 0.0.1.201608251426
+Require-Bundle: org.eclipse.ui,org.eclipse.core.runtime,org.eclipse.ui
+ .intro,org.eclipse.ui.intro.universal,org.eclipse.help
+Bundle-ManifestVersion: 2
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-ActivationPolicy: lazy
+Bundle-Activator: se.ess.ics.csstudio.startup.intro.Activator
+Bundle-Vendor: European Spallation Source ERIC
+

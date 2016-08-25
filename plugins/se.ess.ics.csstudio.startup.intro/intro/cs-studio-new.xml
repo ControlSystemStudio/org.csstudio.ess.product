@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<introContent>
+  	<extensionContent id="se.ess.ics.csstudio.startup.whatsnew" style="esscss_new.css" name="ESS CS-Studio WhatsNew" path="whatsnew/@">
+		<group style-id="content-group" id="se.ess.ics.csstudio.startup.whatsnew-group">
+       		<link label="Whats New in ESS CS-Studio"
+       		url="http://org.eclipse.ui.intro/showHelpTopic?id=/se.ess.ics.csstudio.startup.intro/html/changelog.html" 
+       		id="esscsstudiowhatsnew-Link" style-id="content-link">
+          		<text>
+				 Information on the newest additions to ESS CS-Studio.
+                </text>
+       		</link>
+       	</group>
+  	</extensionContent>
+  	
+</introContent>
