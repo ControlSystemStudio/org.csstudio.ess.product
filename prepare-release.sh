@@ -52,7 +52,7 @@ HTML="${HTML//\$/\\\$}"
 # remove newlines
 HTML="${HTML//[$'\n']/}"
 
-sed -i ".bak" '/<\/p>/ a\ \n'"${HTML}" plugins/se.ess.ics.csstudio.startup.intro/html/changelog.html
+sed -i '/<\/p>/ a\ \n'"${HTML}" plugins/se.ess.ics.csstudio.startup.intro/html/changelog.html
 
 if [ "$PUSH" = "true" ]
 then
