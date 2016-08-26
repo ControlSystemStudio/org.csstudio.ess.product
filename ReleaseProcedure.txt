@@ -6,7 +6,7 @@ From a terminal window
 1. cd into the org.csstudio.ess.product folder
 2. execute the following commands
 
-  source prepare-release.sh 3.3.1 "https://github.com/ControlSystemStudio/cs-studio/wiki/Compatibility" "https://github.com/ControlSystemStudio/cs-studio/issues?milestone=10&page=1&state=closed" "First release of single product"
+  source prepare-release.sh 4.4.1.0 "https://ess-ics.atlassian.net/projects/CSSTUDIO/versions/17001/tab/release-report-all-issues" "First official ESS version of CS-Studio.</li>Based on CS-Studio 4.4.1-SNAPSHOT<li>" false
 
   mvn clean verify
 

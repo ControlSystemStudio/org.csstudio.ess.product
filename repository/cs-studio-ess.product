@@ -21,11 +21,12 @@
       </programArgsLin>
       <vmArgs>-Xmx1024m
 -Xms128m
+-Dorg.eclipse.update.reconcile=false
 -Dosgi.configuration.cascaded=true
 -Dosgi.sharedConfiguration.area.readOnly=true
 -Dosgi.install.area.readOnly=true
 -Dosgi.requiredJavaVersion=1.8
--Dorg.osgi.framework.bundle.parent=ext 
+-Dorg.osgi.framework.bundle.parent=ext
 -Dosgi.framework.extensions=org.eclipse.fx.osgi
       </vmArgs>
       <vmArgsLin>-Dorg.eclipse.swt.internal.gtk.cairoGraphics=false
