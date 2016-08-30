@@ -39,15 +39,15 @@
          </property>
          <property
                name="startupForegroundColor"
-               value="FFFFFF">
+               value="E4F2FA">
          </property>
          <property
                name="startupMessageRect"
-               value="7,200,466,20">
+               value="21,275,438,18">
          </property>
          <property
                name="startupProgressRect"
-               value="5,222,470,15">
+               value="21,293,438,5">
          </property>
          <property
                name="introDescription-firststeps"

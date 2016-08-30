@@ -1,13 +1,13 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <?artifactRepository version='1.1.0'?>
 <artifacts size='1'>
-  <artifact classifier='osgi.bundle' id='se.ess.ics.csstudio.startup.intro' version='0.0.1.201608261222'>
+  <artifact classifier='osgi.bundle' id='se.ess.ics.csstudio.startup.intro' version='4.4.1.0'>
     <properties size='5'>
-      <property name='artifact.size' value='10412'/>
-      <property name='download.size' value='10412'/>
+      <property name='artifact.size' value='10532'/>
+      <property name='download.size' value='10532'/>
       <property name='maven-groupId' value='org.csstudio'/>
       <property name='maven-artifactId' value='se.ess.ics.csstudio.startup.intro'/>
-      <property name='maven-version' value='0.0.1-SNAPSHOT'/>
+      <property name='maven-version' value='4.4.1.0'/>
     </properties>
   </artifact>
 </artifacts>

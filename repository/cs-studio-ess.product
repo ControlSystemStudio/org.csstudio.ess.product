@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?pde version="3.5"?>
 
-<product name="ESS CS-Studio" uid="cs-studio-ess" id="se.ess.ics.csstudio.product.product" application="se.ess.ics.csstudio.product.application" version="4.2.0" useFeatures="true" includeLaunchers="true">
+<product name="ESS CS-Studio" uid="cs-studio-ess" id="se.ess.ics.csstudio.product.product" application="se.ess.ics.csstudio.product.application" version="4.4.1.0" useFeatures="true" includeLaunchers="true">
 
    <aboutInfo>
       <image path="/org.csstudio.product/icons/cs-studio-about.png"/>
@@ -31,6 +31,8 @@
       </vmArgs>
       <vmArgsLin>-Dorg.eclipse.swt.internal.gtk.cairoGraphics=false
 -Dorg.eclipse.swt.internal.gtk.useCairo=false
+-Dorg.eclipse.swt.browser.DefaultType=mozilla 
+-Dorg.eclipse.swt.browser.XULRunnerPath=/ess/xulrunner/
       </vmArgsLin>
       <vmArgsMac>-XstartOnFirstThread -Dorg.eclipse.swt.internal.carbon.smallFonts
       </vmArgsMac>
@@ -39,10 +41,10 @@
    <windowImages i16="/se.ess.ics.csstudio.product/icons/css16.png" i32="/se.ess.ics.csstudio.product/icons/css32.png" i48="/se.ess.ics.csstudio.product/icons/css48.png" i64="/se.ess.ics.csstudio.product/icons/css64.png" i128="/se.ess.ics.csstudio.product/icons/css128.png" i256="/se.ess.ics.csstudio.product/icons/css256.png"/>
 
    <splash
-      location="org.csstudio.product"
-      startupProgressRect="5,222,470,15"
-      startupMessageRect="7,200,466,20"
-      startupForegroundColor="FFFFFF" />
+      location="se.ess.ics.csstudio.product"
+      startupProgressRect="21,293,438,5"
+      startupMessageRect="21,275,438,18"
+      startupForegroundColor="E4F2FA" />
    <launcher name="ESS CS-Studio">
       <macosx icon="/icons/css.icns"/>
       <solaris/>
