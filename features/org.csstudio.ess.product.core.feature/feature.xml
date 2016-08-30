@@ -2,7 +2,7 @@
 <feature
       id="org.csstudio.ess.product.core.feature"
       label="CS-Studio Plug-Ins Dependencies"
-      version="0.0.1.qualifier"
+      version="4.4.1.0"
       provider-name="European Spallation Source ERIC">
 
    <description url="http://www.example.com/description">

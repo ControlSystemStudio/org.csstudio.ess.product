@@ -23,7 +23,7 @@
          </property>
          <property
                name="introTitle"
-               value="Welcome to Control System Studio&lt;/h1&gt;&lt;p&gt;Control System Studio is an Eclipse-based collections of tools to monitor and operate large scale control systems, such as the ones in the accelerator community.&lt;/p&gt;&lt;p&gt;New users: click on First Steps&lt;/p&gt;&lt;h1&gt;">
+               value="Welcome to ESS Control System Studio&lt;/h1&gt;&lt;p&gt;ESS Control System Studio is an Eclipse-based collections of tools to monitor and operate large scale control systems, such as the ones in the accelerator community.&lt;/p&gt;&lt;p&gt;New users: click on First Steps&lt;/p&gt;&lt;h1&gt;">
          </property>
           <property
                name="introBrandingImage"
@@ -31,7 +31,7 @@
          </property>
          <property
                name="introBrandingImageText"
-               value="Control System Studio">
+               value="ESS Control System Studio">
          </property>
          <property
                name="windowImages"
@@ -39,27 +39,27 @@
          </property>
          <property
                name="startupForegroundColor"
-               value="FFFFFF">
+               value="E4F2FA">
          </property>
          <property
                name="startupMessageRect"
-               value="7,200,466,20">
+               value="21,275,438,18">
          </property>
          <property
                name="startupProgressRect"
-               value="5,222,470,15">
+               value="21,293,438,5">
          </property>
          <property
                name="introDescription-firststeps"
-               value="Getting started with CS-Studio">
+               value="Getting started with ESS CS-Studio">
          </property>
          <property
                name="introDescription-tutorials"
-               value="Learn how to use CS-Studio">
+               value="Learn how to use ESS CS-Studio">
          </property>
          <property
                name="introDescription-whatsnew"
-               value="New features in CS-Studio">
+               value="New features in ESS CS-Studio">
          </property>
          <property
                name="aboutImage"
@@ -71,18 +71,9 @@
          </property>
          <property
                name="preferenceCustomization"
-               value="plugin_customization.ini">
+               value="platform:/config/plugin_customization.ini">
          </property>
       </product>
-   </extension>
-   <extension
-         point="org.eclipse.ui.preferencePages">
-      <page
-            category="org.eclipse.ui.preferencePages.Workbench"
-            class="org.eclipse.ui.internal.intro.universal.WelcomeCustomizationPreferencePage"
-            id="org.csstudio.product.introCustomization"
-            name="introCustomizationPreference">
-      </page>
    </extension>
    <extension
          point="org.eclipse.ui.intro">

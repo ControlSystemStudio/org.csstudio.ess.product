@@ -3,10 +3,10 @@
   <modelVersion>4.0.0</modelVersion>
   <parent>
     <groupId>org.csstudio</groupId>
-    <artifactId>ess-product</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <artifactId>se.ess.ics.csstudio</artifactId>
+    <version>4.4.1.0</version>
   </parent>
-  <artifactId>repository</artifactId>
+  <artifactId>se.ess.ics.csstudio.repository</artifactId>
   <packaging>eclipse-repository</packaging>
 
   <build>

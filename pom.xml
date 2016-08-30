@@ -2,8 +2,8 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.csstudio</groupId>
-  <artifactId>ess-product</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
+  <artifactId>se.ess.ics.csstudio</artifactId>
+  <version>4.4.1.0</version>
   <packaging>pom</packaging>
   <name>Template CS-Studio Product</name>
   <description>An Template for creating your own CS-Studio product</description>
@@ -36,7 +36,7 @@
     <jgit.dirtyWorkingTree>error</jgit.dirtyWorkingTree>
     <baselineMode>fail</baselineMode>
     <product.name>cs-studio-ess</product.name>
-    <product.version>${cs-studio.version}.0</product.version>
+    <product.version>4.4.1.0</product.version>
   </properties>
 
   <!-- PLUGIN REPOSITORIES -->

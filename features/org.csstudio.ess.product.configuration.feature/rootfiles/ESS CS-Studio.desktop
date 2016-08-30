@@ -1,0 +1,11 @@
+[Desktop Entry]
+Version=1.0.1
+Name=ESS CS-Studio
+Comment=Control System Studio application
+Exec=/opt/cs-studio/ESS\ CS-Studio
+Terminal=false
+Type=Application
+StartupNotify=true
+Icon=/opt/cs-studio/icon.png
+
+

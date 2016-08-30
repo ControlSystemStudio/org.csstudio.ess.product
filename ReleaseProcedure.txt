@@ -1,0 +1,15 @@
+Product Release Procedure
+------------------------------------------------------------
+
+From a terminal window
+
+1. cd into the org.csstudio.ess.product folder
+2. execute the following commands
+
+  source prepare-release.sh 4.4.1.0 "https://ess-ics.atlassian.net/projects/CSSTUDIO/versions/17001/tab/release-report-all-issues" "First official ESS version of CS-Studio.</li><li>Based on CS-Studio 4.4.1-SNAPSHOT" false
+
+  mvn clean verify
+
+  source package.sh 3.3.1
+
+
