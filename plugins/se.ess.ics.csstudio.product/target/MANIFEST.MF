@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-SymbolicName: se.ess.ics.csstudio.product;singleton:=true
 Bundle-Name: ESS CS-Studio Product
-Bundle-Version: 4.4.1.0
+Bundle-Version: 4.4.1.1d
 Bundle-Localization: plugin
 Require-Bundle: org.eclipse.ui,org.eclipse.core.runtime,org.eclipse.ui
  .intro;bundle-version="3.3.1",org.csstudio.security;bundle-version="1

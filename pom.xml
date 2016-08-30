@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.csstudio</groupId>
   <artifactId>se.ess.ics.csstudio</artifactId>
-  <version>4.4.1.0</version>
+  <version>4.4.1.1d</version>
   <packaging>pom</packaging>
   <name>Template CS-Studio Product</name>
   <description>An Template for creating your own CS-Studio product</description>
@@ -36,7 +36,7 @@
     <jgit.dirtyWorkingTree>error</jgit.dirtyWorkingTree>
     <baselineMode>fail</baselineMode>
     <product.name>cs-studio-ess</product.name>
-    <product.version>4.4.1.0</product.version>
+    <product.version>4.4.1.1d</product.version>
   </properties>
 
   <!-- PLUGIN REPOSITORIES -->

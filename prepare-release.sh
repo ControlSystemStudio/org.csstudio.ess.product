@@ -4,7 +4,7 @@ set -e
 # Check parameters
 if [ $# != 4 ]
 then
-  echo You must provide the product version, milestone, notes, git \(e.g. \"prepare_release.sh 3.3.0 \"https://github\" \"https://github\" \"Some notes\" false\"\)
+  echo You must provide the product version, milestone, notes, git \(e.g. \"prepare-release.sh 3.3.0 \"https://github\" \"https://github\" \"Some notes\" false\"\)
   exit -1
 fi
 
@@ -64,5 +64,5 @@ then
   git tag ESS-CSS-$VERSION
   echo ::: Pushing changes :::
   git push origin
-  git push origin ESS-CSS-$VERSION
+  git push origin ESS-CS-Studio-$VERSION
 fi

@@ -2,16 +2,15 @@
 set -e
 
 # Check parameters
-if [ $# != 4 ]
+if [ $# != 2 ]
 then
-  echo You must provide the product version, milestone, notes, git \(e.g. \"prepare_release.sh 3.3.0 \"https://github\" \"https://github\" \"Some notes\" false\"\)
+  echo You must provide the next release product version, and git \(e.g. \"prepare-next-release.sh 3.3.1 false\"\)
   exit -1
 fi
 
-VERSION=$1
-MILESTONE=$2
-NOTES=$3
-PUSH=$4
+VERSIONP=$1
+VERSION="${VERSIONP}d"
+PUSH=$2
 BUILD_DIR="../org.csstudio.product/build"
 
 echo ::: Prepare splash :::
@@ -22,47 +21,13 @@ echo 0=$VERSION > plugins/se.ess.ics.csstudio.product/about.mappings
 echo ::: Updating plugin versions :::
 mvn -Dtycho.mode=maven org.eclipse.tycho:tycho-versions-plugin:0.20.0:set-version -DnewVersion=$VERSION -Dartifacts=se.ess.ics.csstudio,se.ess.ics.csstudio.features,org.csstudio.ess.product.configuration.feature,org.csstudio.ess.product.core.feature,org.csstudio.ess.product.eclipse.feature,se.ess.ics.csstudio.platform-plugins,org.csstudio.jre6.fragment,se.ess.ics.csstudio.plugins,se.ess.ics.csstudio.product,se.ess.ics.csstudio.startup.intro,se.ess.ics.csstudio.repository
 # update product because set-version doesn't
-sed -i '' -e 's/\(<product[^>]* version="\)[^"]*\("[^>]*>\)/\1'${VERSION}'\2/g' repository/cs-studio-ess.product
+sed -i '' -e 's/\(<product[^>]* version="\)[^"]*\("[^>]*>\)/\1'${VERSIONP}'\2/g' repository/cs-studio-ess.product
 sed -i '' -e 's/\(<product\.version>\)[^<]*\(\<\/product\.version>\)/\1'${VERSION}'\2/g' pom.xml
-
-HTML="<h2>Version ${VERSION} - $(date +"%Y-%m-%d")</h2><ul>"
-
-if [ -n "${NOTES}" ];
-then
-  HTML="${HTML}<li>${NOTES}</li>";
-fi
-
-HTML="${HTML}<li><a href=\"${MILESTONE}\" shape=\"rect\">Closed Issues</a></li></ul>"
-
-# html encode &
-HTML=$(echo $HTML | sed 's/&/\&amp;/g;')
-# escape all backslashes first
-HTML="${HTML//\\/\\\\}"
-# escape slashes
-HTML="${HTML//\//\\/}"
-# escape asterisks
-HTML="${HTML//\*/\\*}"
-# escape full stops
-HTML="${HTML//./\\.}"
-# escape [ and ]
-HTML="${HTML//\[/\\[}"
-HTML="${HTML//\]/\\]}"
-# escape ^ and $
-HTML="${HTML//^/\\^}"
-HTML="${HTML//\$/\\\$}"
-# remove newlines
-HTML="${HTML//[$'\n']/}"
-
-sed -i '' -e '/<\/p>/ a\
-'"${HTML}" plugins/se.ess.ics.csstudio.startup.intro/html/changelog.html
 
 if [ "$PUSH" = "true" ]
 then
   echo ::: Committing version $VERSION :::
-  git commit -a -m "Updating changelog, splash, manifests to version $VERSION"
-  echo ::: Tagging version $VERSION :::
-  git tag ESS-CSS-$VERSION
+  git commit -a -m "Updating splash, manifests to version $VERSION"
   echo ::: Pushing changes :::
   git push origin
-  git push origin ESS-CSS-$VERSION
 fi

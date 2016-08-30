@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-SymbolicName: se.ess.ics.csstudio.startup.intro;singleton:=true
 Bundle-Name: ESS CS-Studio Intro
-Bundle-Version: 4.4.1.0
+Bundle-Version: 4.4.1.1d
 Require-Bundle: org.eclipse.ui,org.eclipse.core.runtime,org.eclipse.ui
  .intro,org.eclipse.ui.intro.universal,org.eclipse.help
 Bundle-ManifestVersion: 2
