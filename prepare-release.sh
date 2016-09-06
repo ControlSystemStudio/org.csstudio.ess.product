@@ -16,8 +16,12 @@ BUILD_DIR="../org.csstudio.product/build"
 
 echo ::: Prepare splash :::
 java -jar $BUILD_DIR/ImageLabeler-2.0.jar $VERSION 462 43 ../org.csstudio.product/plugins/org.csstudio.product/splash-template.bmp plugins/se.ess.ics.csstudio.product/splash.bmp "European Spallation Source Edition" 19 151 plugins/se.ess.ics.csstudio.startup.intro/icons/ess96.png 366 140
+
 echo ::: Change about dialog version :::
 echo 0=$VERSION > plugins/se.ess.ics.csstudio.product/about.mappings
+
+echo ::: Change Ansible reference file :::
+echo $VERSION > features/org.csstudio.ess.product.configuration.feature/rootfiles/ess-version.txt
 
 echo ::: Updating plugin versions :::
 mvn -Dtycho.mode=maven org.eclipse.tycho:tycho-versions-plugin:0.20.0:set-version -DnewVersion=$VERSION -Dartifacts=se.ess.ics.csstudio,se.ess.ics.csstudio.features,org.csstudio.ess.product.configuration.feature,org.csstudio.ess.product.core.feature,org.csstudio.ess.product.eclipse.feature,se.ess.ics.csstudio.platform-plugins,org.csstudio.jre6.fragment,se.ess.ics.csstudio.plugins,se.ess.ics.csstudio.product,se.ess.ics.csstudio.startup.intro,se.ess.ics.csstudio.repository
