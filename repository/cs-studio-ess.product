@@ -28,13 +28,16 @@
 -Dosgi.requiredJavaVersion=1.8
 -Dorg.osgi.framework.bundle.parent=ext
 -Dosgi.framework.extensions=org.eclipse.fx.osgi
+-Dorg.osgi.framework.bundle.parent=ext
+-Dosgi.framework.extensions=org.eclipse.fx.osgi
       </vmArgs>
       <vmArgsLin>-Dorg.eclipse.swt.internal.gtk.cairoGraphics=false
 -Dorg.eclipse.swt.internal.gtk.useCairo=false
 -Dorg.eclipse.swt.browser.DefaultType=mozilla 
 -Dorg.eclipse.swt.browser.XULRunnerPath=/ess/xulrunner/
       </vmArgsLin>
-      <vmArgsMac>-XstartOnFirstThread -Dorg.eclipse.swt.internal.carbon.smallFonts
+      <vmArgsMac>-XstartOnFirstThread
+-Dorg.eclipse.swt.internal.carbon.smallFonts
       </vmArgsMac>
    </launcherArgs>
 
@@ -75,7 +78,6 @@
       <feature id="org.eclipse.equinox.p2.core.feature"/>
       <feature id="org.eclipse.equinox.p2.rcp.feature"/>
       <feature id="org.eclipse.equinox.p2.extras.feature"/>
-      <feature id="org.eclipse.fx.target.rcp.feature"/>
       <feature id="org.csstudio.product.feature"/>
       <feature id="org.csstudio.ess.product.configuration.feature"/>
       <feature id="org.csstudio.core.ui.feature"/>
@@ -100,7 +102,6 @@
       <feature id="org.csstudio.graphene.feature"/>
       <feature id="org.csstudio.graphene.opiwidgets.feature"/>
       <feature id="org.eclipse.egit"/>
-      <feature id="org.eclipse.mylyn.github.feature"/>
       <feature id="org.csstudio.alarm.beast.ui.feature"/>
       <feature id="org.csstudio.alarm.diirt.datasource.feature"/>
       <feature id="org.csstudio.ess.product.eclipse.feature"/>
