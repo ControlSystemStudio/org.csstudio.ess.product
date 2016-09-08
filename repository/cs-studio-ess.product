@@ -106,6 +106,7 @@
       <feature id="org.csstudio.alarm.diirt.datasource.feature"/>
       <feature id="org.csstudio.ess.product.eclipse.feature"/>
       <feature id="org.csstudio.ess.product.core.feature"/>
+      <feature id="org.csstudio.display.builder.feature" version="0.1.0.qualifier"/>
    </features>
 
    <configurations>
