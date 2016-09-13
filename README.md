@@ -39,3 +39,5 @@ Using Eclipse Neon and following the [Control System Studio Guide](http://cs-stu
 - Select the currently checked **_Target definition_** and press the **_Edit…_** button,
 - Select the **_Content_** tab in the **_Edit Target Definition_** dialog, then uncheck the second copy of each duplicated plug-in or the one with a lower version number,
 - Press **_Finish_**, then **_Apply_** and **_OK_**.
+
+Note that when a new library/plug-in is added to the application, it will result unchecked in the **_Target Platform_**, thus requiring it to me manually checked in the **_Edit Target Definition_** dialog.

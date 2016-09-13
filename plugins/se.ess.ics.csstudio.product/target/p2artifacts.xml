@@ -3,8 +3,8 @@
 <artifacts size='1'>
   <artifact classifier='osgi.bundle' id='se.ess.ics.csstudio.product' version='4.4.1.1d'>
     <properties size='5'>
-      <property name='artifact.size' value='1350105'/>
-      <property name='download.size' value='1350105'/>
+      <property name='artifact.size' value='1350104'/>
+      <property name='download.size' value='1350104'/>
       <property name='maven-groupId' value='org.csstudio'/>
       <property name='maven-artifactId' value='se.ess.ics.csstudio.product'/>
       <property name='maven-version' value='4.4.1.1d'/>
