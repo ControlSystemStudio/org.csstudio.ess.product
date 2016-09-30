@@ -4,7 +4,7 @@
   <parent>
     <groupId>org.csstudio</groupId>
     <artifactId>se.ess.ics.csstudio</artifactId>
-    <version>4.4.1.1d</version>
+    <version>4.4.1.1</version>
   </parent>
   <artifactId>se.ess.ics.csstudio.repository</artifactId>
   <packaging>eclipse-repository</packaging>
@@ -26,11 +26,15 @@
         <configuration>
           <formats>
             <linux>tar.gz</linux>
+            <macosx>zip</macosx>
           </formats>
           <products>
             <product>
               <id>${product.name}</id>
-              <rootFolder>cs-studio</rootFolder>
+                <rootFolders>
+          	      <linux>cs-studio</linux>
+                  <macosx>ESS CS-Studio.app</macosx>
+                </rootFolders>
               <archiveFileName>${product.name}-${product.version}</archiveFileName>
             </product>
           </products>
@@ -41,26 +45,72 @@
             <goals>
               <goal>materialize-products</goal>
             </goals>
-            <configuration>
-              <products>
-                <product>
-                  <id>${product.name}</id>
-                  <rootFolder>cs-studio</rootFolder>
-                  <rootFolders>
-                    <macosx>ESS CS-Studio.app</macosx>
-                  </rootFolders>
-                </product>
-              </products>
-            </configuration>
           </execution>
           <execution>
             <id>archive-products</id>
+            <phase>verify</phase>
             <goals>
               <goal>archive-products</goal>
             </goals>
           </execution>
         </executions>
       </plugin>
+		<plugin>
+			<groupId>name.abuchen</groupId>
+			<artifactId>fix-info-plist-maven-plugin</artifactId>
+			<version>1.0</version>
+			<executions>
+				<execution>
+					<id>fix-info-plist</id>
+					<phase>package</phase>
+					<goals>
+						<goal>fix-info-plist</goal>
+					</goals>
+				</execution>
+			</executions>
+			<configuration>
+				<productId>${product.name}</productId>
+				<appName>ESS CS-Studio.app</appName>
+				<properties>
+					<property>
+						<name>CFBundleName</name>
+						<value>ESS CS-Studio</value>
+					</property>
+					<property>
+						<name>CFBundleDisplayName</name>
+						<value>ESS CS-Studio</value>
+					</property>
+					<property>
+						<name>CFBundleExecutable</name>
+						<value>ESS CS-Studio</value>
+					</property>
+					<property>
+						<name>CFBundleShortVersionString</name>
+						<value>${product.version}</value>
+					</property>
+					<property>
+						<name>CFBundleVersion</name>
+						<value>${product.version}</value>
+					</property>
+					<property>
+						<name>CFBundleIdentifier</name>
+						<value>se.ess.ics.csstudio</value>
+					</property>
+					<property>
+						<name>NSHumanReadableCopyright</name>
+						<value>Copyright 2016 European Spallation Source ERIC. All rights reserved.</value>
+					</property>
+					<property>
+						<name>CFBundleGetInfoString</name>
+						<value />
+					</property>
+					<property>
+						<name>Eclipse</name>
+						<value />
+					</property>
+				</properties>
+			</configuration>
+		</plugin>
     </plugins>
   </build>
 </project>

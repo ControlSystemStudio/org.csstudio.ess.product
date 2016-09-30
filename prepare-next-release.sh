@@ -8,8 +8,7 @@ then
   exit -1
 fi
 
-VERSIONP=$1
-VERSION="${VERSIONP}d"
+VERSION=$1
 PUSH=$2
 BUILD_DIR="../org.csstudio.product/build"
 
@@ -23,9 +22,9 @@ echo ::: Change Ansible reference file :::
 echo $VERSION > features/org.csstudio.ess.product.configuration.feature/rootfiles/ess-version.txt
 
 echo ::: Updating plugin versions :::
-mvn -Dtycho.mode=maven org.eclipse.tycho:tycho-versions-plugin:0.20.0:set-version -DnewVersion=$VERSION -Dartifacts=se.ess.ics.csstudio,se.ess.ics.csstudio.features,org.csstudio.ess.product.configuration.feature,org.csstudio.ess.product.core.feature,org.csstudio.ess.product.eclipse.feature,se.ess.ics.csstudio.platform-plugins,org.csstudio.jre6.fragment,se.ess.ics.csstudio.plugins,se.ess.ics.csstudio.product,se.ess.ics.csstudio.startup.intro,se.ess.ics.csstudio.repository
+mvn -Dtycho.mode=maven org.eclipse.tycho:tycho-versions-plugin:0.20.0:set-version -DnewVersion=$VERSION -Dartifacts=se.ess.ics.csstudio,se.ess.ics.csstudio.features,org.csstudio.ess.product.configuration.feature,org.csstudio.ess.product.core.feature,org.csstudio.ess.product.eclipse.feature,se.ess.ics.csstudio.plugins,se.ess.ics.csstudio.product,se.ess.ics.csstudio.startup.intro,se.ess.ics.csstudio.repository
 # update product because set-version doesn't
-sed -i '' -e 's/\(<product[^>]* version="\)[^"]*\("[^>]*>\)/\1'${VERSIONP}'\2/g' repository/cs-studio-ess.product
+sed -i '' -e 's/\(<product[^>]* version="\)[^"]*\("[^>]*>\)/\1'${VERSION}'\2/g' repository/cs-studio-ess.product
 sed -i '' -e 's/\(<product\.version>\)[^<]*\(\<\/product\.version>\)/\1'${VERSION}'\2/g' pom.xml
 
 if [ "$PUSH" = "true" ]

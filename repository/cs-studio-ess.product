@@ -49,10 +49,11 @@
       startupMessageRect="21,275,438,18"
       startupForegroundColor="E4F2FA" />
    <launcher name="ESS CS-Studio">
+      <linux icon="/icons/css48.xpm"/>
       <macosx icon="/icons/css.icns"/>
       <solaris/>
       <win useIco="true">
-         <ico path="/ess-product/repository/icons/css.ico"/>
+         <ico path="/icons/css.ico"/>
          <bmp/>
       </win>
    </launcher>
