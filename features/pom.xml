@@ -3,7 +3,7 @@
   <parent>
     <groupId>org.csstudio</groupId>
     <artifactId>se.ess.ics.csstudio</artifactId>
-    <version>4.4.1.1d</version>
+    <version>4.4.1.1</version>
   </parent>
   <artifactId>se.ess.ics.csstudio.features</artifactId>
   <packaging>pom</packaging>
