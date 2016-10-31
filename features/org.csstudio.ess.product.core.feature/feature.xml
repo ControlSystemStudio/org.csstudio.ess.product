@@ -2,7 +2,7 @@
 <feature
       id="org.csstudio.ess.product.core.feature"
       label="CS-Studio Plug-Ins Dependencies"
-      version="4.4.1.1"
+      version="4.4.1.2"
       provider-name="European Spallation Source ERIC">
 
    <description url="http://www.example.com/description">
@@ -448,7 +448,7 @@
          id="org.antlr.runtime"
          download-size="0"
          install-size="0"
-         version="3.5.2"
+         version="0.0.0"
          unpack="false"/>
 
    <plugin
