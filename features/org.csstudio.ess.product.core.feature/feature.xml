@@ -368,6 +368,13 @@
          unpack="false"/>
 
    <plugin
+         id="com.sun.jersey.contribs.jersey-multipart"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
          id="junit"
          download-size="0"
          install-size="0"
@@ -453,6 +460,34 @@
 
    <plugin
          id="org.csstudio.ui.resources"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.projectlombok.lombok"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="eu.hansolo.medusa"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.controlsfx"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.apache.commons.collections4"
          download-size="0"
          install-size="0"
          version="0.0.0"
