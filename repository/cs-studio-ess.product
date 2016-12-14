@@ -108,6 +108,9 @@
       <feature id="org.csstudio.ess.product.eclipse.feature"/>
       <feature id="org.csstudio.ess.product.core.feature"/>
       <feature id="org.csstudio.display.builder.feature"/>
+      <feature id="org.csstudio.saverestore.feature"/>
+      <feature id="org.csstudio.saverestore.git.feature"/>
+      <feature id="org.csstudio.saverestore.masar.feature"/>
    </features>
 
    <configurations>
