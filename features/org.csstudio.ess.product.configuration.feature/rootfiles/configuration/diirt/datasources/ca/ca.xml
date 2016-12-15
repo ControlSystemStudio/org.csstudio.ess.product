@@ -19,8 +19,6 @@
         implementation currently lacks an official maintainer.
     -->
 
-    <!-- This examples uses the pure java implementation (CAJ) with the given
-        configuration parameters -->
     <jcaContext
         pureJava="true"
         addr_list="localhost"
@@ -31,13 +29,6 @@
         server_port="5064"
         max_array_bytes="16384"
     />
-
-    <!-- This examples uses the JNI over C implementation (JCA) with the given
-        configuration parameters -->
-    <!--<jcaContext pureJava="false" preemptive_callback="true" addr_list="" auto_addr_list="true" connection_timeout="30.0"
-                beacon_period="15.0" repeater_port="5065" server_port="5064"
-                max_array_bytes="16384" />-->
-
 
     <!--
         Channel Access data source options
@@ -67,9 +58,12 @@
             Auto detection may not work on JNI implementation.
     -->
 
-    <!-- Example to configure the dataSource option -->
-    <!--<dataSourceOptions monitorMask="VALUE" dbePropertySupported="false"
-                       honorZeroPrecision="true" rtypValueOnly="false"
-                       varArraySupported="auto" />-->
+    <dataSourceOptions
+		dbePropertySupported="true"
+		honorZeroPrecision="true"
+		monitorMask="VALUE"
+		rtypeValueOnly="false"
+		varArraySupported="auto"
+    />
 
 </ca>
