@@ -17,10 +17,6 @@
       [Enter License Description here.]
    </license>
 
-   <includes
-         id="org.eclipse.jgit"
-         version="0.0.0"/>
-
    <plugin
          id="org.eclipse.ui"
          download-size="0"
@@ -941,6 +937,13 @@
 
    <plugin
          id="org.eclipse.paho.client.mqttv3"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.jgit"
          download-size="0"
          install-size="0"
          version="0.0.0"
