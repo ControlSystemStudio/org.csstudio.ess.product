@@ -2,7 +2,7 @@
 <feature
       id="org.csstudio.ess.product.eclipse.feature"
       label="Eclipse Plug-Ins Dependencies"
-      version="4.5.0.0"
+      version="4.5.0.1"
       provider-name="European Spallation Source ERIC">
 
    <description url="http://www.example.com/description">
