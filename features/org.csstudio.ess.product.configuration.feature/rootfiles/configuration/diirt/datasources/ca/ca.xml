@@ -21,7 +21,7 @@
 
     <jcaContext
         pureJava="true"
-        addr_list="localhost"
+        addr_list="localhost:194.47.242.253:10.4.3.40"
         auto_addr_list="true"
         connection_timeout="30.0"
         beacon_period="15.0"
