@@ -111,6 +111,8 @@
       <feature id="org.csstudio.saverestore.feature"/>
       <feature id="org.csstudio.saverestore.git.feature"/>
       <feature id="org.csstudio.saverestore.masar.feature"/>
+      <feature id="org.csstudio.archive.diirt.datasource.feature"/>
+      <feature id="org.eclipse.jgit"/>
    </features>
 
    <configurations>
