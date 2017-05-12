@@ -114,10 +114,8 @@
       <feature id="org.csstudio.trends.databrowser3.feature"/>
       <feature id="org.csstudio.trends.databrowser3.opiwidget.feature"/>
       <feature id="org.csstudio.trends.databrowser3.bobwidget.feature"/>
-<!--
-      <feature id="org.csstudio.trends.databrowser2.feature"/>
-      <feature id="org.csstudio.trends.databrowser2.opiwidget.feature"/>
--->
+      <feature id="org.csstudio.applications.opibuilder.edm.feature" version="5.0.0.qualifier"/>
+      <feature id="org.csstudio.applications.opibuilder.medm.feature" version="5.0.0.qualifier"/>
    </features>
 
    <configurations>
