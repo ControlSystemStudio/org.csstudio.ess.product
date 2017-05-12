@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.csstudio</groupId>
   <artifactId>se.ess.ics.csstudio</artifactId>
-  <version>4.5.0.0</version>
+  <version>4.5.0.1</version>
   <packaging>pom</packaging>
   <name>Template CS-Studio Product</name>
   <description>An Template for creating your own CS-Studio product</description>
@@ -23,8 +23,8 @@
   <!-- PROPERTIES -->
   <properties>
     <!-- VERSIONS -->
-    <tycho.version>0.23.1</tycho.version>
-    <tycho-extras.version>0.23.1</tycho-extras.version>
+    <tycho.version>1.0.0</tycho.version>
+    <tycho-extras.version>1.0.0</tycho-extras.version>
     <eclipse.central.url>http://download.eclipse.org</eclipse.central.url>
     <eclipse.mirror.url>${eclipse.central.url}</eclipse.mirror.url>
     <orbit-site>${eclipse.mirror.url}/tools/orbit/downloads/drops/R20150519210750/repository/</orbit-site>
@@ -35,7 +35,7 @@
     <jgit.dirtyWorkingTree>error</jgit.dirtyWorkingTree>
     <baselineMode>fail</baselineMode>
     <product.name>cs-studio-ess</product.name>
-    <product.version>4.5.0.0</product.version>
+    <product.version>4.5.0.1</product.version>
   </properties>
 
   <!-- PLUGIN REPOSITORIES -->
@@ -136,7 +136,11 @@
         <artifactId>tycho-compiler-plugin</artifactId>
         <version>${tycho.version}</version>
         <configuration>
-          <!-- Without this argument I get an error in the plugin 'org.csstudio.rap.core' -->
+          <!-- We don't commit the project settings files
+          (.settings/org.eclipse.jdt.core.prefs), so we
+          don't want the Eclipse defaults affecting the build. -->
+          <useProjectSettings>false</useProjectSettings>
+          <!-- This is to avoid errors when using restricted API from org.ecpics.vtype, and sun.* -->
           <compilerArgument>-err:-forbidden</compilerArgument>
         </configuration>
       </plugin>

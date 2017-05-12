@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?pde version="3.5"?>
 
-<product name="ESS CS-Studio" uid="cs-studio-ess" id="se.ess.ics.csstudio.product.product" application="se.ess.ics.csstudio.product.application" version="4.5.0.0" useFeatures="true" includeLaunchers="true">
+<product name="ESS CS-Studio" uid="cs-studio-ess" id="se.ess.ics.csstudio.product.product" application="se.ess.ics.csstudio.product.application" version="4.5.0.1" useFeatures="true" includeLaunchers="true">
 
    <aboutInfo>
       <image path="/org.csstudio.product/icons/cs-studio-about.png"/>
@@ -89,9 +89,7 @@
       <feature id="org.csstudio.pvmanager.autocomplete.feature"/>
       <feature id="org.csstudio.olog.feature"/>
       <feature id="org.csstudio.email.feature"/>
-      <feature id="org.csstudio.trends.databrowser2.feature"/>
       <feature id="org.csstudio.logbook.viewer.feature"/>
-      <feature id="org.csstudio.trends.databrowser2.opiwidget.feature"/>
       <feature id="org.csstudio.archive.reader.appliance.feature"/>
       <feature id="org.csstudio.applications.channel.feature"/>
       <feature id="org.csstudio.applications.channelfinder.feature"/>
@@ -107,10 +105,17 @@
       <feature id="org.csstudio.alarm.diirt.datasource.feature"/>
       <feature id="org.csstudio.ess.product.eclipse.feature"/>
       <feature id="org.csstudio.ess.product.core.feature"/>
-      <feature id="org.csstudio.display.builder.feature"/>
       <feature id="org.csstudio.saverestore.feature"/>
       <feature id="org.csstudio.saverestore.git.feature"/>
       <feature id="org.csstudio.saverestore.masar.feature"/>
+      <feature id="org.csstudio.archive.diirt.datasource.feature"/>
+      <feature id="org.eclipse.jgit"/>
+      <feature id="org.csstudio.display.builder.feature"/>
+      <feature id="org.csstudio.trends.databrowser3.feature"/>
+      <feature id="org.csstudio.trends.databrowser3.opiwidget.feature"/>
+      <feature id="org.csstudio.trends.databrowser3.bobwidget.feature"/>
+      <feature id="org.csstudio.applications.opibuilder.edm.feature" version="5.0.0.qualifier"/>
+      <feature id="org.csstudio.applications.opibuilder.medm.feature" version="5.0.0.qualifier"/>
    </features>
 
    <configurations>
