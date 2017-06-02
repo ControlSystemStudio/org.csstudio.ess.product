@@ -164,12 +164,14 @@
         </property>
       </activation>
       <properties>
-        <eclipse-site>http://download.eclipse.org/releases/mars</eclipse-site>
+        <eclipse-site>http://download.eclipse.org/releases/neon</eclipse-site>
         <eclipse-update-site>http://download.eclipse.org/eclipse/updates/4.6</eclipse-update-site>
-        <rap-site>http://download.eclipse.org/rt/rap/3.0</rap-site>
+        <rap-site>http://download.eclipse.org/rt/rap/3.1</rap-site>
         <rap-incubator-site>http://archive.eclipse.org/rt/rap/incubator/nightly/gef/20150122-1538/</rap-incubator-site>
+        <rap-gef-site>http://archive.eclipse.org/rt/rap/incubator/nightly/gef/20150327-1849</rap-gef-site>
+        <rap-e4-site>http://download.eclipse.org/rt/rap/incubator/3.0/e4/target/site</rap-e4-site>
+        <swtbot-site>http://download.eclipse.org/technology/swtbot/releases/latest/</swtbot-site>
         <platform-version>[4.4,4.6)</platform-version>
-        <swtbot-site>http://download.eclipse.org/technology/swtbot/mars/dev-build/update-site</swtbot-site>
       </properties>
     </profile>
     <profile>
