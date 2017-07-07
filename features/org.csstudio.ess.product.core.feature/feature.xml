@@ -17,6 +17,130 @@
       [Enter License Description here.]
    </license>
 
+   <includes
+         id="org.csstudio.alarm.beast.ui.alarmtable.opiwidget.feature"
+         version="0.0.0"/>
+
+   <includes
+         id="org.csstudio.alarm.beast.ui.feature"
+         version="0.0.0"/>
+
+   <includes
+         id="org.csstudio.email.feature"
+         version="0.0.0"/>
+
+   <includes
+         id="org.csstudio.graphene.feature"
+         version="0.0.0"/>
+
+   <includes
+         id="org.csstudio.graphene.opiwidgets.feature"
+         version="0.0.0"/>
+
+   <includes
+         id="org.csstudio.pretune.feature"
+         version="0.0.0"/>
+
+   <includes
+         id="org.csstudio.utilities.debugging.feature"
+         version="0.0.0"/>
+
+   <includes
+         id="org.csstudio.applications.utility.feature"
+         version="0.0.0"/>
+
+   <includes
+         id="org.csstudio.applications.utility.menu.pvscript.feature"
+         version="0.0.0"/>
+
+   <includes
+         id="org.csstudio.applications.utility.navigator.applaunch.feature"
+         version="0.0.0"/>
+
+   <includes
+         id="org.csstudio.applications.channel.feature"
+         version="0.0.0"/>
+
+   <includes
+         id="org.csstudio.applications.channelfinder.feature"
+         version="0.0.0"/>
+
+   <includes
+         id="org.csstudio.applications.diag.feature"
+         version="0.0.0"/>
+
+   <includes
+         id="org.csstudio.applications.pvmanager.diag.feature"
+         version="0.0.0"/>
+
+   <includes
+         id="org.csstudio.display.pace.feature"
+         version="0.0.0"/>
+
+   <includes
+         id="org.csstudio.display.pvtable.feature"
+         version="0.0.0"/>
+
+   <includes
+         id="org.csstudio.display.rdbtable.feature"
+         version="0.0.0"/>
+
+   <includes
+         id="org.csstudio.applications.logbook.feature"
+         version="0.0.0"/>
+
+   <includes
+         id="org.csstudio.logbook.shift.feature"
+         version="0.0.0"/>
+
+   <includes
+         id="org.csstudio.logbook.viewer.feature"
+         version="0.0.0"/>
+
+   <includes
+         id="org.csstudio.olog.feature"
+         version="0.0.0"/>
+
+   <includes
+         id="org.csstudio.applications.opibuilder.edm.feature"
+         version="0.0.0"/>
+
+   <includes
+         id="org.csstudio.applications.opibuilder.feature"
+         version="0.0.0"/>
+
+   <includes
+         id="org.csstudio.applications.opibuilder.medm.feature"
+         version="0.0.0"/>
+
+   <includes
+         id="org.csstudio.saverestore.feature"
+         version="0.0.0"/>
+
+   <includes
+         id="org.csstudio.saverestore.git.feature"
+         version="0.0.0"/>
+
+   <includes
+         id="org.csstudio.saverestore.masar.feature"
+         version="0.0.0"/>
+
+   <includes
+         id="org.csstudio.saverestore.periodictable.feature"
+         version="0.0.0"/>
+
+   <includes
+         id="org.csstudio.scan.ui.feature"
+         version="0.0.0"/>
+
+   <includes
+         id="org.csstudio.desy.snl.feature"
+         version="0.0.0"/>
+
+   <includes
+         id="org.csstudio.applications.shift.feature"
+         version="0.0.0"/>
+
    <plugin
          id="org.csstudio.java"
          download-size="0"
@@ -481,6 +605,41 @@
 
    <plugin
          id="org.apache.commons.collections4"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.csstudio.trends.databrowser3"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.csstudio.trends.databrowser3.bobwidget"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.csstudio.trends.databrowser3.opiwidget"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.csstudio.alarm.beast.notifier.logbook"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.csstudio.alarm.beast.ui.globaltable"
          download-size="0"
          install-size="0"
          version="0.0.0"
