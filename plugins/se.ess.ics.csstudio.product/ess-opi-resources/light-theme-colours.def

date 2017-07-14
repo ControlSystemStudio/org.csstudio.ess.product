@@ -1,0 +1,158 @@
+######################################################
+# Named colors
+#
+# Format:
+#     NameOfColor1 = red, green, blue [, alpha ]
+#     NameOfColor2 = NameOfColor1
+# with red, green, blue, alpha values in 0..255 range.
+#
+# Whenever possible, use named colors in displays
+# instead of arbitrary red/green/blue values.
+######################################################
+
+# ------- ESS 'light theme' colors ----------------
+
+BLACK = 0, 0, 0
+WHITE = 255, 255, 255
+
+BLUE = 79, 228, 250
+BLUE-BACKGROUND = 195, 226, 225
+BLUE-BORDER = 79, 228, 250
+BLUE-GROUP-BACKGROUND = 179, 209, 209
+BLUE-GROUP-BORDER = 138, 167, 167
+
+GRAY = 169, 169, 169
+GRAY-BORDER = 121, 121, 121
+
+GREEN = 61, 216, 61
+GREEN-BACKGROUND = 189, 208, 189
+GREEN-BORDER = 40, 140, 40
+GREEN-GROUP-BACKGROUND = 172, 191, 173
+GREEN-GROUP-BORDER = 131, 150, 131
+
+MAGENTA = 211, 45, 156
+MAGENTA-BACKGROUND = 218, 195, 209
+MAGENTA-BORDER = 135, 29, 100
+MAGENTA-GROUP-BACKGROUND = 201, 178, 193
+MAGENTA-GROUP-BORDER = 160, 137, 151
+
+ORANGE = 254, 194, 81
+ORANGE-BACKGROUND = 226, 207, 189
+ORANGE-BORDER = 153, 117, 49
+ORANGE-GROUP-BACKGROUND = 209, 190, 173
+ORANGE-GROUP-BORDER = 168, 149, 131
+
+RED = 252, 13, 27
+RED-BACKGROUND = 225, 192, 188
+RED-BORDER = 150, 8, 16
+RED-GROUP-BACKGROUND = 208, 175, 172
+RED-GROUP-BORDER = 167, 134, 130
+
+YELLOW = 252, 242, 17
+YELLOW-BACKGROUND = 226, 216, 193
+YELLOW-BORDER = 150, 144, 10
+YELLOW-GROUP-BACKGROUND = 209, 199, 177
+YELLOW-GROUP-BORDER = 168, 158, 135
+
+BACKGROUND = 220, 225, 221
+GROUP-BACKGROUND = 200, 205, 201
+GROUP-BORDER = 150, 155, 151
+
+PRIMARY = 0, 148, 201
+PRIMARY-DARK = 31, 83, 102
+PRIMARY-LIGHT = 151, 188, 202
+
+SECONDARY = 202, 0, 0
+SECONDARY-DARK = 102, 31, 32
+SECONDARY-LIGHT = 202, 151, 152
+
+TEXT-DARK = 25, 25, 25
+TEXT-LIGHT = 230, 230, 230
+
+# ------- Derived colors ----------------
+
+BLACK-BORDER = GRAY-BORDER
+BLACK-TEXT = WHITE
+
+WHITE-BORDER = GRAY-BORDER
+WHITE-TEXT = BLACK
+
+BLUE-TEXT = BLACK
+
+GRAY-TEXT = WHITE
+
+GREEN-TEXT = BLACK
+
+MAGENTA-TEXT = WHITE
+
+ORANGE-TEXT = BLACK
+
+RED-TEXT = WHITE
+
+YELLOW-TEXT = BLACK
+
+TEXT = TEXT-DARK
+GROUP-TEXT = TEXT-DARK
+PRIMARY-GROUP-BORDER = PRIMARY-LIGHT
+SECONDARY-GROUP-BORDER = SECONDARY-LIGHT
+
+HEADER-TEXT = BLACK
+PRIMARY-HEADER-BACKGROUND = PRIMARY-LIGHT
+SECONDARY-HEADER-BACKGROUND = SECONDARY-LIGHT
+
+ERROR = RED
+WARNING = YELLOW
+
+# ------- Predefined colors ----------------
+
+# Alarm related
+OK = GREEN
+MINOR = YELLOW
+MAJOR = RED
+INVALID = MAGENTA
+DISCONNECTED = MAGENTA-BORDER
+
+# Default color for text
+Text = TEXT-DARK
+
+# Default color for 'active' text that's being edited
+ActiveText = ORANGE
+
+# Display background
+Background = BACKGROUND
+
+# Default color for widgets that read/write a value
+Read_Background = 230, 235, 232
+Write_Background = 224, 217, 202
+
+# Default color for buttons
+Button_Background = 236, 236, 236
+
+# Default color for grid
+Grid = GRAY
+
+# ------- Additional colors ----------------
+
+# Use alarm colors only when you mean to indicate an alarm.
+# Avoid using 'Red' which might suggest an alarm
+# just because you like the look of red.
+# STOP looks similar to red=MAJOR alarm, and is allowed
+# for 'STOP' type of buttons
+STOP = RED
+
+# Attention looks similar to a MINOR alarm.
+# It is meant to draw attention
+ATTENTION = YELLOW
+
+# The colors for On/Off, Open/Close etc,.
+# "ON" does not necessarily mean 'device is turned on', but
+# stands for 'indicator is on, active, illuminated'.
+# For a 'motor is at target' type indicator, the motor would
+# actually be 'off' while the indicator uses the 'ON' color.
+#
+# If one of the states represents an alarm, the corresponding alarm color may be used.
+# For example, a limit switch indicator could use colors "OFF" and "MAJOR":
+# OFF when idle, MAJOR when the limit switch was hit and this is an abnormal situation
+# that requires attention.
+ON = GREEN
+OFF = GRAY
