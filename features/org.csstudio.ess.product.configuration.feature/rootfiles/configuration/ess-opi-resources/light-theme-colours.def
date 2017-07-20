@@ -2,8 +2,7 @@
 # Named colors
 #
 # Format:
-#     NameOfColor1 = red, green, blue [, alpha ]
-#     NameOfColor2 = NameOfColor1
+#   NameOfColor = red, green, blue [, alpha ] | PreviouslyDefinedNameOfColor
 # with red, green, blue, alpha values in 0..255 range.
 #
 # Whenever possible, use named colors in displays
