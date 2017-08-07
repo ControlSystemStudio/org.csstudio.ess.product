@@ -1,0 +1,146 @@
+// Named font definitions
+//
+// Entries in this file are read in sequence.
+// A later entry in the file can override
+// an earlier entry in the file.
+//
+// In a production setup, this file may be constructed
+// by concatenating a generic file with a more specific file,
+// and the specific entries would then override generic entries
+// of the same name.
+//
+// Format:
+//
+//   NamedFont['(' OS ')'] = Family '-' Style '-' Size | '@' PreviouslyDefinedNamedFont
+//
+// Family: Font family name "Liberation Sans", "Liberation Mono", "Liberation Serif"
+//  Style: "regular", "bold", "italic", "bold italic"
+//   Size: Font height in pixels
+//     OS: "windows", "linux", "macosx"
+//
+// Leading/trailing spaces around each element are OK, but if the font family
+// is "Liberation Sans", it has to be typed with just that one space between
+// "Liberation" and "Sans"
+//
+// The ESS version of display builder includes the following fonts
+//   - Digital-7
+//   - Digital Readout Thick Upright Regular
+//   - Digital Readout Upright
+//   - Elektra
+//   - Lato
+//   - Liberation Mono
+//   - Liberation Sans
+//   - Liberation Serif
+//   - Open Sans
+//   - Roboto
+//   - Roboto Condensed
+//   - Source Code Pro
+//   - Source Sans Pro
+//   - Source Serif Pro
+//   - Titillium
+//
+// Their use is encouraged because the resulting displays
+// will always render correctly.
+// When using other fonts, for example "Arial" on Windows,
+// the font might not be available to a display builder
+// runtime that is executing on Mac OS or Linux.
+//
+// Example for a named font
+//
+// Oddball = Comic Sans MS-regular-40
+//
+// On Linux resp. MacOS, these will be used instead,replacnig the definition
+// shown above. Operating system selectors are: "windows", "linux", "macosx"
+//
+// Oddball(linux) = PakTypeNaqsh-regular-40
+// Oddball(macosx) = Herculanum-regular-40
+
+
+// ------- ESS fonts ----------------
+
+HUGE-MONO-BOLD           = Source Code Pro  - bold        - 36
+HUGE-MONO-BOLD-ITALIC    = Source Code Pro  - bold italic - 36
+HUGE-MONO-ITALIC         = Source Code Pro  - italic      - 36
+HUGE-MONO-PLAIN          = Source Code Pro  - regular     - 36
+HUGE-SANS-BOLD           = Source Sans Pro  - bold        - 36
+HUGE-SANS-BOLD-ITALIC    = Source Sans Pro  - bold italic - 36
+HUGE-SANS-ITALIC         = Source Sans Pro  - italic      - 36
+HUGE-SANS-PLAIN          = Source Sans Pro  - regular     - 36
+HUGE-SERIF-BOLD          = Source Serif Pro - bold        - 36
+HUGE-SERIF-BOLD-ITALIC   = Source Serif Pro - bold italic - 36
+HUGE-SERIF-ITALIC        = Source Serif Pro - italic      - 36
+HUGE-SERIF-PLAIN         = Source Serif Pro - regular     - 36
+
+LARGE-MONO-BOLD          = Source Code Pro  - bold        - 21
+LARGE-MONO-BOLD-ITALIC   = Source Code Pro  - bold italic - 21
+LARGE-MONO-ITALIC        = Source Code Pro  - italic      - 21
+LARGE-MONO-PLAIN         = Source Code Pro  - regular     - 21
+LARGE-SANS-BOLD          = Source Sans Pro  - bold        - 21
+LARGE-SANS-BOLD-ITALIC   = Source Sans Pro  - bold italic - 21
+LARGE-SANS-ITALIC        = Source Sans Pro  - italic      - 21
+LARGE-SANS-PLAIN         = Source Sans Pro  - regular     - 21
+LARGE-SERIF-BOLD         = Source Serif Pro - bold        - 21
+LARGE-SERIF-BOLD-ITALIC  = Source Serif Pro - bold italic - 21
+LARGE-SERIF-ITALIC       = Source Serif Pro - italic      - 21
+LARGE-SERIF-PLAIN        = Source Serif Pro - regular     - 21
+
+NORMAL-MONO-BOLD         = Source Code Pro  - bold        - 16
+NORMAL-MONO-BOLD-ITALIC  = Source Code Pro  - bold italic - 16
+NORMAL-MONO-ITALIC       = Source Code Pro  - italic      - 16
+NORMAL-MONO-PLAIN        = Source Code Pro  - regular     - 16
+NORMAL-SANS-BOLD         = Source Sans Pro  - bold        - 16
+NORMAL-SANS-BOLD-ITALIC  = Source Sans Pro  - bold italic - 16
+NORMAL-SANS-ITALIC       = Source Sans Pro  - italic      - 16
+NORMAL-SANS-PLAIN        = Source Sans Pro  - regular     - 16
+NORMAL-SERIF-BOLD        = Source Serif Pro - bold        - 16
+NORMAL-SERIF-BOLD-ITALIC = Source Serif Pro - bold italic - 16
+NORMAL-SERIF-ITALIC      = Source Serif Pro - italic      - 16
+NORMAL-SERIF-PLAIN       = Source Serif Pro - regular     - 16
+
+SMALL-MONO-BOLD          = Source Code Pro  - bold        - 14
+SMALL-MONO-BOLD-ITALIC   = Source Code Pro  - bold italic - 14
+SMALL-MONO-ITALIC        = Source Code Pro  - italic      - 14
+SMALL-MONO-PLAIN         = Source Code Pro  - regular     - 14
+SMALL-SANS-BOLD          = Source Sans Pro  - bold        - 14
+SMALL-SANS-BOLD-ITALIC   = Source Sans Pro  - bold italic - 14
+SMALL-SANS-ITALIC        = Source Sans Pro  - italic      - 14
+SMALL-SANS-PLAIN         = Source Sans Pro  - regular     - 14
+SMALL-SERIF-BOLD         = Source Serif Pro - bold        - 14
+SMALL-SERIF-BOLD-ITALIC  = Source Serif Pro - bold italic - 14
+SMALL-SERIF-ITALIC       = Source Serif Pro - italic      - 14
+SMALL-SERIF-PLAIN        = Source Serif Pro - regular     - 14
+
+TINY-MONO-BOLD           = Source Code Pro  - bold        - 12
+TINY-MONO-BOLD-ITALIC    = Source Code Pro  - bold italic - 12
+TINY-MONO-ITALIC         = Source Code Pro  - italic      - 12
+TINY-MONO-PLAIN          = Source Code Pro  - regular     - 12
+TINY-SANS-BOLD           = Source Sans Pro  - bold        - 12
+TINY-SANS-BOLD-ITALIC    = Source Sans Pro  - bold italic - 12
+TINY-SANS-ITALIC         = Source Sans Pro  - italic      - 12
+TINY-SANS-PLAIN          = Source Sans Pro  - regular     - 12
+TINY-SERIF-BOLD          = Source Serif Pro - bold        - 12
+TINY-SERIF-BOLD-ITALIC   = Source Serif Pro - bold italic - 12
+TINY-SERIF-ITALIC        = Source Serif Pro - italic      - 12
+TINY-SERIF-PLAIN         = Source Serif Pro - regular     - 12
+
+DIGITAL-DOTS             = Elektra          - regular     - 21
+DIGITAL                  = Digital Readout Thick Upright Regular - regular - 21
+
+
+// ------- Derived fonts ----------------
+
+HEADER           = @HUGE-SANS-BOLD-ITALIC
+GROUP-HEADER     = @LARGE-SANS-BOLD-ITALIC
+SUB-GROUP-HEADER = @NORMAL-SANS-BOLD-ITALIC
+CONSTANT-WIDTH   = @NORMAL-MONO-PLAIN
+TYPEWRITER       = @NORMAL-MONO-PLAIN
+
+
+// ------- Predefined ----------------
+Default      = @NORMAL-SANS-PLAIN
+Default Bold = @NORMAL-SANS-BOLD
+Header 1     = @HUGE-SANS-BOLD-ITALIC
+Header 2     = @LARGE-SANS-BOLD-ITALIC
+Header 3     = @NORMAL-SANS-BOLD-ITALIC
+Comment      = @NORMAL-SANS-ITALIC
+Fine Print   = @SMALL-SANS-PLAIN
