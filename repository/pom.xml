@@ -4,7 +4,7 @@
   <parent>
     <groupId>org.csstudio</groupId>
     <artifactId>se.ess.ics.csstudio</artifactId>
-    <version>4.5.0.3</version>
+    <version>4.5.2.0</version>
   </parent>
   <artifactId>se.ess.ics.csstudio.repository</artifactId>
   <packaging>eclipse-repository</packaging>
