@@ -19,8 +19,8 @@
       <programArgsLin>--launcher.GTK_version
 2
       </programArgsLin>
-      <vmArgs>-Xmx1024m
--Xms128m
+      <vmArgs>-Xmx2048m
+-Xms160m
 -Dorg.eclipse.update.reconcile=false
 -Dosgi.configuration.cascaded=true
 -Dosgi.sharedConfiguration.area.readOnly=true
@@ -51,7 +51,6 @@
    <launcher name="ESS CS-Studio">
       <linux icon="/icons/css48.xpm"/>
       <macosx icon="/icons/css.icns"/>
-      <solaris/>
       <win useIco="true">
          <ico path="/icons/css.ico"/>
          <bmp/>
