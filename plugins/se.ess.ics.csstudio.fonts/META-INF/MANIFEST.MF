@@ -2,9 +2,9 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: ESS CS-Studio Mandatory Fonts
 Bundle-SymbolicName: se.ess.ics.csstudio.fonts;singleton:=true
-Bundle-Version: 1.0.0
+Bundle-Version: 4.5.1.1
 Bundle-Activator: se.ess.ics.csstudio.fonts.Activator
-Bundle-Vendor: European Spallation Source ERIC
+Bundle-Vendor: Claudio Rosati - European Spallation Source ERIC
 Require-Bundle: org.apache.commons.lang3;bundle-version="3.5.0",
  org.csstudio.diirt.util.core.preferences;bundle-version="1.0.2",
  org.csstudio.javafx;bundle-version="1.0.0",

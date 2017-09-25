@@ -3,7 +3,7 @@ Bundle-ManifestVersion: 2
 Bundle-Name: ESS CS-Studio Product
 Bundle-SymbolicName: se.ess.ics.csstudio.product;singleton:=true
 Bundle-Version: 4.5.1.1
-Bundle-Vendor: European Spallation Source ERIC
+Bundle-Vendor: Claudio Rosati - European Spallation Source ERIC
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime,

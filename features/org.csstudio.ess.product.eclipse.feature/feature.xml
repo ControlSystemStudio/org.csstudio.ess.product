@@ -3,7 +3,7 @@
       id="org.csstudio.ess.product.eclipse.feature"
       label="Eclipse Plug-Ins Dependencies"
       version="4.5.1.1"
-      provider-name="European Spallation Source ERIC">
+      provider-name="Claudio Rosati - European Spallation Source ERIC">
 
    <description url="http://www.example.com/description">
       ESS CS-Studion eclipse plug-ins needed to start from the IDE.
