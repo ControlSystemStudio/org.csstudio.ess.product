@@ -21,12 +21,14 @@ import org.eclipse.osgi.util.NLS;
 @SuppressWarnings( "nls" )
 public class Messages extends NLS {
 
-    private static final String BUNDLE_NAME = "se.ess.ics.csstudio.display.builder";
+    private static final String BUNDLE_NAME = "se.ess.ics.csstudio.display.builder.messages";
 
     // Keep in alphabetical order!
     public static String WidgetProperties_Channel;
+    public static String WidgetProperties_Controller;
     public static String WidgetProperties_CoarseIncrement;
     public static String WidgetProperties_FineIncrement;
+    public static String WidgetProperties_OperatingMode;
 
     static {
         // Initialize resource bundle.
