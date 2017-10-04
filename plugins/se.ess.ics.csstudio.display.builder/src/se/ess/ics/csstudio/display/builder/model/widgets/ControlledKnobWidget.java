@@ -82,7 +82,7 @@ public class ControlledKnobWidget extends KnobWidget {
     };
 
     private volatile WidgetProperty<Integer>       channel;
-    private volatile WidgetProperty<Controller>        controller;
+    private volatile WidgetProperty<Controller>    controller;
     private volatile WidgetProperty<Double>        coarse_increment;
     private volatile WidgetProperty<Double>        fine_increment;
     private volatile WidgetProperty<OperatingMode> operating_mode;

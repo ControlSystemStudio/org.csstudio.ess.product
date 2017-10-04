@@ -13,6 +13,7 @@ import org.csstudio.display.builder.model.WidgetProperty;
 import org.csstudio.display.builder.representation.javafx.widgets.BaseKnobRepresentation;
 
 import se.ess.ics.csstudio.display.builder.model.widgets.ControlledKnobWidget;
+import se.ess.ics.csstudio.display.builder.model.widgets.ControlledKnobWidget.Controller;
 import se.ess.knobs.controlled.ControlledKnob;
 
 /**
@@ -46,11 +47,18 @@ public class ControlledKnobRepresentation extends BaseKnobRepresentation<Control
         super.updateChanges();
 
         if ( dirtyControl.checkAndClear() ) {
+
             jfx_node.setChannel(model_widget.propChannel().getValue());
-            jfx_node.setController(model_widget.propController().getValue().getID());
             jfx_node.setCoarseIncrement(model_widget.propCoarseIncrement().getValue());
             jfx_node.setFineIncrement(model_widget.propFineIncrement().getValue());
             jfx_node.setOperatingMode(model_widget.propOperatingMode().getValue());
+
+            if ( toolkit.isEditMode() ) {
+                jfx_node.setController(Controller.NONE.getID());
+            } else {
+                jfx_node.setController(model_widget.propController().getValue().getID());
+            }
+
         }
 
     }
@@ -61,7 +69,6 @@ public class ControlledKnobRepresentation extends BaseKnobRepresentation<Control
         super.registerListeners();
 
         model_widget.propChannel().addUntypedPropertyListener(this::controlChanged);
-        model_widget.propController().addUntypedPropertyListener(this::controlChanged);
         model_widget.propCoarseIncrement().addUntypedPropertyListener(this::controlChanged);
         model_widget.propFineIncrement().addUntypedPropertyListener(this::controlChanged);
         model_widget.propOperatingMode().addUntypedPropertyListener(this::controlChanged);
