@@ -25,14 +25,20 @@ public class ControlledKnobRepresentation extends BaseKnobRepresentation<Control
     private final DirtyFlag dirtyControl = new DirtyFlag();
 
     @Override
+    protected ControlledKnob createJFXNode ( ) throws Exception {
+
+        try {
+            return super.createJFXNode();
+        } finally {
+            dirtyControl.mark();
+            toolkit.scheduleUpdate(this);
+        }
+
+    }
+
+    @Override
     protected ControlledKnob createKnob() {
-
-        ControlledKnob knob = new ControlledKnob();
-
-        dirtyControl.mark();
-
-        return knob;
-
+        return new ControlledKnob();
     }
 
     @Override

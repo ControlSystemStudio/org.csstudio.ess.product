@@ -19,4 +19,11 @@
 			type="controlled-knob">
 		</representation>
    </extension>
+	<extension
+		point="org.csstudio.display.builder.runtime.widgets">
+		<runtime
+			class="se.ess.ics.csstudio.display.builder.runtime.ControlledKnobWidgetRuntime"
+			type="controlled-knob">
+		</runtime>
+	</extension>
 </plugin>
