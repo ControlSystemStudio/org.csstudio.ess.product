@@ -2,8 +2,8 @@
 <feature
       id="org.csstudio.ess.product.configuration.feature"
       label="Product configuration feature"
-      version="4.5.1.0"
-      provider-name="European Spallation Source ERIC">
+      version="4.5.1.1"
+      provider-name="Claudio Rosati - European Spallation Source ERIC">
 
    <description url="http://www.example.com/description">
       ESS CS-Studio Product Configuration.
@@ -33,6 +33,13 @@
 
    <plugin
          id="se.ess.ics.csstudio.fonts"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="se.ess.ics.csstudio.display.builder"
          download-size="0"
          install-size="0"
          version="0.0.0"

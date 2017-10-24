@@ -7,6 +7,6 @@
     <artifactId>se.ess.ics.csstudio.plugins</artifactId>
     <version>4.5.1.1</version>
   </parent>
-  <artifactId>se.ess.ics.csstudio.fonts</artifactId>
+  <artifactId>se.ess.ics.csstudio.display.builder</artifactId>
   <packaging>eclipse-plugin</packaging>
 </project>

@@ -1,0 +1,22 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: ESS Display Builder
+Bundle-Description: ESS Display Builder Additions
+Bundle-SymbolicName: se.ess.ics.csstudio.display.builder;singleton:=true
+Bundle-Version: 4.5.1.1
+Bundle-Activator: se.ess.ics.csstudio.display.builder.Activator
+Bundle-Vendor: Claudio Rosati - European Spallation Source ERIC
+Require-Bundle: org.eclipse.core.runtime,
+ org.csstudio.display.builder.model,
+ org.csstudio.display.builder.representation,
+ org.csstudio.display.builder.representation.javafx,
+ org.csstudio.display.builder.runtime;bundle-version="1.0.0",
+ org.csstudio.display.builder.util;bundle-version="1.0.0",
+ org.csstudio.platform.libs.gauges,
+ org.diirt.vtype;bundle-version="3.1.7"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Export-Package: se.ess.knobs.controlled
+Bundle-ActivationPolicy: lazy
+Bundle-Localization: plugin
+Bundle-ClassPath: lib/Controlled-KNOBS-1.0.2.jar,
+ .

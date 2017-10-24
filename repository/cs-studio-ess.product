@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?pde version="3.5"?>
 
-<product name="ESS CS-Studio" uid="cs-studio-ess" id="se.ess.ics.csstudio.product.product" application="se.ess.ics.csstudio.product.application" version="4.5.1.0" useFeatures="true" includeLaunchers="true">
+<product name="ESS CS-Studio" uid="cs-studio-ess" id="se.ess.ics.csstudio.product.product" application="se.ess.ics.csstudio.product.application" version="4.5.1.1" useFeatures="true" includeLaunchers="true">
 
    <aboutInfo>
       <image path="/org.csstudio.product/icons/cs-studio-about.png"/>
@@ -19,8 +19,8 @@
       <programArgsLin>--launcher.GTK_version
 2
       </programArgsLin>
-      <vmArgs>-Xmx1024m
--Xms128m
+      <vmArgs>-Xmx2048m
+-Xms160m
 -Dorg.eclipse.update.reconcile=false
 -Dosgi.configuration.cascaded=true
 -Dosgi.sharedConfiguration.area.readOnly=true
@@ -51,7 +51,6 @@
    <launcher name="ESS CS-Studio">
       <linux icon="/icons/css48.xpm"/>
       <macosx icon="/icons/css.icns"/>
-      <solaris/>
       <win useIco="true">
          <ico path="/icons/css.ico"/>
          <bmp/>
