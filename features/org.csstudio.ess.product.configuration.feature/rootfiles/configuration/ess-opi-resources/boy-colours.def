@@ -1,0 +1,132 @@
+# HMI Design Guide Colors
+
+# Mimic Background: Light grey
+IO Background = 235, 235, 235
+
+# Text: Black
+IO Foreground = 0, 0, 0
+
+# Area Background: Mid grey
+IO Area Background = 221, 223, 229
+
+# Component States
+
+# 1 / On state Blue
+IO PV ON = 0, 0, 255
+
+# 0 / Off Dark Brown
+IO PV OFF = 149, 125, 71
+
+# Input Fields
+
+# Focus on Entry
+IO Focus Entry = 198, 217, 241
+
+# Valid Entry
+IO Valid Entry = 0, 0, 255
+
+# Invalid Entry
+IO Invalid Entry = 250, 12, 14
+
+# Alarms
+
+# Invalid/Disconnected: Magenta
+IO Invalid Level Alarm = 255, 0, 255
+
+# Major: Red
+IO High Level Alarm = 250, 12, 14
+
+# Minor: Yellow
+IO Medium Level Alarm = 255, 255, 0
+
+# No alarm: Green
+IO Normal Level Alarm = 0, 255, 0
+
+# Component states - symbol fill
+
+# running component state - dark grey
+IO Running Symbol Fill = 166, 166, 166
+
+# stopped component state - white
+IO Stopped Symbol Fill = 255, 255, 255
+
+# Obsolete alarm colors
+Major = 250, 12, 14
+Minor = 255, 255, 0
+Invalid = 255, 0, 255
+Disconnected = 255, 0, 255
+
+# Display widget color: Light grey
+IO Grid = 215,215,215
+
+# Shape widget colors: Black and Dark grey
+IO Border = 0, 0, 0
+IO Shape Fill= 166, 166, 166
+IO Line = 0, 0, 0
+IO Link = 0, 0, 0
+
+# Label & Text colors: Black
+IO Text Fg = 0, 0, 0
+
+# PV field colors
+
+# Read-only field: Black on light grey
+IO InputPV Bg = 235, 235, 235 
+IO InputPV Fg = 0, 0, 0
+
+# Entry field: Black on white
+IO OutputPV Bg = 255, 255, 255
+IO OutputPV Fg = 0, 0, 0
+
+# Scaled widget colors: Black
+IO Stick = 0, 0, 0
+
+# XY Graph Trace colors
+IO Trace 1 = 21, 21, 196 
+IO Trace 2 = 242, 26, 26
+IO Trace 3 = 33, 179, 33
+IO Trace 4 = 0, 0, 0
+IO Trace 5 = 128, 0, 255
+IO Trace 6 = 255, 170, 0
+IO Trace 7 = 255, 0, 240
+IO Trace 8 = 243, 132, 132
+
+# StatusBar color: Black on light grey
+IO StatusBar Bg = 235, 235, 235
+IO StatusBar Fg = 0, 0, 0
+
+# Button colors
+IO Button = 178, 178, 178
+IO TextButton = 0, 0, 0
+IO TextInactiveButton = 166,166,166
+
+# Label color
+IO Label = 0, 0, 0
+
+# Electrical bus colors - very dark grey / mid grey
+IO Energised Busbar = 95, 95, 95
+IO De energised Busbar = 178, 178, 178
+
+# Pipelines colors - very dark grey / mid grey
+IO Flow Pipeline = 95, 95, 95
+IO No Flow Pipeline = 178, 178, 178
+
+# Pipelines colors - extension
+IO Air = 138,149,151
+IO Pressurized Air = 172,172,172
+IO GN2 = 150,131,236
+IO LN2 = 102,2,153
+IO Helium (>100 K) or GHe = 0,204,255
+IO Helium (80-100 K) = 49,140,231
+IO Helium (50 K) = 0,142,142
+IO Helium (< 50 K) or LHe = 0,51,153
+IO Oxygen = 34,113,179
+IO Gases (except air) = 252,181,20
+IO Water = 87,166,57
+IO Demineralized Water = 0,120,0
+IO Heavy water (deuterium oxide) = 211,110,112
+IO Steam = 117,21,30
+IO Fire Protection System = 175,43,30
+IO Fuel and Oils = 149,95,32
+IO Acids = 249,86,2
+IO Alkalis = 160,81,117
