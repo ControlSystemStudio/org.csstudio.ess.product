@@ -68,6 +68,11 @@ SECONDARY-LIGHT = 202, 151, 152
 TEXT-DARK = 25, 25, 25
 TEXT-LIGHT = 230, 230, 230
 
+RAL-2000 = 213, 111, 1
+RAL-2000-BORDER = 138, 72, 0
+RAL-4003 = 196, 96, 140
+RAL-4003-BORDER = 120, 59, 85
+
 # ------- Derived colors ----------------
 
 BLACK-BORDER = GRAY-BORDER
@@ -101,6 +106,11 @@ SECONDARY-HEADER-BACKGROUND = SECONDARY-LIGHT
 
 ERROR = RED
 WARNING = YELLOW
+
+PERSONNEL-SAFETY = RAL-2000
+PERSONNEL-SAFETY-BORDER = RAL-2000-BORDER
+MACHINE-PROTECTION = RAL-4003
+MACHINE-PROTECTION-BORDER = RAL-4003-BORDER
 
 # ------- Predefined colors ----------------
 
@@ -137,7 +147,7 @@ Grid = GRAY
 # just because you like the look of red.
 # STOP looks similar to red=MAJOR alarm, and is allowed
 # for 'STOP' type of buttons
-STOP = RED
+STOP = 222, 33, 22
 
 # Attention looks similar to a MINOR alarm.
 # It is meant to draw attention
@@ -153,5 +163,5 @@ ATTENTION = YELLOW
 # For example, a limit switch indicator could use colors "OFF" and "MAJOR":
 # OFF when idle, MAJOR when the limit switch was hit and this is an abnormal situation
 # that requires attention.
-ON = GREEN
+ON = 22, 222, 33
 OFF = GRAY

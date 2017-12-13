@@ -3,7 +3,7 @@ Bundle-ManifestVersion: 2
 Bundle-Name: ESS Display Builder
 Bundle-Description: ESS Display Builder Additions
 Bundle-SymbolicName: se.ess.ics.csstudio.display.builder;singleton:=true
-Bundle-Version: 4.5.1.1
+Bundle-Version: 4.5.1.2
 Bundle-Activator: se.ess.ics.csstudio.display.builder.Activator
 Bundle-Vendor: Claudio Rosati - European Spallation Source ERIC
 Require-Bundle: org.eclipse.core.runtime,
@@ -18,5 +18,5 @@ Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Export-Package: se.ess.knobs.controlled
 Bundle-ActivationPolicy: lazy
 Bundle-Localization: plugin
-Bundle-ClassPath: lib/Controlled-KNOBS-1.0.2.jar,
+Bundle-ClassPath: lib/Controlled-KNOBS-1.0.3.jar,
  .

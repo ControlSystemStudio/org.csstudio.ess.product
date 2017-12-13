@@ -8,6 +8,8 @@
  */
 package se.ess.ics.csstudio.display.builder.representation.javafx.widgets;
 
+import java.util.Objects;
+
 import org.csstudio.display.builder.model.DirtyFlag;
 import org.csstudio.display.builder.model.WidgetProperty;
 import org.csstudio.display.builder.representation.javafx.widgets.BaseKnobRepresentation;
@@ -15,6 +17,7 @@ import org.csstudio.display.builder.representation.javafx.widgets.BaseKnobRepres
 import se.ess.ics.csstudio.display.builder.model.widgets.ControlledKnobWidget;
 import se.ess.ics.csstudio.display.builder.model.widgets.ControlledKnobWidget.Controller;
 import se.ess.knobs.controlled.ControlledKnob;
+import se.ess.knobs.controller.Controllable.OperatingMode;
 
 /**
  * @author claudiorosati, European Spallation Source ERIC
@@ -52,17 +55,38 @@ public class ControlledKnobRepresentation extends BaseKnobRepresentation<Control
 
         super.updateChanges();
 
+        Object value;
+
         if ( dirtyControl.checkAndClear() ) {
 
-            jfx_node.setChannel(model_widget.propChannel().getValue());
-            jfx_node.setCoarseIncrement(model_widget.propCoarseIncrement().getValue());
-            jfx_node.setFineIncrement(model_widget.propFineIncrement().getValue());
-            jfx_node.setOperatingMode(model_widget.propOperatingMode().getValue());
+            value = model_widget.propChannel().getValue();
 
-            if ( toolkit.isEditMode() ) {
-                jfx_node.setController(Controller.NONE.getID());
-            } else {
-                jfx_node.setController(model_widget.propController().getValue().getID());
+            if ( !Objects.equals(value, jfx_node.getChannel()) ) {
+                jfx_node.setChannel((int) value);
+            }
+
+            value = model_widget.propCoarseIncrement().getValue();
+
+            if ( !Objects.equals(value, jfx_node.getCoarseIncrement()) ) {
+                jfx_node.setCoarseIncrement((double) value);
+            }
+
+            value = model_widget.propFineIncrement().getValue();
+
+            if ( !Objects.equals(value, jfx_node.getFineIncrement()) ) {
+                jfx_node.setFineIncrement((double) value);
+            }
+
+            value = model_widget.propOperatingMode().getValue();
+
+            if ( !Objects.equals(value, jfx_node.getOperatingMode()) ) {
+                jfx_node.setOperatingMode((OperatingMode) value);
+            }
+
+            value = toolkit.isEditMode() ? Controller.NONE.getID() : model_widget.propController().getValue().getID();
+
+            if ( !Objects.equals(value, jfx_node.getController()) ) {
+                jfx_node.setController((String) value);
             }
 
         }
