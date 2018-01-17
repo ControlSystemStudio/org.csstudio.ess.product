@@ -254,28 +254,7 @@
          unpack="false"/>
 
    <plugin
-         id="org.epics.caj"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
          id="org.epics.jca"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.epics.pvAccessJava"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.epics.pvDataJava"
          download-size="0"
          install-size="0"
          version="0.0.0"
