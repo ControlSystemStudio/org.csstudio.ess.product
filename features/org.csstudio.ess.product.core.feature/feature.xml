@@ -568,7 +568,7 @@
          version="0.0.0"
          unpack="false"/>
 
-<!--   <plugin
+   <plugin
          id="se.europeanspallationsource.javafx.control.controlled-knobs"
          download-size="0"
          install-size="0"
@@ -594,7 +594,7 @@
          download-size="0"
          install-size="0"
          version="0.0.0"
-         unpack="false"/>-->
+         unpack="false"/>
 
    <plugin
          id="org.controlsfx"
