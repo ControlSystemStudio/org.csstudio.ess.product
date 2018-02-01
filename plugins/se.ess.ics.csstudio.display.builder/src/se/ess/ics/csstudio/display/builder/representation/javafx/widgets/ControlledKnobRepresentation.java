@@ -8,6 +8,7 @@
  */
 package se.ess.ics.csstudio.display.builder.representation.javafx.widgets;
 
+
 import java.util.Objects;
 
 import org.csstudio.display.builder.model.DirtyFlag;
@@ -16,8 +17,9 @@ import org.csstudio.display.builder.representation.javafx.widgets.BaseKnobRepres
 
 import se.ess.ics.csstudio.display.builder.model.widgets.ControlledKnobWidget;
 import se.ess.ics.csstudio.display.builder.model.widgets.ControlledKnobWidget.Controller;
-import se.ess.knobs.controlled.ControlledKnob;
-import se.ess.knobs.controller.Controllable.OperatingMode;
+import se.europeanspallationsource.javafx.control.knobs.controlled.ControlledKnob;
+import se.europeanspallationsource.javafx.control.knobs.controller.Controllable.OperatingMode;
+
 
 /**
  * @author claudiorosati, European Spallation Source ERIC
@@ -40,7 +42,7 @@ public class ControlledKnobRepresentation extends BaseKnobRepresentation<Control
     }
 
     @Override
-    protected ControlledKnob createKnob() {
+    protected ControlledKnob createKnob ( ) {
         return new ControlledKnob();
     }
 

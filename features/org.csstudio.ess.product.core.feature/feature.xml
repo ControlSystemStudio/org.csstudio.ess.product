@@ -568,12 +568,33 @@
          version="0.0.0"
          unpack="false"/>
 
-   <plugin
-         id="org.csstudio.platform.libs.gauges"
+<!--   <plugin
+         id="se.europeanspallationsource.javafx.control.controlled-knobs"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
+
+   <plugin
+         id="se.europeanspallationsource.javafx.control.knobs"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="se.europeanspallationsource.javafx.control.medusa"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="se.europeanspallationsource.javafx.control.thumbwheel"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>-->
 
    <plugin
          id="org.controlsfx"
