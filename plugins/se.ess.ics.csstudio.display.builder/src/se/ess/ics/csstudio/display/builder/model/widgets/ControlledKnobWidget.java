@@ -9,7 +9,11 @@
 package se.ess.ics.csstudio.display.builder.model.widgets;
 
 
+import static org.csstudio.display.builder.model.properties.CommonWidgetProperties.newDoublePropertyDescriptor;
+import static org.csstudio.display.builder.model.properties.CommonWidgetProperties.newIntegerPropertyDescriptor;
+
 import java.util.List;
+
 import org.csstudio.display.builder.model.Widget;
 import org.csstudio.display.builder.model.WidgetCategory;
 import org.csstudio.display.builder.model.WidgetDescriptor;
@@ -18,11 +22,11 @@ import org.csstudio.display.builder.model.WidgetPropertyCategory;
 import org.csstudio.display.builder.model.WidgetPropertyDescriptor;
 import org.csstudio.display.builder.model.properties.EnumWidgetProperty;
 import org.csstudio.display.builder.model.widgets.KnobWidget;
+
 import se.ess.ics.csstudio.display.builder.Messages;
 import se.europeanspallationsource.javafx.control.knobs.controlled.ControlledKnob;
 import se.europeanspallationsource.javafx.control.knobs.controller.Controllable.OperatingMode;
 import se.europeanspallationsource.javafx.control.knobs.controller.midi.djtechtools.MidiFighterTwisterController;
-;
 
 
 /**
