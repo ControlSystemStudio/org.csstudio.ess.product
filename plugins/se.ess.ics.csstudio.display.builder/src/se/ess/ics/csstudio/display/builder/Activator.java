@@ -13,12 +13,10 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.logging.Logger;
-
 import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
-
-import se.ess.knobs.controlled.ControlledKnob;
-import se.ess.knobs.controller.Controllers;
+import se.europeanspallationsource.javafx.control.knobs.controlled.ControlledKnob;
+import se.europeanspallationsource.javafx.control.knobs.controller.Controllers;
 
 
 /**
