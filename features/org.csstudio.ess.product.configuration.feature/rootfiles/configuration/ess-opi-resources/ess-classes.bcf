@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <name>ess-classes</name>
+  <widget type="rectangle" version="2.0.0">
+    <name>SECONDARY-TITLE-BAR</name>
+    <x use_class="true">0</x>
+    <y use_class="true">0</y>
+    <width>800</width>
+    <height use_class="true">50</height>
+    <line_width use_class="true">0</line_width>
+    <background_color use_class="true">
+      <color name="SECONDARY-HEADER-BACKGROUND" red="202" green="151" blue="152">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>TITLE-BAR</name>
+    <x use_class="true">0</x>
+    <y use_class="true">0</y>
+    <width>520</width>
+    <height use_class="true">50</height>
+    <line_width use_class="true">0</line_width>
+    <background_color use_class="true">
+      <color name="PRIMARY-HEADER-BACKGROUND" red="151" green="188" blue="202">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>TITLE</name>
+    <text>&lt;title&gt;</text>
+    <x use_class="true">20</x>
+    <y use_class="true">0</y>
+    <width>500</width>
+    <height use_class="true">50</height>
+    <font use_class="true">
+      <font name="Header 1" family="Source Sans Pro" style="BOLD_ITALIC" size="36.0">
+      </font>
+    </font>
+    <foreground_color use_class="true">
+      <color name="HEADER-TEXT" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <transparent use_class="true">true</transparent>
+    <horizontal_alignment use_class="true">0</horizontal_alignment>
+    <vertical_alignment use_class="true">1</vertical_alignment>
+    <wrap_words use_class="true">false</wrap_words>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>SUBTITLE</name>
+    <text>&lt;subtitle&gt;</text>
+    <x>520</x>
+    <y use_class="true">20</y>
+    <width>260</width>
+    <height use_class="true">30</height>
+    <font use_class="true">
+      <font name="Header 2" family="Source Sans Pro" style="BOLD_ITALIC" size="21.0">
+      </font>
+    </font>
+    <foreground_color use_class="true">
+      <color name="HEADER-TEXT" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <horizontal_alignment use_class="true">2</horizontal_alignment>
+    <vertical_alignment use_class="true">2</vertical_alignment>
+    <wrap_words use_class="true">false</wrap_words>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>GROUP</name>
+    <x>20</x>
+    <y>70</y>
+    <width>270</width>
+    <height>230</height>
+    <line_color use_class="true">
+      <color name="GROUP-BORDER" red="150" green="155" blue="151">
+      </color>
+    </line_color>
+    <background_color use_class="true">
+      <color name="GROUP-BACKGROUND" red="200" green="205" blue="201">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>GROUP-TITLE</name>
+    <text>&lt;group-title&gt;</text>
+    <x>20</x>
+    <y>70</y>
+    <width>270</width>
+    <height use_class="true">30</height>
+    <font use_class="true">
+      <font name="Header 2" family="Source Sans Pro" style="BOLD_ITALIC" size="21.0">
+      </font>
+    </font>
+    <foreground_color use_class="true">
+      <color name="GROUP-TEXT" red="25" green="25" blue="25">
+      </color>
+    </foreground_color>
+    <horizontal_alignment use_class="true">1</horizontal_alignment>
+    <vertical_alignment use_class="true">1</vertical_alignment>
+    <wrap_words use_class="true">false</wrap_words>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>GROUP-BLUE</name>
+    <x>310</x>
+    <y>70</y>
+    <width>270</width>
+    <height>230</height>
+    <line_color use_class="true">
+      <color name="BLUE-GROUP-BORDER" red="138" green="167" blue="167">
+      </color>
+    </line_color>
+    <background_color use_class="true">
+      <color name="BLUE-GROUP-BACKGROUND" red="179" green="209" blue="209">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>GROUP-GREEN</name>
+    <x>600</x>
+    <y>70</y>
+    <width>270</width>
+    <height>230</height>
+    <line_color use_class="true">
+      <color name="GREEN-GROUP-BORDER" red="131" green="150" blue="131">
+      </color>
+    </line_color>
+    <background_color use_class="true">
+      <color name="GREEN-GROUP-BACKGROUND" red="172" green="191" blue="173">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>GROUP-MAGENTA</name>
+    <x>890</x>
+    <y>70</y>
+    <width>270</width>
+    <height>230</height>
+    <line_color use_class="true">
+      <color name="MAGENTA-GROUP-BORDER" red="160" green="137" blue="151">
+      </color>
+    </line_color>
+    <background_color use_class="true">
+      <color name="MAGENTA-GROUP-BACKGROUND" red="201" green="178" blue="193">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>GROUP-ORANGE</name>
+    <x>310</x>
+    <y>320</y>
+    <width>270</width>
+    <height>230</height>
+    <line_color use_class="true">
+      <color name="ORANGE-GROUP-BORDER" red="168" green="149" blue="131">
+      </color>
+    </line_color>
+    <background_color use_class="true">
+      <color name="ORANGE-GROUP-BACKGROUND" red="209" green="190" blue="173">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>GROUP-RED</name>
+    <x>600</x>
+    <y>320</y>
+    <width>270</width>
+    <height>230</height>
+    <line_color use_class="true">
+      <color name="RED-GROUP-BORDER" red="167" green="134" blue="130">
+      </color>
+    </line_color>
+    <background_color use_class="true">
+      <color name="RED-GROUP-BACKGROUND" red="208" green="175" blue="172">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>GROUP-YELLOW</name>
+    <x>890</x>
+    <y>320</y>
+    <width>270</width>
+    <height>230</height>
+    <line_color use_class="true">
+      <color name="YELLOW-GROUP-BORDER" red="168" green="158" blue="135">
+      </color>
+    </line_color>
+    <background_color use_class="true">
+      <color name="YELLOW-GROUP-BACKGROUND" red="209" green="199" blue="177">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>HEADER2</name>
+    <text>&lt;header-2&gt;</text>
+    <x>20</x>
+    <y>320</y>
+    <width>270</width>
+    <height>30</height>
+    <font use_class="true">
+      <font name="Header 2" family="Source Sans Pro" style="BOLD_ITALIC" size="21.0">
+      </font>
+    </font>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>HEADER3</name>
+    <text use_class="true">&lt;header-3&gt;</text>
+    <x>20</x>
+    <y>350</y>
+    <width>270</width>
+    <height>25</height>
+    <font use_class="true">
+      <font name="Header 3" family="Source Sans Pro" style="BOLD_ITALIC" size="16.0">
+      </font>
+    </font>
+    <foreground_color use_class="true">
+      <color name="Text" red="25" green="25" blue="25">
+      </color>
+    </foreground_color>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>CAPTION</name>
+    <text>&lt;caption&gt;:</text>
+    <x>20</x>
+    <y>375</y>
+    <width>270</width>
+    <foreground_color use_class="true">
+      <color name="Text" red="25" green="25" blue="25">
+      </color>
+    </foreground_color>
+    <horizontal_alignment use_class="true">2</horizontal_alignment>
+    <vertical_alignment use_class="true">1</vertical_alignment>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>BUTTONS-BAR</name>
+    <x>20</x>
+    <y>630</y>
+    <width>420</width>
+    <height>50</height>
+    <line_width use_class="true">1</line_width>
+    <line_color use_class="true">
+      <color name="GROUP-BORDER" red="150" green="155" blue="151">
+      </color>
+    </line_color>
+    <background_color use_class="true">
+      <color name="GROUP-BACKGROUND" red="200" green="205" blue="201">
+      </color>
+    </background_color>
+    <corner_width use_class="true">4</corner_width>
+    <corner_height use_class="true">4</corner_height>
+  </widget>
+</display>
