@@ -19,9 +19,6 @@
       <programArgsLin>--launcher.GTK_version
 2
       </programArgsLin>
-      <programArgsMac>-vm
-/Library/Java/JavaVirtualMachines/jdk1.8.0_162.jdk/Contents/Home/jre/bin
-      </programArgsMac>
       <vmArgs>-Xmx2048m
 -Xms160m
 -Dorg.eclipse.update.reconcile=false
@@ -36,7 +33,7 @@
       </vmArgs>
       <vmArgsLin>-Dorg.eclipse.swt.internal.gtk.cairoGraphics=false
 -Dorg.eclipse.swt.internal.gtk.useCairo=false
--Dorg.eclipse.swt.browser.DefaultType=mozilla 
+-Dorg.eclipse.swt.browser.DefaultType=mozilla
 -Dorg.eclipse.swt.browser.XULRunnerPath=/opt/xulrunner/
       </vmArgsLin>
       <vmArgsMac>-XstartOnFirstThread
