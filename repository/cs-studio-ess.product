@@ -33,7 +33,7 @@
       </vmArgs>
       <vmArgsLin>-Dorg.eclipse.swt.internal.gtk.cairoGraphics=false
 -Dorg.eclipse.swt.internal.gtk.useCairo=false
--Dorg.eclipse.swt.browser.DefaultType=mozilla 
+-Dorg.eclipse.swt.browser.DefaultType=mozilla
 -Dorg.eclipse.swt.browser.XULRunnerPath=/opt/xulrunner/
       </vmArgsLin>
       <vmArgsMac>-XstartOnFirstThread
