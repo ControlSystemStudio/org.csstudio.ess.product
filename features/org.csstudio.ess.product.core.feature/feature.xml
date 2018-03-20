@@ -86,22 +86,6 @@
          version="0.0.0"/>
 
    <includes
-         id="org.csstudio.applications.logbook.feature"
-         version="0.0.0"/>
-
-   <includes
-         id="org.csstudio.logbook.shift.feature"
-         version="0.0.0"/>
-
-   <includes
-         id="org.csstudio.logbook.viewer.feature"
-         version="0.0.0"/>
-
-   <includes
-         id="org.csstudio.olog.feature"
-         version="0.0.0"/>
-
-   <includes
          id="org.csstudio.applications.opibuilder.edm.feature"
          version="0.0.0"/>
 
@@ -135,10 +119,6 @@
 
    <includes
          id="org.csstudio.desy.snl.feature"
-         version="0.0.0"/>
-
-   <includes
-         id="org.csstudio.applications.shift.feature"
          version="0.0.0"/>
 
    <plugin
@@ -464,20 +444,6 @@
          unpack="false"/>
 
    <plugin
-         id="com.sun.jersey.bundle"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="com.sun.jersey.contribs.jersey-multipart"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
          id="junit"
          download-size="0"
          install-size="0"
@@ -500,13 +466,6 @@
 
    <plugin
          id="org.csstudio.utility.pvmanager.ui.toolbox"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="edu.msu.nscl.olog.api"
          download-size="0"
          install-size="0"
          version="0.0.0"
@@ -626,13 +585,6 @@
 
    <plugin
          id="org.csstudio.trends.databrowser3.opiwidget"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.csstudio.alarm.beast.notifier.logbook"
          download-size="0"
          install-size="0"
          version="0.0.0"
@@ -841,5 +793,57 @@
          install-size="0"
          version="0.0.0"
          unpack="false"/>
+
+   <plugin
+         id="com.sun.jersey.bundle"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="com.sun.jersey.contribs.jersey-multipart"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+<!-- REMOVED UNTIL OLOG WILL BE UPDATED PROPERLY
+
+   <includes
+         id="org.csstudio.applications.logbook.feature"
+         version="0.0.0"/>
+
+   <includes
+         id="org.csstudio.logbook.shift.feature"
+         version="0.0.0"/>
+
+   <includes
+         id="org.csstudio.logbook.viewer.feature"
+         version="0.0.0"/>
+
+   <includes
+         id="org.csstudio.olog.feature"
+         version="0.0.0"/>
+         
+   <includes
+         id="org.csstudio.applications.shift.feature"
+         version="0.0.0"/>
+
+   <plugin
+         id="org.csstudio.alarm.beast.notifier.logbook"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="edu.msu.nscl.olog.api"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+-->
 
 </feature>
