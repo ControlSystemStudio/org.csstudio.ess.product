@@ -2,7 +2,7 @@
 <feature
       id="org.csstudio.ess.product.core.feature"
       label="CS-Studio Plug-Ins Dependencies"
-      version="4.5.7.0"
+      version="4.5.7.1"
       provider-name="Claudio Rosati - European Spallation Source ERIC">
 
    <description url="http://www.example.com/description">
@@ -716,20 +716,130 @@
          version="0.0.0"
          unpack="false"/>
 
-   <plugin id="org.apache.xmlgraphics.batik-anim" download-size="0" install-size="0" version="0.0.0" unpack="false"/>
-   <plugin id="org.apache.xmlgraphics.batik-awt-util" download-size="0" install-size="0" version="0.0.0" unpack="false"/>
-   <plugin id="org.apache.xmlgraphics.batik-bridge" download-size="0" install-size="0" version="0.0.0" unpack="false"/>
-   <plugin id="org.apache.xmlgraphics.batik-css" download-size="0" install-size="0" version="0.0.0" unpack="false"/>
-   <plugin id="org.apache.xmlgraphics.batik-dom" download-size="0" install-size="0" version="0.0.0" unpack="false"/>
-   <plugin id="org.apache.xmlgraphics.batik-ext" download-size="0" install-size="0" version="0.0.0" unpack="false"/>
-   <plugin id="org.apache.xmlgraphics.batik-gvt" download-size="0" install-size="0" version="0.0.0" unpack="false"/>
-   <plugin id="org.apache.xmlgraphics.batik-parser" download-size="0" install-size="0" version="0.0.0" unpack="false"/>
-   <plugin id="org.apache.xmlgraphics.batik-script" download-size="0" install-size="0" version="0.0.0" unpack="false"/>
-   <plugin id="org.apache.xmlgraphics.batik-svg-dom" download-size="0" install-size="0" version="0.0.0" unpack="false"/>
-   <plugin id="org.apache.xmlgraphics.batik-svggen" download-size="0" install-size="0" version="0.0.0" unpack="false"/>
-   <plugin id="org.apache.xmlgraphics.batik-transcoder" download-size="0" install-size="0" version="0.0.0" unpack="false"/>
-   <plugin id="org.apache.xmlgraphics.batik-util" download-size="0" install-size="0" version="0.0.0" unpack="false"/>
-   <plugin id="org.apache.xmlgraphics.batik-xml" download-size="0" install-size="0" version="0.0.0" unpack="false"/>
-   <plugin id="org.apache.xmlgraphics.commons" download-size="0" install-size="0" version="0.0.0" unpack="false"/>
+   <plugin
+         id="org.apache.xmlgraphics.batik-anim"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.apache.xmlgraphics.batik-awt-util"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.apache.xmlgraphics.batik-bridge"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.apache.xmlgraphics.batik-css"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.apache.xmlgraphics.batik-dom"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.apache.xmlgraphics.batik-ext"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.apache.xmlgraphics.batik-gvt"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.apache.xmlgraphics.batik-parser"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.apache.xmlgraphics.batik-script"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.apache.xmlgraphics.batik-svg-dom"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.apache.xmlgraphics.batik-svggen"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.apache.xmlgraphics.batik-transcoder"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.apache.xmlgraphics.batik-util"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.apache.xmlgraphics.batik-xml"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.apache.xmlgraphics.commons"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="javax.ws.rs.jsr311-api"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="com.sun.jersey"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="com.sun.jersey.core"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
 
 </feature>
