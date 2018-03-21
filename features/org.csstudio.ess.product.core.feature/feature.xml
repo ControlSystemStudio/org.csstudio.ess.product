@@ -46,10 +46,6 @@
          version="0.0.0"/>
 
    <includes
-         id="org.csstudio.applications.utility.feature"
-         version="0.0.0"/>
-
-   <includes
          id="org.csstudio.applications.utility.menu.pvscript.feature"
          version="0.0.0"/>
 
@@ -807,6 +803,84 @@
          install-size="0"
          version="0.0.0"
          unpack="false"/>
+         
+<!-- REMOVED TO INCLUDE ONLY THE NEEDED PLUGINS (following this comment)
+
+   <includes
+         id="org.csstudio.applications.utility.feature"
+         version="0.0.0"/>
+
+-->
+
+   <plugin
+         id="org.csstudio.apputil"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.csstudio.apputil.ui"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.csstudio.ui.menu.web"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.csstudio.utility.file"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.csstudio.utility.httpd"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.csstudio.utility.screenshot"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.csstudio.utility.speech"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.csstudio.utility.sysmon"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.csstudio.utility.treemodel"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.csstudio.servicelocator"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>         
 
 <!-- REMOVED UNTIL OLOG WILL BE UPDATED PROPERLY
 
