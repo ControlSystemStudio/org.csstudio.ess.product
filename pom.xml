@@ -28,7 +28,7 @@
     <eclipse.central.url>http://download.eclipse.org</eclipse.central.url>
     <eclipse.mirror.url>${eclipse.central.url}</eclipse.mirror.url>
     <orbit-site>${eclipse.mirror.url}/tools/orbit/downloads/drops/R20150519210750/repository/</orbit-site>
-    <cs-studio.version>4.3</cs-studio.version>
+    <cs-studio.version>4.6</cs-studio.version>
     <download.root>http://download.controlsystemstudio.org</download.root>
     <cs-studio-central.url>http://download.controlsystemstudio.org/product/${cs-studio.version}</cs-studio-central.url>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

@@ -4,7 +4,7 @@ set -e
 # Check parameters
 if [ $# != 2 ]
 then
-  echo You must provide the next release product version, and git \(e.g. \"prepare-next-release.sh 3.3.1 false\"\)
+  echo You must provide the next release product version, and git \(e.g. \"prepare-next-release.sh 3.3.1.0 false\"\)
   exit -1
 fi
 
