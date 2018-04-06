@@ -4,7 +4,7 @@ set -e
 # Check parameters
 if [ $# != 4 ]
 then
-  echo You must provide the product version, milestone, notes, git \(e.g. \"prepare-release.sh 3.3.0 \"https://github\" \"https://github\" \"Some notes\" false\"\)
+  echo You must provide the product version, milestone, notes, git \(e.g. \"prepare-release.sh 3.3.0.0 \"https://github\" \"https://github\" \"Some notes\" false\"\)
   exit -1
 fi
 
