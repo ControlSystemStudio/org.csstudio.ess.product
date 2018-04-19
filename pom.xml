@@ -27,7 +27,7 @@
     <tycho-extras.version>1.0.0</tycho-extras.version>
     <eclipse.central.url>http://download.eclipse.org</eclipse.central.url>
     <eclipse.mirror.url>${eclipse.central.url}</eclipse.mirror.url>
-    <orbit-site>${eclipse.mirror.url}/tools/orbit/downloads/drops/R20150519210750/repository/</orbit-site>
+    <orbit-site>http://download.eclipse.org/tools/orbit/downloads/drops/R20180330011457/repository</orbit-site>
     <cs-studio.version>4.6</cs-studio.version>
     <download.root>http://download.controlsystemstudio.org</download.root>
     <cs-studio-central.url>http://download.controlsystemstudio.org/product/${cs-studio.version}</cs-studio-central.url>
@@ -164,14 +164,16 @@
         </property>
       </activation>
       <properties>
-        <eclipse-site>http://download.eclipse.org/releases/neon</eclipse-site>
-        <eclipse-update-site>http://download.eclipse.org/eclipse/updates/4.6</eclipse-update-site>
+        <eclipse-site>http://download.eclipse.org/releases/oxygen</eclipse-site>
+        <eclipse-update-site>http://download.eclipse.org/eclipse/updates/4.7</eclipse-update-site>
         <rap-site>http://download.eclipse.org/rt/rap/3.1</rap-site>
-        <rap-incubator-site>http://archive.eclipse.org/rt/rap/incubator/nightly/gef/20150122-1538/</rap-incubator-site>
+        <rap-incubator-site>http://archive.eclipse.org/rt/rap/incubator/nightly/gef/20150327-1849</rap-incubator-site>
         <rap-gef-site>http://archive.eclipse.org/rt/rap/incubator/nightly/gef/20150327-1849</rap-gef-site>
         <rap-e4-site>http://download.eclipse.org/rt/rap/incubator/3.0/e4/target/site</rap-e4-site>
         <swtbot-site>http://download.eclipse.org/technology/swtbot/releases/latest/</swtbot-site>
-        <platform-version>[4.4,4.6)</platform-version>
+        <orbit-site>http://download.eclipse.org/tools/orbit/downloads/drops/R20180330011457/repository</orbit-site>
+        <efx-site>http://download.eclipse.org/efxclipse/runtime-released/2.4.0/site</efx-site>
+        <platform-version>[4.4,4.7)</platform-version>
       </properties>
     </profile>
     <profile>
