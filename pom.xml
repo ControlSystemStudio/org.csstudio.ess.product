@@ -5,15 +5,8 @@
   <artifactId>se.ess.ics.csstudio</artifactId>
   <version>4.6.1.0</version>
   <packaging>pom</packaging>
-  <name>Template CS-Studio Product</name>
-  <description>An Template for creating your own CS-Studio product</description>
-
-  <!-- CHILD MODULES -->
-  <modules>
-    <module>repository</module>
-    <module>features</module>
-    <module>plugins</module>
-  </modules>
+  <name>ESS CS-Studio Product</name>
+  <description>ESS CS-Studio product</description>
 
   <!-- USE MAVEN 3.0 -->
   <prerequisites>
@@ -24,12 +17,9 @@
   <properties>
     <!-- VERSIONS -->
     <tycho.version>1.0.0</tycho.version>
-    <tycho-extras.version>1.0.0</tycho-extras.version>
-    <eclipse.central.url>http://download.eclipse.org</eclipse.central.url>
-    <eclipse.mirror.url>${eclipse.central.url}</eclipse.mirror.url>
-    <orbit-site>http://download.eclipse.org/tools/orbit/downloads/drops/R20180330011457/repository</orbit-site>
+    <tycho-extras.version>${tycho.version}</tycho-extras.version>
     <cs-studio.version>4.6</cs-studio.version>
-    <download.root>http://download.controlsystemstudio.org</download.root>
+    <diirt.version>3.1.7</diirt.version>
     <cs-studio-central.url>http://download.controlsystemstudio.org/product/${cs-studio.version}</cs-studio-central.url>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <jgit.dirtyWorkingTree>error</jgit.dirtyWorkingTree>
@@ -57,103 +47,6 @@
 	  </pluginRepository>
   </pluginRepositories>
 
-  <build>
-    <!-- PLUGIN CONFIGURATION -->
-    <plugins>
-      <plugin>
-        <groupId>org.eclipse.tycho</groupId>
-        <artifactId>tycho-maven-plugin</artifactId>
-        <version>${tycho.version}</version>
-        <extensions>true</extensions>
-      </plugin>
-      <plugin>
-        <groupId>org.eclipse.tycho</groupId>
-        <artifactId>target-platform-configuration</artifactId>
-        <version>${tycho.version}</version>
-        <configuration>
-          <dependency-resolution>
-            <extraRequirements>
-              <requirement>
-                <!-- Needed to satisfy the import packages javax.servlet 
-                  and javax.servlet.http required by the plugin org.csstudio.rap.core -->
-                <type>eclipse-plugin</type>
-                <id>javax.servlet</id>
-                <versionRange>0.0.0</versionRange>
-              </requirement>
-              <requirement>
-                <!-- Needed to satisfy the import package org.eclipse.ui.parts 
-                  required by the plugin org.csstudio.logbook.olog -->
-                <type>eclipse-plugin</type>
-                <id>org.eclipse.ui.ide</id>
-                <versionRange>0.0.0</versionRange>
-              </requirement>
-              <requirement>
-                <!-- Needed to generate CS-Studio P2 Repository. -->
-                <type>eclipse-feature</type>
-                <id>org.eclipse.objectteams.otdt.core.patch</id>
-                <versionRange>0.0.0</versionRange>
-              </requirement>
-              <requirement>
-                <!-- Needed as a dependency for org.eclipse.objectteams.otdt.core.patch -->
-                <type>eclipse-feature</type>
-                <id>org.eclipse.jdt</id>
-                <versionRange>0.0.0</versionRange>
-              </requirement>
-            </extraRequirements>
-          </dependency-resolution>
-
-          <environments>
-<!--            <environment>
-              <os>linux</os>
-              <ws>gtk</ws>
-              <arch>x86</arch>
-            </environment>-->
-            <environment>
-              <os>linux</os>
-              <ws>gtk</ws>
-              <arch>x86_64</arch>
-            </environment>
-<!--            <environment>
-              <os>win32</os>
-              <ws>win32</ws>
-              <arch>x86</arch>
-            </environment>-->
-            <environment>
-              <os>win32</os>
-              <ws>win32</ws>
-              <arch>x86_64</arch>
-            </environment>
-            <environment>
-              <os>macosx</os>
-              <ws>cocoa</ws>
-              <arch>x86_64</arch>
-            </environment>
-          </environments>
-        </configuration>
-      </plugin>
-      <plugin>
-        <groupId>org.eclipse.tycho</groupId>
-        <artifactId>tycho-compiler-plugin</artifactId>
-        <version>${tycho.version}</version>
-        <configuration>
-          <!-- We don't commit the project settings files
-          (.settings/org.eclipse.jdt.core.prefs), so we
-          don't want the Eclipse defaults affecting the build. -->
-          <useProjectSettings>false</useProjectSettings>
-          <!-- This is to avoid errors when using restricted API from org.ecpics.vtype, and sun.* -->
-          <compilerArgument>-err:-forbidden</compilerArgument>
-        </configuration>
-      </plugin>
-      <plugin>
-        <groupId>org.eclipse.tycho</groupId>
-        <artifactId>tycho-surefire-plugin</artifactId>
-        <version>${tycho.version}</version>
-        <configuration>
-          <skipTests>true</skipTests>
-        </configuration>
-      </plugin>
-    </plugins>
-  </build>
   <!-- Profiles -->
   <profiles>
     <profile>
@@ -168,13 +61,26 @@
         <eclipse-update-site>http://download.eclipse.org/eclipse/updates/4.7</eclipse-update-site>
         <rap-site>http://download.eclipse.org/rt/rap/3.1</rap-site>
         <rap-incubator-site>http://archive.eclipse.org/rt/rap/incubator/nightly/gef/20150327-1849</rap-incubator-site>
-        <rap-gef-site>http://archive.eclipse.org/rt/rap/incubator/nightly/gef/20150327-1849</rap-gef-site>
         <rap-e4-site>http://download.eclipse.org/rt/rap/incubator/3.0/e4/target/site</rap-e4-site>
         <swtbot-site>http://download.eclipse.org/technology/swtbot/releases/latest/</swtbot-site>
         <orbit-site>http://download.eclipse.org/tools/orbit/downloads/drops/R20180330011457/repository</orbit-site>
         <efx-site>http://download.eclipse.org/efxclipse/runtime-released/2.4.0/site</efx-site>
-        <platform-version>[4.4,4.7)</platform-version>
       </properties>
+    </profile>
+    <profile>
+      <id>csstudio-local-repo-enable</id>
+      <activation>
+        <property>
+          <name>csstudio.local.repo</name>
+        </property>
+      </activation>
+      <repositories>
+        <repository>
+          <id>csstudio-local-repo</id>
+          <url>file:${csstudio.local.repo}</url>
+          <layout>p2</layout>
+        </repository>
+      </repositories>
     </profile>
     <profile>
       <id>csstudio-composite-repo-enable</id>
@@ -202,6 +108,24 @@
       <pluginRepositories>
       </pluginRepositories>
     </profile>
+    <!-- this profile is related to bug 1818 - https://github.com/ControlSystemStudio/cs-studio/issues/1818
+      org.eclipse.draw2d_3.9.101.201408150207 is forced over never versions of
+      plugin -->
+    <profile>
+      <id>issue-1818</id>
+      <activation>
+        <property>
+          <name>issue-1818</name>
+        </property>
+      </activation>
+      <repositories>
+        <repository>
+          <id>csstudio-issue-1818</id>
+          <url>http://download.controlsystemstudio.org/issue/1818</url>
+          <layout>p2</layout>
+        </repository>
+      </repositories>
+    </profile>
     <profile>
       <id>cs-studio</id>
       <activation>
@@ -211,13 +135,13 @@
       </activation>
       <repositories>
         <repository>
-          <id>diirt</id>
-          <url>http://diirt.download.controlsystemstudio.org/diirt/3.1.2</url>
+          <id>csstudio-updates</id>
+          <url>http://download.controlsystemstudio.org/updates/${cs-studio.version}</url>
           <layout>p2</layout>
         </repository>
         <repository>
-          <id>csstudio</id>
-          <url>${download.root}/updates/${cs-studio.version}</url>
+          <id>csstudio-issue-1818</id>
+          <url>http://download.controlsystemstudio.org/issue/1818</url>
           <layout>p2</layout>
         </repository>
       </repositories>
@@ -253,14 +177,137 @@
     </repository>
     <repository>
       <id>efx</id>
-      <url>http://download.eclipse.org/efxclipse/runtime-released/2.1.0/site</url>
+      <url>${efx-site}</url>
       <layout>p2</layout>
     </repository>
     <repository>
-      <id>mercurialeclipse</id>
-      <url>http://download.controlsystemstudio.org/mercurialeclipse</url>
+      <id>diirt</id>
+      <url>http://diirt.download.controlsystemstudio.org/diirt/${diirt.version}</url>
       <layout>p2</layout>
     </repository>
   </repositories>
 
+  <!-- CHILD MODULES -->
+  <modules>
+    <module>plugins</module>
+    <module>features</module>
+    <module>repository</module>
+  </modules>
+
+  <build>
+
+    <extensions>
+      <extension>
+        <groupId>org.kuali.maven.wagons</groupId>
+        <artifactId>maven-s3-wagon</artifactId>
+        <version>1.2.1</version>
+      </extension>
+    </extensions>
+
+    <!-- PLUGIN MANAGEMENT -->
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>org.eclipse.tycho</groupId>
+          <artifactId>tycho-packaging-plugin</artifactId>
+          <version>${tycho.version}</version>
+          <dependencies>
+            <dependency>
+              <groupId>org.eclipse.tycho.extras</groupId>
+              <artifactId>tycho-buildtimestamp-jgit</artifactId>
+              <version>${tycho-extras.version}</version>
+            </dependency>
+          </dependencies>
+          <configuration>
+            <timestampProvider>jgit</timestampProvider>
+            <jgit.ignore>
+              pom.xml
+              plugins/org.csstudio.product/.settings/*
+              plugins/org.csstudio.startup.intro/.settings/*
+              features/org.csstudio.product.feature/.settings/*
+              repository/.settings/*
+              .gitignore
+              *.target
+            </jgit.ignore>
+            <jgit.dirtyWorkingTree>warning</jgit.dirtyWorkingTree>
+          </configuration>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+
+    <!-- PLUGIN CONFIGURATION -->
+    <plugins>
+      <plugin>
+        <groupId>org.eclipse.tycho</groupId>
+        <artifactId>tycho-maven-plugin</artifactId>
+        <version>${tycho.version}</version>
+        <extensions>true</extensions>
+      </plugin>
+      <plugin>
+        <groupId>org.eclipse.tycho</groupId>
+        <artifactId>target-platform-configuration</artifactId>
+        <version>${tycho.version}</version>
+        <configuration>
+          <dependency-resolution>
+            <extraRequirements>
+              <requirement>
+                <!-- Needed to satisfy the import package org.eclipse.ui.parts
+                  required by the plugin org.csstudio.logbook.olog -->
+                <type>eclipse-plugin</type>
+                <id>org.eclipse.ui.ide</id>
+                <versionRange>0.0.0</versionRange>
+              </requirement>
+            </extraRequirements>
+            <!-- Default behavior is to resolve ALL dependencies. -->
+            <!--<optionalDependencies>ignore</optionalDependencies> -->
+          </dependency-resolution>
+
+          <filters>
+            <!-- This is how features/plugins can be ignored. -->
+            <!--<filter> <type>eclipse-plugin</type> <id>artifactId</id>
+              <removeAll /> </filter> -->
+          </filters>
+
+          <environments>
+            <environment>
+              <os>linux</os>
+              <ws>gtk</ws>
+              <arch>x86_64</arch>
+            </environment>
+            <environment>
+              <os>win32</os>
+              <ws>win32</ws>
+              <arch>x86_64</arch>
+            </environment>
+            <environment>
+              <os>macosx</os>
+              <ws>cocoa</ws>
+              <arch>x86_64</arch>
+            </environment>
+          </environments>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.eclipse.tycho</groupId>
+        <artifactId>tycho-compiler-plugin</artifactId>
+        <version>${tycho.version}</version>
+        <configuration>
+           We don't commit the project settings files
+          (.settings/org.eclipse.jdt.core.prefs), so we
+          don't want the Eclipse defaults affecting the build. 
+          <useProjectSettings>false</useProjectSettings>
+           This is to avoid errors when using restricted API from org.ecpics.vtype, and sun.* 
+          <compilerArgument>-err:-forbidden</compilerArgument>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.eclipse.tycho</groupId>
+        <artifactId>tycho-surefire-plugin</artifactId>
+        <version>${tycho.version}</version>
+        <configuration>
+          <skipTests>true</skipTests>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
 </project>
