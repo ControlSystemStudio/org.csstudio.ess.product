@@ -17,39 +17,9 @@
       [Enter License Description here.]
    </license>
 
-   <plugin
-         id="se.ess.ics.csstudio.product"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="se.ess.ics.csstudio.startup.intro"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="se.ess.ics.csstudio.fonts"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="se.ess.ics.csstudio.display.builder"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="se.europeanspallationsource.javafx.control.controlled-knobs"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
+   <plugin id="se.ess.ics.csstudio.product" download-size="0" install-size="0" version="0.0.0" unpack="false"/>
+   <plugin id="se.ess.ics.csstudio.startup.intro" download-size="0" install-size="0" version="0.0.0" unpack="false"/>
+   <plugin id="se.ess.ics.csstudio.display.builder" download-size="0" install-size="0" version="0.0.0" unpack="false"/>
+   <plugin id="se.europeanspallationsource.javafx.control.controlled-knobs" download-size="0" install-size="0" version="0.0.0" unpack="false"/>
 
 </feature>
