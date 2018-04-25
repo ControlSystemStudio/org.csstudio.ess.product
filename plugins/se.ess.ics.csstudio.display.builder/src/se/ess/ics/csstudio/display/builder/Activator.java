@@ -13,17 +13,10 @@ import java.util.logging.Logger;
 
 import org.csstudio.utility.product.IWorkbenchWindowAdvisorExtPoint;
 import org.eclipse.core.runtime.IStatus;
-import org.eclipse.swt.SWT;
-import org.eclipse.swt.widgets.Display;
-import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.IMemento;
 import org.eclipse.ui.WorkbenchException;
 import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
-
-import javafx.embed.swt.FXCanvas;
-import javafx.scene.Scene;
-import se.europeanspallationsource.javafx.control.knobs.controlled.ControlledKnob;
 
 
 /**
@@ -60,16 +53,8 @@ public class Activator implements BundleActivator, IWorkbenchWindowAdvisorExtPoi
 
     @Override
     public void preWindowOpen ( ) {
-
-        final Display display = Display.getCurrent();
-        final Shell shell = new Shell(display);
-        final FXCanvas canvas = new FXCanvas(shell, SWT.NONE);
-
         ControllersUtility.get().discoverAndInitialize();
         FontsUtility.get().loadFonts();
-
-        canvas.setScene(new Scene(new ControlledKnob()));
-
     }
 
     @Override
