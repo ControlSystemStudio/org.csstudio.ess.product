@@ -22,7 +22,7 @@
       <programArgsMac>-share_link
 /Users/claudiorosati/Projects/GitHubX/ess-symbols=/ess-symbols,/Users/claudiorosati/Projects/GitHubX/ess-templates=/ess-templates
 -vm
-/Library/Java/JavaVirtualMachines/jdk1.8.0_162.jdk/Contents/Home/jre/bin
+/Library/Java/JavaVirtualMachines/jdk1.8.0_172.jdk/Contents/Home/jre/bin
       </programArgsMac>
       <vmArgs>-Xmx2048m
 -Xms160m
