@@ -35,16 +35,16 @@
 	<swtbot-site>http://download.eclipse.org/technology/swtbot/releases/latest/</swtbot-site>
 
 	<!-- *** 4.6 NEON *** -->
-	<eclipse-site>http://download.eclipse.org/releases/neon</eclipse-site>
-	<eclipse-update-site>http://download.eclipse.org/eclipse/updates/4.6</eclipse-update-site>
-    <orbit-site>http://download.eclipse.org/tools/orbit/downloads/drops/R20150519210750/repository/</orbit-site>
-	<platform-version>[4.4,4.6)</platform-version>
+	<!--<eclipse-site>http://download.eclipse.org/releases/neon</eclipse-site>-->
+	<!--<eclipse-update-site>http://download.eclipse.org/eclipse/updates/4.6</eclipse-update-site>-->
+    <!--<orbit-site>http://download.eclipse.org/tools/orbit/downloads/drops/R20150519210750/repository/</orbit-site>-->
+	<!--<platform-version>[4.4,4.6)</platform-version>-->
 
 	<!-- *** 4.7 OXYGEN *** -->
-	<!--<eclipse-site>http://download.eclipse.org/releases/oxygen</eclipse-site>-->
-	<!--<eclipse-update-site>http://download.eclipse.org/eclipse/updates/4.7</eclipse-update-site>-->
-    <!--<orbit-site>http://download.eclipse.org/tools/orbit/downloads/drops/R20180330011457/repository</orbit-site>-->
-	<!--<platform-version>[4.4,4.7)</platform-version>-->
+	<eclipse-site>http://download.eclipse.org/releases/oxygen</eclipse-site>
+	<eclipse-update-site>http://download.eclipse.org/eclipse/updates/4.7</eclipse-update-site>
+    <orbit-site>http://download.eclipse.org/tools/orbit/downloads/drops/R20180330011457/repository</orbit-site>
+	<platform-version>[4.4,4.7)</platform-version>
 
   </properties>
 
