@@ -4,7 +4,7 @@
 <product name="ESS CS-Studio" uid="cs-studio-ess" id="se.ess.ics.csstudio.product.product" application="se.ess.ics.csstudio.product.application" version="4.6.1.1" useFeatures="true" includeLaunchers="true">
 
    <aboutInfo>
-      <image path="/org.csstudio.product/icons/cs-studio-about.png"/>
+      <image path="/se.ess.ics.csstudio.product/icons/cs-studio-about.png"/>
       <text>
          %aboutText
       </text>
@@ -85,7 +85,7 @@ For details, see http://www.eclipse.org/legal/epl-v10.html
    </plugins>
 
   <features>
-    <feature id="org.csstudio.alarm.beast.ui.feature"/>
+	<feature id="org.csstudio.alarm.beast.ui.feature"/>
     <feature id="org.csstudio.alarm.diirt.datasource.feature"/>
     <feature id="org.csstudio.applications.channel.feature"/>
     <feature id="org.csstudio.applications.channelfinder.feature"/>

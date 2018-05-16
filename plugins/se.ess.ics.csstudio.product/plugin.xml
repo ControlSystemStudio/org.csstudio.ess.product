@@ -22,7 +22,7 @@
 			</property>
 			<property
 				name="aboutImage"
-				value="platform:/plugin/org.csstudio.product/icons/cs-studio-about.png">
+				value="platform:/plugin/se.ess.ics.csstudio.product/icons/cs-studio-about.png">
 			</property>
 			<property
 				name="aboutText"
