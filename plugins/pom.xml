@@ -9,6 +9,7 @@
   <packaging>pom</packaging>
   <modules>
       <module>se.ess.ics.csstudio.display.builder</module>
+      <module>se.ess.ics.csstudio.fonts</module>
       <module>se.ess.ics.csstudio.product</module>
       <module>se.ess.ics.csstudio.startup.intro</module>
   </modules>
