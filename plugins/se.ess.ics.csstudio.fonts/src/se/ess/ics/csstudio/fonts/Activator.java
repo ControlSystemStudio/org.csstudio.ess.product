@@ -1,16 +1,5 @@
-/**
- * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS HEADER.
- * Copyright (C) 2016 European Spallation Source ERIC.
- * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
- * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.html
- */
-package se.ess.ics.csstudio.display.builder;
+package se.ess.ics.csstudio.fonts;
 
-
-import static se.ess.ics.csstudio.display.builder.Activator.ID;
-import static se.ess.ics.csstudio.display.builder.Activator.LOGGER;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -22,49 +11,86 @@ import java.text.MessageFormat;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import java.util.concurrent.atomic.AtomicBoolean;
+import java.util.logging.Logger;
 
 import org.apache.commons.lang3.StringUtils;
 import org.csstudio.diirt.util.core.preferences.ExceptionUtilities;
+import org.csstudio.utility.product.IWorkbenchWindowAdvisorExtPoint;
 import org.eclipse.core.runtime.FileLocator;
+import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Path;
 import org.eclipse.core.runtime.Platform;
+import org.eclipse.swt.widgets.Display;
+import org.eclipse.ui.IMemento;
+import org.eclipse.ui.WorkbenchException;
 import org.osgi.framework.Bundle;
+import org.osgi.framework.BundleActivator;
+import org.osgi.framework.BundleContext;
 
 import javafx.scene.text.Font;
 
 
-/**
- * This singleton class loads the ESS required fonts.
- *
- * @author claudiorosati, European Spallation Source ERIC
- * @version 1.0.0 25 Apr 2018
- */
-public class FontsUtility {
+public class Activator implements BundleActivator, IWorkbenchWindowAdvisorExtPoint {
 
-    public static final String FONTS_FOLDER    = "fonts/";
-    public static final String FONTS_LIST_FILE = FONTS_FOLDER + "fonts-list.txt";
+    public static final String   FONTS_FOLDER    = "fonts/";
+    public static final String   FONTS_LIST_FILE = FONTS_FOLDER + "fonts-list.txt";
+    public static final String   ID              = "se.ess.ics.csstudio.fonts";
+    public static final Logger   LOGGER          = Logger.getLogger(Activator.class.getName());
+    private static BundleContext context;
 
-    public static FontsUtility get ( ) {
-        return FontsUtilitySingleton.INSTANCE;
+    static BundleContext getContext ( ) {
+        return context;
     }
 
-    private final AtomicBoolean inited = new AtomicBoolean(false);
-
-    private FontsUtility ( ) {
+    @Override
+    public void postWindowClose ( ) {
     }
 
-    public void loadFonts ( ) {
+    @Override
+    public void postWindowCreate ( ) {
+    }
 
-        if ( inited.compareAndSet(false, true) ) {
+    @Override
+    public void postWindowOpen ( ) {
+    }
 
-            List<File> fontFiles = findFontFiles();
+    @Override
+    public void postWindowRestore ( ) throws WorkbenchException {
+    }
 
-            loadFXFonts(fontFiles);
-//            loadSWTFonts(fontFiles);
+    @Override
+    public void preWindowOpen ( ) {
 
-        }
+        List<File> fontFiles = findFontFiles();
 
+        loadFXFonts(fontFiles);
+        loadSWTFonts(fontFiles);
+
+    }
+
+    @Override
+    public boolean preWindowShellClose ( ) {
+        return true;
+    }
+
+    @Override
+    public IStatus restoreState ( IMemento memento ) {
+        return null;
+    }
+
+    @Override
+    public IStatus saveState ( IMemento memento ) {
+        return null;
+    }
+
+    @Override
+    public void start ( BundleContext bundleContext ) throws Exception {
+        Activator.context = bundleContext;
+    }
+
+    @Override
+    public void stop ( BundleContext bundleContext ) throws Exception {
+        Activator.context = null;
     }
 
     /**
@@ -130,17 +156,17 @@ public class FontsUtility {
 
     }
 
-//    private void loadSWTFonts ( List<File> fontFiles ) {
-//        Display.getCurrent().syncExec( ( ) -> {
-//            fontFiles.stream().forEach(f -> {
-//                if ( !Display.getCurrent().loadFont(f.toString()) ) {
-//                    LOGGER.warning(MessageFormat.format("Font file ''{0}'' not loaded.", f.toString()));
-//                } else {
-//                    LOGGER.config(MessageFormat.format("SWT engine successfully loaded font ''{0}''.", f.toString()));
-//                }
-//            });
-//        });
-//    }
+    private void loadSWTFonts ( List<File> fontFiles ) {
+        Display.getCurrent().syncExec(() -> {
+            fontFiles.stream().forEach(f -> {
+                if ( !Display.getCurrent().loadFont(f.toString()) ) {
+                    LOGGER.warning(MessageFormat.format("Font file ''{0}'' not loaded.", f.toString()));
+                } else {
+                    LOGGER.config(MessageFormat.format("SWT engine successfully loaded font ''{0}''.", f.toString()));
+                }
+            });
+        });
+    }
 
     private void loadFXFonts ( List<File> fontFiles ) {
         fontFiles.stream().forEach(f -> {
@@ -151,12 +177,6 @@ public class FontsUtility {
                 LOGGER.warning(MessageFormat.format("Font file ''{0}'' not loaded [{1}].\n{2}", f.toString(), ex.getMessage(), ExceptionUtilities.reducedStackTrace(ex, "se.ess")));
             }
         });
-    }
-
-    private static interface FontsUtilitySingleton {
-
-        FontsUtility INSTANCE = new FontsUtility();
-
     }
 
 }

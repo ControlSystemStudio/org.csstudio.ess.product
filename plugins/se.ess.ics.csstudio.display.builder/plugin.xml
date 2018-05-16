@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?eclipse version="3.4"?>
 <plugin>
-	<extension point="org.csstudio.utility.product.module">
-		<workbench class="se.ess.ics.csstudio.display.builder.Activator"/>
-	</extension>
-	<extension point="org.csstudio.display.builder.model.widgets">
-		<widget
+	<extension
+		point="org.csstudio.display.builder.model.widgets">
+  		<widget
 			category="CONTROL"
 			class="se.ess.ics.csstudio.display.builder.model.widgets.ControlledKnobWidget"
 			description="%ControlledKnobWidget_Description"
@@ -14,12 +12,13 @@
 			type="controlled-knob">
 		</widget>
 	</extension>
-	<extension point="org.csstudio.display.builder.representation.widgets">
-		<representation
+	<extension
+ 		point="org.csstudio.display.builder.representation.widgets">
+  		<representation
 			class="se.ess.ics.csstudio.display.builder.representation.javafx.widgets.ControlledKnobRepresentation"
 			type="controlled-knob">
 		</representation>
-	</extension>
+   </extension>
 	<extension
 		point="org.csstudio.display.builder.runtime.widgets">
 		<runtime

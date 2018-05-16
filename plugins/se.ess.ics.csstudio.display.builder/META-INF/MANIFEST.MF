@@ -6,25 +6,18 @@ Bundle-SymbolicName: se.ess.ics.csstudio.display.builder;singleton:=true
 Bundle-Version: 4.6.1.1
 Bundle-Activator: se.ess.ics.csstudio.display.builder.Activator
 Bundle-Vendor: Claudio Rosati - European Spallation Source ERIC
-Require-Bundle: org.apache.commons.lang3,
- org.csstudio.diirt.util.core.preferences,
+Require-Bundle: org.diirt.vtype,
+ org.eclipse.core.runtime,
  org.csstudio.display.builder.model,
  org.csstudio.display.builder.representation,
  org.csstudio.display.builder.representation.javafx,
- org.csstudio.display.builder.runtime,
- org.csstudio.display.builder.util,
- org.csstudio.javafx,
- org.csstudio.startup,
- org.csstudio.utility.product, 
- org.csstudio.vtype.pv,
- org.diirt.vtype,
- org.eclipse.core.runtime,
- org.eclipse.swt,
- org.eclipse.ui,
+ org.csstudio.display.builder.runtime;bundle-version="1.0.0",
+ org.csstudio.display.builder.util;bundle-version="1.0.0",
+ org.csstudio.vtype.pv;bundle-version="4.0.2",
  se.europeanspallationsource.javafx.control.controlled-knobs,
  se.europeanspallationsource.javafx.control.knobs,
  se.europeanspallationsource.javafx.control.medusa
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy
 Bundle-Localization: plugin
-Automatic-Module-Name: se.ess.ics.csstudio.display.builder
+Bundle-ClassPath: .

@@ -9,77 +9,52 @@
 package se.ess.ics.csstudio.display.builder;
 
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 import java.util.logging.Logger;
-
-import org.csstudio.utility.product.IWorkbenchWindowAdvisorExtPoint;
-import org.eclipse.core.runtime.IStatus;
-import org.eclipse.ui.IMemento;
-import org.eclipse.ui.WorkbenchException;
 import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
+import se.europeanspallationsource.javafx.control.knobs.controlled.ControlledKnob;
+import se.europeanspallationsource.javafx.control.knobs.controller.Controllers;
 
 
 /**
  * @author Claudio Rosati, European Spallation Source ERIC
  * @version 1.0.0 25 Sep 2017
  */
-public class Activator implements BundleActivator, IWorkbenchWindowAdvisorExtPoint {
+public class Activator implements BundleActivator {
 
+    public static final List<String> CONTROLLERS;
     // The plug-in ID
     public static final String ID     = "se.ess.ics.csstudio.display.builder";
     public static final Logger LOGGER = Logger.getLogger(Activator.class.getName());
 
     private static BundleContext context;
 
+    static {
+
+        CONTROLLERS = new ArrayList<>(Controllers.get().getIdentifiers());
+
+        Collections.sort(CONTROLLERS);
+        CONTROLLERS.add(0, ControlledKnob.CONTROLLER_NONE);
+
+    }
+
     static BundleContext getContext ( ) {
         return context;
     }
 
     @Override
-    public void postWindowClose ( ) {
-    }
-
-    @Override
-    public void postWindowCreate ( ) {
-    }
-
-    @Override
-    public void postWindowOpen ( ) {
-    }
-
-    @Override
-    public void postWindowRestore ( ) throws WorkbenchException {
-    }
-
-    @Override
-    public void preWindowOpen ( ) {
-        ControllersUtility.get().discoverAndInitialize();
-        FontsUtility.get().loadFonts();
-    }
-
-    @Override
-    public boolean preWindowShellClose ( ) {
-        return false;
-    }
-
-    @Override
-    public IStatus restoreState ( IMemento memento ) {
-        return null;
-    }
-
-    @Override
-    public IStatus saveState ( IMemento memento ) {
-        return null;
-    }
-
-    @Override
     public void start ( BundleContext bundleContext ) throws Exception {
-        context = bundleContext;
+
+        Activator.context = bundleContext;
+
     }
 
     @Override
     public void stop ( BundleContext bundleContext ) throws Exception {
-        context = null;
+        Activator.context = null;
     }
 
 }
