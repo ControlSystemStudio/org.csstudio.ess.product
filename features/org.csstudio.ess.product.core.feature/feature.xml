@@ -2,37 +2,115 @@
 <feature
       id="org.csstudio.ess.product.core.feature"
       label="CS-Studio Plug-Ins Dependencies"
-      version="4.6.1.0"
+      version="4.6.1.1"
       provider-name="Claudio Rosati - European Spallation Source ERIC">
 
-   <description url="http://www.example.com/description">
-      ESS CS-Studion core plug-ins needed to start from the IDE.
-   </description>
+  <description url="http://www.example.com/description">
+ESS CS-Studion core plug-ins needed to start the IDE.
+  </description>
 
-   <copyright url="http://www.example.com/copyright">
-      [Enter Copyright Description here.]
-   </copyright>
+  <copyright url="http://www.example.com/copyright">
+ Copyright (c) 2016 European Spallation Source ERIC, Lund, Sweden.
+ 	</copyright>
 
-   <license url="http://www.example.com/license">
-      [Enter License Description here.]
-   </license>
+ 	<license url="http://www.eclipse.org/legal/epl-v10.html">
+ 		<text>
+ You must accept this license agreement in order to install and use this software.
+ THIS SOFTWARE IS PROVIDED UNDER THIS LICENSE ON AN &quot;../AS IS&quot; BASIS.
+ WITHOUT WARRANTY OF ANY KIND, EXPRESSED OR IMPLIED, INCLUDING
+ BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
+ FOR PARTICULAR PURPOSE AND NON-INFRINGEMENT.
+ For details, see http://www.eclipse.org/legal/epl-v10.html
+ 		 </text>
+ 	</license>
 
+  <includes id="org.csstudio.core.diirt.feature" version="0.0.0"/>
 
-<!-- REMOVED FROM cs-studio-ess.product TO INCLUDE ONLY THE NEEDED PLUGINS (following this comment)
-
-   <includes id="org.csstudio.applications.utility.feature"/>
-
--->
-
-   <plugin id="org.csstudio.apputil" download-size="0" install-size="0" version="0.0.0" unpack="false"/>
-   <plugin id="org.csstudio.apputil.ui" download-size="0" install-size="0" version="0.0.0" unpack="false"/>
-   <plugin id="org.csstudio.servicelocator" download-size="0" install-size="0" version="0.0.0" unpack="false"/>
-   <plugin id="org.csstudio.ui.menu.web" download-size="0" install-size="0" version="0.0.0" unpack="false"/>
-   <plugin id="org.csstudio.utility.file" download-size="0" install-size="0" version="0.0.0" unpack="false"/>
-   <plugin id="org.csstudio.utility.httpd" download-size="0" install-size="0" version="0.0.0" unpack="false"/>
-   <plugin id="org.csstudio.utility.screenshot" download-size="0" install-size="0" version="0.0.0" unpack="false"/>
-   <plugin id="org.csstudio.utility.speech" download-size="0" install-size="0" version="0.0.0" unpack="false"/>
-   <plugin id="org.csstudio.utility.sysmon" download-size="0" install-size="0" version="0.0.0" unpack="false"/>
-   <plugin id="org.csstudio.utility.treemodel" download-size="0" install-size="0" version="0.0.0" unpack="false"/>
+  <plugin id="com.google.guava" download-size="0" install-size="0" version="0.0.0" unpack="false"/>
+  <plugin id="com.squareup.moshi" download-size="0" install-size="0" version="0.0.0" unpack="false"/>
+  <plugin id="com.squareup.okhttp3.logging-interceptor" download-size="0" install-size="0" version="0.0.0" unpack="false"/>
+  <plugin id="com.squareup.okhttp3.okhttp" download-size="0" install-size="0" version="0.0.0" unpack="false"/>
+  <plugin id="com.squareup.okio" download-size="0" install-size="0" version="0.0.0" unpack="false"/>
+  <plugin id="com.squareup.retrofit2.converter-moshi" download-size="0" install-size="0" version="0.0.0" unpack="false"/>
+  <plugin id="com.squareup.retrofit2.retrofit" download-size="0" install-size="0" version="0.0.0" unpack="false"/>
+  <plugin id="javaewah" download-size="0" install-size="0" version="0.0.0" unpack="false"/>
+  <plugin id="javax.activation" download-size="0" install-size="0" version="0.0.0" unpack="false"/>
+  <plugin id="javax.mail" download-size="0" install-size="0" version="0.0.0" unpack="false"/>
+  <plugin id="org.antlr.runtime" download-size="0" install-size="0" version="0.0.0" unpack="false"/>
+  <plugin id="org.apache.batik.bridge" download-size="0" install-size="0" version="0.0.0" unpack="false"/>
+  <plugin id="org.apache.batik.css" download-size="0" install-size="0" version="0.0.0" unpack="false"/>
+  <plugin id="org.apache.batik.dom" download-size="0" install-size="0" version="0.0.0" unpack="false"/>
+  <plugin id="org.apache.batik.dom.svg" download-size="0" install-size="0" version="0.0.0" unpack="false"/>
+  <plugin id="org.apache.batik.ext.awt" download-size="0" install-size="0" version="0.0.0" unpack="false"/>
+  <plugin id="org.apache.batik.parser" download-size="0" install-size="0" version="0.0.0" unpack="false"/>
+  <plugin id="org.apache.batik.svggen" download-size="0" install-size="0" version="0.0.0" unpack="false"/>
+  <plugin id="org.apache.batik.transcoder" download-size="0" install-size="0" version="0.0.0" unpack="false"/>
+  <plugin id="org.apache.batik.xml" download-size="0" install-size="0" version="0.0.0" unpack="false"/>
+  <plugin id="org.apache.commons.collections4" download-size="0" install-size="0" version="0.0.0" unpack="false"/>
+  <plugin id="org.apache.commons.io" download-size="0" install-size="0" version="0.0.0" unpack="false"/>
+  <plugin id="org.apache.commons.lang" download-size="0" install-size="0" version="0.0.0" unpack="false"/>
+  <plugin id="org.apache.commons.lang3" download-size="0" install-size="0" version="0.0.0" unpack="false"/>
+  <plugin id="org.apache.servicemix.bundles.poi" download-size="0" install-size="0" version="0.0.0" unpack="false"/>
+  <plugin id="org.controlsfx" download-size="0" install-size="0" version="0.0.0" unpack="false"/>
+  <plugin id="org.csstudio.apputil" download-size="0" install-size="0" version="0.0.0" unpack="false"/>
+  <plugin id="org.csstudio.apputil.ui" download-size="0" install-size="0" version="0.0.0" unpack="false"/>
+  <plugin id="org.csstudio.autocomplete" download-size="0" install-size="0" version="0.0.0" unpack="false"/>
+  <plugin id="org.csstudio.autocomplete.logbook" download-size="0" install-size="0" version="0.0.0" unpack="false"/>
+  <plugin id="org.csstudio.autocomplete.pvmanager.formula" download-size="0" install-size="0" version="0.0.0" unpack="false"/>
+  <plugin id="org.csstudio.autocomplete.pvmanager.loc" download-size="0" install-size="0" version="0.0.0" unpack="false"/>
+  <plugin id="org.csstudio.autocomplete.pvmanager.sim" download-size="0" install-size="0" version="0.0.0" unpack="false"/>
+  <plugin id="org.csstudio.autocomplete.pvmanager.sys" download-size="0" install-size="0" version="0.0.0" unpack="false"/>
+  <plugin id="org.csstudio.autocomplete.ui" download-size="0" install-size="0" version="0.0.0" unpack="false"/>
+  <plugin id="org.csstudio.autocomplete.ui.rcp" download-size="0" install-size="0" version="0.0.0" unpack="false"/>
+  <plugin id="org.csstudio.csdata" download-size="0" install-size="0" version="0.0.0" unpack="false"/>
+  <plugin id="org.csstudio.csdata.clipboard" download-size="0" install-size="0" version="0.0.0" unpack="false"/>
+  <plugin id="org.csstudio.data" download-size="0" install-size="0" version="0.0.0" unpack="false"/>
+  <plugin id="org.csstudio.diag.pvfields" download-size="0" install-size="0" version="0.0.0" unpack="false"/>
+  <plugin id="org.csstudio.email" download-size="0" install-size="0" version="0.0.0" unpack="false"/>
+  <plugin id="org.csstudio.email.ui" download-size="0" install-size="0" version="0.0.0" unpack="false"/>
+  <plugin id="org.csstudio.examples" download-size="0" install-size="0" version="0.0.0" unpack="false"/>
+  <plugin id="org.csstudio.java" download-size="0" install-size="0" version="0.0.0" unpack="false"/>
+  <plugin id="org.csstudio.logging" download-size="0" install-size="0" version="0.0.0" unpack="false"/>
+  <plugin id="org.csstudio.logging.ui" download-size="0" install-size="0" version="0.0.0" unpack="false"/>
+  <plugin id="org.csstudio.navigator.applaunch" download-size="0" install-size="0" version="0.0.0" unpack="false"/>
+  <plugin id="org.csstudio.openfile" download-size="0" install-size="0" version="0.0.0" unpack="false"/>
+  <plugin id="org.csstudio.perspectives" download-size="0" install-size="0" version="0.0.0" unpack="false"/>
+  <plugin id="org.csstudio.platform.libs.jdbc" download-size="0" install-size="0" version="0.0.0" unpack="false"/>
+  <plugin id="org.csstudio.platform.libs.jms" download-size="0" install-size="0" version="0.0.0" unpack="false"/>
+  <plugin id="org.csstudio.platform.utility.jms" download-size="0" install-size="0" version="0.0.0" unpack="false"/>
+  <plugin id="org.csstudio.platform.utility.rdb" download-size="0" install-size="0" version="0.0.0" unpack="false"/>
+  <plugin id="org.csstudio.security" download-size="0" install-size="0" version="0.0.0" unpack="false"/>
+  <plugin id="org.csstudio.security.ui" download-size="0" install-size="0" version="0.0.0" unpack="false"/>
+  <plugin id="org.csstudio.servicelocator" download-size="0" install-size="0" version="0.0.0" unpack="false"/>
+  <plugin id="org.csstudio.simplepv.pvmanager" download-size="0" install-size="0" version="0.0.0" unpack="false"/>
+  <plugin id="org.csstudio.simplepv.vtypepv" download-size="0" install-size="0" version="0.0.0" unpack="false"/>
+  <plugin id="org.csstudio.startup" download-size="0" install-size="0" version="0.0.0" unpack="false"/>
+  <plugin id="org.csstudio.startup.helper" download-size="0" install-size="0" version="0.0.0" unpack="false"/>
+  <plugin id="org.csstudio.ui.help" download-size="0" install-size="0" version="0.0.0" unpack="false"/>
+  <plugin id="org.csstudio.ui.menu" download-size="0" install-size="0" version="0.0.0" unpack="false"/>
+  <plugin id="org.csstudio.ui.menu.app" download-size="0" install-size="0" version="0.0.0" unpack="false"/>
+  <plugin id="org.csstudio.ui.menu.pvscript" download-size="0" install-size="0" version="0.0.0" unpack="false"/>
+  <plugin id="org.csstudio.ui.menu.web" download-size="0" install-size="0" version="0.0.0" unpack="false"/>
+  <plugin id="org.csstudio.ui.preferences" download-size="0" install-size="0" version="0.0.0" unpack="false"/>
+  <plugin id="org.csstudio.ui.util" download-size="0" install-size="0" version="0.0.0" unpack="false"/>
+  <plugin id="org.csstudio.utility.batik" download-size="0" install-size="0" version="0.0.0" unpack="false"/>
+  <plugin id="org.csstudio.utility.file" download-size="0" install-size="0" version="0.0.0" unpack="false"/>
+  <plugin id="org.csstudio.utility.httpd" download-size="0" install-size="0" version="0.0.0" unpack="false"/>
+  <plugin id="org.csstudio.utility.product" download-size="0" install-size="0" version="0.0.0" unpack="false"/>
+  <plugin id="org.csstudio.utility.product.default" download-size="0" install-size="0" version="0.0.0" unpack="false"/>
+  <plugin id="org.csstudio.utility.screenshot" download-size="0" install-size="0" version="0.0.0" unpack="false"/>
+  <plugin id="org.csstudio.utility.singlesource" download-size="0" install-size="0" version="0.0.0" unpack="false"/>
+  <plugin id="org.csstudio.utility.singlesource.rcp" download-size="0" install-size="0" version="0.0.0" unpack="false"/>
+  <plugin id="org.csstudio.utility.speech" download-size="0" install-size="0" version="0.0.0" unpack="false"/>
+  <plugin id="org.csstudio.utility.sysmon" download-size="0" install-size="0" version="0.0.0" unpack="false"/>
+  <plugin id="org.csstudio.utility.treemodel" download-size="0" install-size="0" version="0.0.0" unpack="false"/>
+  <plugin id="org.csstudio.vtype.pv" download-size="0" install-size="0" version="0.0.0" unpack="false"/>
+  <plugin id="org.csstudio.workspace" download-size="0" install-size="0" version="0.0.0" unpack="false"/>
+  <plugin id="org.eclipse.paho.client.mqttv3" download-size="0" install-size="0" version="0.0.0"/>
+  <plugin id="org.epics.jca" download-size="0" install-size="0" version="0.0.0"/>
+  <plugin id="org.epics.pvaccess" download-size="0" install-size="0" version="0.0.0" unpack="false"/>
+  <plugin id="org.epics.pvdata" download-size="0" install-size="0" version="0.0.0" unpack="false"/>
+  <plugin id="org.influxdb.java" download-size="0" install-size="0" version="0.0.0" unpack="false"/>
+  <plugin id="org.python.jython" download-size="0" install-size="0" version="0.0.0" unpack="false"/>
 
 </feature>
