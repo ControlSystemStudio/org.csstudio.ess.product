@@ -1,85 +1,96 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?eclipse version="3.4"?>
 <plugin>
-
-   <extension
-         id="se.ess.ics.csstudio.product.application"
-         point="org.eclipse.core.runtime.applications">
-      <application>
-         <run
-               class="org.csstudio.startup.application.Application">
-         </run>
-      </application>
-   </extension>
-   <extension
-         id="product"
-         point="org.eclipse.core.runtime.products">
-      <product
-            application="se.ess.ics.csstudio.product.application"
-            name="ESS CS-Studio">
-         <property
-               name="appName"
-               value="ESS CS-Studio">
-         </property>
-         <property
-               name="introTitle"
-               value="Welcome to ESS Control System Studio&lt;/h1&gt;&lt;p&gt;ESS Control System Studio is an Eclipse-based collections of tools to monitor and operate large scale control systems, such as the ones in the accelerator community.&lt;/p&gt;&lt;p&gt;New users: click on First Steps&lt;/p&gt;&lt;h1&gt;">
-         </property>
-          <property
-               name="introBrandingImage"
-               value="product:icons/welcome.png">
-         </property>
-         <property
-               name="introBrandingImageText"
-               value="ESS Control System Studio">
-         </property>
-         <property
-               name="windowImages"
-               value="icons/css16.png,icons/css32.png,icons/css48.png,icons/css64.png,icons/css128.png,icons/css256.png">
-         </property>
-         <property
-               name="startupForegroundColor"
-               value="E4F2FA">
-         </property>
-         <property
-               name="startupMessageRect"
-               value="21,275,438,18">
-         </property>
-         <property
-               name="startupProgressRect"
-               value="21,293,438,5">
-         </property>
-         <property
-               name="introDescription-firststeps"
-               value="Getting started with ESS CS-Studio">
-         </property>
-         <property
-               name="introDescription-tutorials"
-               value="Learn how to use ESS CS-Studio">
-         </property>
-         <property
-               name="introDescription-whatsnew"
-               value="New features in ESS CS-Studio">
-         </property>
-         <property
-               name="aboutImage"
-               value="platform:/plugin/org.csstudio.product/icons/cs-studio-about.png">
-         </property>
-         <property
-               name="aboutText"
-               value="%aboutText">
-         </property>
-         <property
-               name="preferenceCustomization"
-               value="platform:/config/plugin_customization.ini">
-         </property>
-      </product>
-   </extension>
-   <extension
-         point="org.eclipse.ui.intro">
-      <introProductBinding
-            introId="org.eclipse.ui.intro.universal"
-            productId="se.ess.ics.csstudio.product.product">
-      </introProductBinding>
-   </extension>
+]	<extension
+		id="se.ess.ics.csstudio.product.application"
+		point="org.eclipse.core.runtime.applications">
+		<application>
+			<run
+				class="org.csstudio.startup.application.Application">
+			</run>
+		</application>
+	</extension>
+	<extension
+		id="product"
+		point="org.eclipse.core.runtime.products">
+		<product
+			application="se.ess.ics.csstudio.product.application"
+			name="ESS CS-Studio">
+			<property
+				name="windowImages"
+				value="icons/css16.png,icons/css32.png,icons/css48.png,icons/css64.png,icons/css128.png,icons/css256.png">
+			</property>
+			<property
+				name="aboutImage"
+				value="platform:/plugin/se.ess.ics.csstudio.product/icons/cs-studio-about.png">
+			</property>
+			<property
+				name="aboutText"
+				value="%aboutText">
+			</property>
+			<property
+				name="appName"
+				value="ESS CS-Studio">
+			</property>
+			<property
+				name="introTitle"
+				value="Welcome to ESS Control System Studio&lt;/h1&gt;&lt;p&gt;ESS Control System Studio is an Eclipse-based collections of tools to monitor and operate large scale control systems, such as the ones in the accelerator community.&lt;/p&gt;&lt;p&gt;New users: click on First Steps&lt;/p&gt;&lt;h1&gt;">
+			</property>
+			<property
+				name="introBrandingImage"
+				value="product:icons/welcome.png">
+			</property>
+			<property
+				name="introBrandingImageText"
+				value="ESS Control System Studio">
+			</property>
+			<property
+				name="startupForegroundColor"
+				value="E4F2FA">
+			</property>
+			<property
+				name="startupMessageRect"
+				value="21,275,438,18">
+			</property>
+			<property
+				name="startupProgressRect"
+				value="21,293,438,5">
+			</property>
+			<property
+				name="introDescription-firststeps"
+				value="Getting started with ESS CS-Studio">
+			</property>
+			<property
+				name="introDescription-tutorials"
+				value="Learn how to use ESS CS-Studio">
+			</property>
+			<property
+				name="introDescription-whatsnew"
+				value="New features in ESS CS-Studio">
+			</property>
+			<property
+				name="preferenceCustomization"
+				value="platform:/config/plugin_customization.ini">
+			</property>
+		</product>
+	</extension>
+	<extension
+		point="org.eclipse.ui.intro">
+		<introProductBinding
+			introId="org.eclipse.ui.intro.universal"
+			productId="se.ess.ics.csstudio.product.product">
+		</introProductBinding>
+	</extension>
+	<!-- Note that the classes listed in here should be in plugins
+			 that can be loaded without locking the workspace.
+			 This means the plugins loaded for these classes
+			 should not use preferences or anything else that
+			 triggers initialization of the workspace
+		-->
+	<extension point="org.csstudio.startup.module">
+		 <startupParameters class="org.csstudio.utility.product.StartupParameters"/>
+		 <workspace class="org.csstudio.utility.product.WorkspacePrompt"/>
+		 <workbench class="org.csstudio.utility.product.Workbench"/>
+		 <project class="org.csstudio.startup.module.defaults.DefaultProject"/>
+	</extension>
 </plugin>

@@ -3,7 +3,7 @@ Bundle-ManifestVersion: 2
 Bundle-Name: ESS Display Builder
 Bundle-Description: ESS Display Builder Additions
 Bundle-SymbolicName: se.ess.ics.csstudio.display.builder;singleton:=true
-Bundle-Version: 4.5.7.1
+Bundle-Version: 4.6.1.1
 Bundle-Activator: se.ess.ics.csstudio.display.builder.Activator
 Bundle-Vendor: Claudio Rosati - European Spallation Source ERIC
 Require-Bundle: org.diirt.vtype,
@@ -16,11 +16,8 @@ Require-Bundle: org.diirt.vtype,
  org.csstudio.vtype.pv;bundle-version="4.0.2",
  se.europeanspallationsource.javafx.control.controlled-knobs,
  se.europeanspallationsource.javafx.control.knobs,
- se.europeanspallationsource.javafx.control.medusa,
- se.europeanspallationsource.javafx.control.thumbwheel
+ se.europeanspallationsource.javafx.control.medusa
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
-Export-Package: se.europeanspallationsource.javafx.control.knobs.controlled
 Bundle-ActivationPolicy: lazy
 Bundle-Localization: plugin
-Bundle-ClassPath: lib/Controlled-KNOBS-1.0.3.jar,
- .
+Bundle-ClassPath: .
