@@ -3,7 +3,7 @@ Bundle-ManifestVersion: 2
 Bundle-Name: ESS Display Builder
 Bundle-Description: ESS Display Builder Additions
 Bundle-SymbolicName: se.ess.ics.csstudio.display.builder;singleton:=true
-Bundle-Version: 4.6.1.0
+Bundle-Version: 4.6.1.1
 Bundle-Activator: se.ess.ics.csstudio.display.builder.Activator
 Bundle-Vendor: Claudio Rosati - European Spallation Source ERIC
 Require-Bundle: org.apache.commons.lang3,
@@ -22,7 +22,8 @@ Require-Bundle: org.apache.commons.lang3,
  org.eclipse.swt,
  org.eclipse.ui,
  se.europeanspallationsource.javafx.control.controlled-knobs,
- se.europeanspallationsource.javafx.control.knobs
+ se.europeanspallationsource.javafx.control.knobs,
+ se.europeanspallationsource.javafx.control.medusa
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy
 Bundle-Localization: plugin
