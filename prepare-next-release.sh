@@ -13,7 +13,7 @@ PUSH=$2
 BUILD_DIR="./build"
 
 echo ::: Prepare splash :::
-java -jar $BUILD_DIR/ImageLabeler-2.0.jar "$VERSION (development)" 462 43 ../org.csstudio.product/org.csstudio.product/plugins/org.csstudio.product/splash-template.bmp plugins/se.ess.ics.csstudio.product/splash.bmp "European Spallation Source Edition" 19 151 plugins/se.ess.ics.csstudio.startup.intro/icons/ess96.png 366 140
+java -jar $BUILD_DIR/ImageLabeler-2.0.jar "$VERSION (development)" 462 43 $BUILD_DIR/splash-template.bmp plugins/se.ess.ics.csstudio.product/splash.bmp "European Spallation Source Edition" 19 151 plugins/se.ess.ics.csstudio.startup.intro/icons/ess96.png 366 140
 
 echo ::: Change about dialog version :::
 echo 0=$VERSION > plugins/se.ess.ics.csstudio.product/about.mappings
