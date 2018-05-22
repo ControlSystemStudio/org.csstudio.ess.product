@@ -2,7 +2,7 @@
 <feature
 	id="org.csstudio.ess.product.eclipse.feature"
 	label="Eclipse Plug-Ins Dependencies"
-	version="4.6.1.1"
+	version="4.6.1.2"
 	provider-name="Claudio Rosati - European Spallation Source ERIC">
 
 	<description url="http://www.example.com/description">
@@ -14,14 +14,12 @@ Copyright (c) 2016 European Spallation Source ERIC, Lund, Sweden.
 	</copyright>
 
 	<license url="http://www.eclipse.org/legal/epl-v10.html">
-		<text>
 You must accept this license agreement in order to install and use this software.
 THIS SOFTWARE IS PROVIDED UNDER THIS LICENSE ON AN &quot;../AS IS&quot; BASIS.
 WITHOUT WARRANTY OF ANY KIND, EXPRESSED OR IMPLIED, INCLUDING
 BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
 FOR PARTICULAR PURPOSE AND NON-INFRINGEMENT.
 For details, see http://www.eclipse.org/legal/epl-v10.html
-		 </text>
 	</license>
 
 	<includes id="org.eclipse.rcp" version="0.0.0"/>
