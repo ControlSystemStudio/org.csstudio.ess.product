@@ -20,8 +20,6 @@
     <tycho-extras.version>${tycho.version}</tycho-extras.version>
     <cs-studio.version>4.6</cs-studio.version>
 	<diirt.version>3.1.7</diirt.version>
-    <download.root>http://download.controlsystemstudio.org</download.root>
-    <cs-studio-central.url>http://download.controlsystemstudio.org/product/${cs-studio.version}</cs-studio-central.url>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <jgit.dirtyWorkingTree>warning</jgit.dirtyWorkingTree>
     <baselineMode>fail</baselineMode>
@@ -100,11 +98,6 @@
       <layout>p2</layout>
     </repository>
 	<repository>
-	  <id>csstudio</id>
-	  <url>${download.root}/updates/${cs-studio.version}</url>
-	  <layout>p2</layout>
-	</repository>
-    <repository>
       <id>rap</id>
       <url>${rap-site}</url>
       <layout>p2</layout>
