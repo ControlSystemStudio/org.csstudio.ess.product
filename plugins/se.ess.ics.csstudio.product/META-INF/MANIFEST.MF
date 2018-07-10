@@ -28,4 +28,3 @@ Require-Bundle: org.eclipse.core.runtime,
 Bundle-ActivationPolicy: lazy
 Bundle-Localization: plugin
 Bundle-Description: CS-Studio for ESS users (Office, Control Rooms)
-Bundle-RequiredExecutionEnvironment: JavaSE-1.7

@@ -1,10 +1,14 @@
 package se.ess.ics.csstudio.fonts;
 
 
+import java.io.BufferedInputStream;
 import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStream;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.text.MessageFormat;
@@ -37,6 +41,9 @@ public class Activator implements BundleActivator, IWorkbenchWindowAdvisorExtPoi
     public static final String   ID              = "se.ess.ics.csstudio.fonts";
     public static final Logger   LOGGER          = Logger.getLogger(Activator.class.getName());
     private static BundleContext context;
+
+    private int jfxFontsInstalled = 0;
+    private int swtFontsInstalled = 0;
 
     static BundleContext getContext ( ) {
         return context;
@@ -155,28 +162,35 @@ public class Activator implements BundleActivator, IWorkbenchWindowAdvisorExtPoi
         return fontFiles;
 
     }
-
+    
     private void loadSWTFonts ( List<File> fontFiles ) {
         Display.getCurrent().syncExec(() -> {
             fontFiles.stream().forEach(f -> {
                 if ( !Display.getCurrent().loadFont(f.toString()) ) {
                     LOGGER.warning(MessageFormat.format("Font file ''{0}'' not loaded.", f.toString()));
                 } else {
+                    swtFontsInstalled++;
                     LOGGER.config(MessageFormat.format("SWT engine successfully loaded font ''{0}''.", f.toString()));
                 }
             });
+            LOGGER.info(MessageFormat.format("SWT engine successfully loaded {0} fonts.", swtFontsInstalled));
         });
     }
 
     private void loadFXFonts ( List<File> fontFiles ) {
         fontFiles.stream().forEach(f -> {
-            try {
-                Font.loadFont(f.toURI().toURL().toExternalForm(), 10);
-                LOGGER.config(MessageFormat.format("JavaFX engine successfully loaded font ''{0}''.", f.toString()));
-            } catch ( MalformedURLException ex ) {
+            try ( InputStream istream = new BufferedInputStream(new FileInputStream(f)) ) {
+                if ( Font.loadFont(istream, 12) != null ) {
+                    jfxFontsInstalled++;
+                    LOGGER.config(MessageFormat.format("JavaFX engine successfully loaded font ''{0}''.", f.toString()));
+                } else {
+                    LOGGER.warning(MessageFormat.format("Font cannot be created from file ''{0}''", f.toString()));
+                }
+            } catch ( IOException ex ) {
                 LOGGER.warning(MessageFormat.format("Font file ''{0}'' not loaded [{1}].\n{2}", f.toString(), ex.getMessage(), ExceptionUtilities.reducedStackTrace(ex, "se.ess")));
             }
         });
+        LOGGER.info(MessageFormat.format("JavaFX engine successfully loaded {0} fonts.", jfxFontsInstalled));
     }
 
 }
