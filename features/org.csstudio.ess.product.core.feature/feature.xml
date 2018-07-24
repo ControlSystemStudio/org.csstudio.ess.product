@@ -57,7 +57,7 @@ ESS CS-Studion core plug-ins needed to start the IDE.
   <plugin id="org.apache.xmlgraphics.batik-transcoder" download-size="0" install-size="0" version="0.0.0" unpack="false"/>
   <plugin id="org.apache.xmlgraphics.batik-util" download-size="0" install-size="0" version="0.0.0" unpack="false"/>
   <plugin id="org.apache.xmlgraphics.batik-xml" download-size="0" install-size="0" version="0.0.0" unpack="false"/>
-  <plugin id="org.apache.xmlgraphics.xmlgraphics-commons" download-size="0" install-size="0" version="0.0.0" unpack="false"/>
+  <plugin id="org.apache.xmlgraphics.commons" download-size="0" install-size="0" version="0.0.0" unpack="false"/>
   <plugin id="org.controlsfx" download-size="0" install-size="0" version="0.0.0" unpack="false"/>
   <plugin id="org.csstudio.apputil" download-size="0" install-size="0" version="0.0.0" unpack="false"/>
   <plugin id="org.csstudio.apputil.ui" download-size="0" install-size="0" version="0.0.0" unpack="false"/>
