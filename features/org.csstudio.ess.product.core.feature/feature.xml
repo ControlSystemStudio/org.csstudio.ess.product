@@ -35,20 +35,29 @@ ESS CS-Studion core plug-ins needed to start the IDE.
   <plugin id="javax.activation" download-size="0" install-size="0" version="0.0.0" unpack="false"/>
   <plugin id="javax.mail" download-size="0" install-size="0" version="0.0.0" unpack="false"/>
   <plugin id="org.antlr.runtime" download-size="0" install-size="0" version="0.0.0" unpack="false"/>
-  <plugin id="org.apache.batik.bridge" download-size="0" install-size="0" version="0.0.0" unpack="false"/>
-  <plugin id="org.apache.batik.css" download-size="0" install-size="0" version="0.0.0" unpack="false"/>
-  <plugin id="org.apache.batik.dom" download-size="0" install-size="0" version="0.0.0" unpack="false"/>
-  <plugin id="org.apache.batik.dom.svg" download-size="0" install-size="0" version="0.0.0" unpack="false"/>
-  <plugin id="org.apache.batik.ext.awt" download-size="0" install-size="0" version="0.0.0" unpack="false"/>
-  <plugin id="org.apache.batik.parser" download-size="0" install-size="0" version="0.0.0" unpack="false"/>
-  <plugin id="org.apache.batik.svggen" download-size="0" install-size="0" version="0.0.0" unpack="false"/>
-  <plugin id="org.apache.batik.transcoder" download-size="0" install-size="0" version="0.0.0" unpack="false"/>
-  <plugin id="org.apache.batik.xml" download-size="0" install-size="0" version="0.0.0" unpack="false"/>
   <plugin id="org.apache.commons.collections4" download-size="0" install-size="0" version="0.0.0" unpack="false"/>
   <plugin id="org.apache.commons.io" download-size="0" install-size="0" version="0.0.0" unpack="false"/>
   <plugin id="org.apache.commons.lang" download-size="0" install-size="0" version="0.0.0" unpack="false"/>
   <plugin id="org.apache.commons.lang3" download-size="0" install-size="0" version="0.0.0" unpack="false"/>
   <plugin id="org.apache.servicemix.bundles.poi" download-size="0" install-size="0" version="0.0.0" unpack="false"/>
+  <plugin id="org.apache.xmlgraphics.batik-anim" download-size="0" install-size="0" version="0.0.0" unpack="false"/>
+  <plugin id="org.apache.xmlgraphics.batik-awt-util" download-size="0" install-size="0" version="0.0.0" unpack="false"/>
+  <plugin id="org.apache.xmlgraphics.batik-bridge" download-size="0" install-size="0" version="0.0.0" unpack="false"/>
+  <plugin id="org.apache.xmlgraphics.batik-constants" download-size="0" install-size="0" version="0.0.0" unpack="false"/>
+  <plugin id="org.apache.xmlgraphics.batik-css" download-size="0" install-size="0" version="0.0.0" unpack="false"/>
+  <plugin id="org.apache.xmlgraphics.batik-dom" download-size="0" install-size="0" version="0.0.0" unpack="false"/>
+  <plugin id="org.apache.xmlgraphics.batik-ext" download-size="0" install-size="0" version="0.0.0" unpack="false"/>
+  <plugin id="org.apache.xmlgraphics.batik-gui-util" download-size="0" install-size="0" version="0.0.0" unpack="false"/>
+  <plugin id="org.apache.xmlgraphics.batik-gvt" download-size="0" install-size="0" version="0.0.0" unpack="false"/>
+  <plugin id="org.apache.xmlgraphics.batik-i18n" download-size="0" install-size="0" version="0.0.0" unpack="false"/>
+  <plugin id="org.apache.xmlgraphics.batik-parser" download-size="0" install-size="0" version="0.0.0" unpack="false"/>
+  <plugin id="org.apache.xmlgraphics.batik-script" download-size="0" install-size="0" version="0.0.0" unpack="false"/>
+  <plugin id="org.apache.xmlgraphics.batik-svg-dom" download-size="0" install-size="0" version="0.0.0" unpack="false"/>
+  <plugin id="org.apache.xmlgraphics.batik-svggen" download-size="0" install-size="0" version="0.0.0" unpack="false"/>
+  <plugin id="org.apache.xmlgraphics.batik-transcoder" download-size="0" install-size="0" version="0.0.0" unpack="false"/>
+  <plugin id="org.apache.xmlgraphics.batik-util" download-size="0" install-size="0" version="0.0.0" unpack="false"/>
+  <plugin id="org.apache.xmlgraphics.batik-xml" download-size="0" install-size="0" version="0.0.0" unpack="false"/>
+  <plugin id="org.apache.xmlgraphics.xmlgraphics-commons" download-size="0" install-size="0" version="0.0.0" unpack="false"/>
   <plugin id="org.controlsfx" download-size="0" install-size="0" version="0.0.0" unpack="false"/>
   <plugin id="org.csstudio.apputil" download-size="0" install-size="0" version="0.0.0" unpack="false"/>
   <plugin id="org.csstudio.apputil.ui" download-size="0" install-size="0" version="0.0.0" unpack="false"/>
