@@ -5,7 +5,9 @@ cd ../repository/target/products
 
 export CSSVER=$(cat cs-studio-ess/linux/gtk/x86_64/cs-studio/ess-version.txt)
 
+echo "--------------------------------------------------"
 echo "Fixing BATIK dependencies for CS-Studio ${CSSVER}..."
+echo "--------------------------------------------------"
 
 echo "Patching Window product:"
 zip -d cs-studio-ess-${CSSVER}-win32.win32.x86_64.zip "plugins/org.apache.batik*1.8*.jar"; \
