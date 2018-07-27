@@ -1,6 +1,8 @@
 #!/bin/bash
 set -e
 
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_172.jdk/Contents/Home
+
 # Check parameters
 if [ $# != 2 ]
 then
@@ -11,6 +13,11 @@ fi
 VERSION=$1
 PUSH=$2
 BUILD_DIR="./build"
+
+echo ""
+echo "===="
+echo "==== JDK used: " $JAVA_HOME
+echo "===="
 
 echo ::: Prepare splash :::
 java -jar $BUILD_DIR/ImageLabeler-2.0.jar "$VERSION (development)" 462 43 $BUILD_DIR/splash-template.bmp plugins/se.ess.ics.csstudio.product/splash.bmp "European Spallation Source Edition" 19 151 plugins/se.ess.ics.csstudio.startup.intro/icons/ess96.png 366 140

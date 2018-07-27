@@ -14,6 +14,13 @@ NOTES=$3
 PUSH=$4
 BUILD_DIR="./build"
 
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_172.jdk/Contents/Home
+
+echo ""
+echo "===="
+echo "==== JDK used: " $JAVA_HOME
+echo "===="
+
 echo ::: Prepare splash :::
 java -jar $BUILD_DIR/ImageLabeler-2.0.jar $VERSION 462 43 $BUILD_DIR/splash-template.bmp plugins/se.ess.ics.csstudio.product/splash.bmp "European Spallation Source Edition" 19 151 plugins/se.ess.ics.csstudio.startup.intro/icons/ess96.png 366 140
 
