@@ -21,6 +21,6 @@ cd cs-studio-ess-${CSSVER}-linux.gtk.x86_64
 tar -zxf ../cs-studio-ess-${CSSVER}-linux.gtk.x86_64.tar.gz
 find ./cs-studio/plugins -type f -iname 'org.apache.batik*1.8*.jar' -delete -print
 rm -f ../cs-studio-ess-${CSSVER}-linux.gtk.x86_64.tar.gz
-tar -zcf ../cs-studio-ess-${CSSVER}-linux.gtk.x86_64.tar.gz .
+tar -zcf ../cs-studio-ess-${CSSVER}-linux.gtk.x86_64.tar.gz cs-studio
 cd ..
 rm -fr cs-studio-ess-${CSSVER}-linux.gtk.x86_64
