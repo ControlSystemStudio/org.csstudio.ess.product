@@ -14,8 +14,6 @@ NOTES=$3
 PUSH=$4
 BUILD_DIR="./build"
 
-export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_172.jdk/Contents/Home
-
 echo ""
 echo "===="
 echo "==== JDK used: " $JAVA_HOME
