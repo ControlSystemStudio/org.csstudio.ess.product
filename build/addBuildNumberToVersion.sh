@@ -1,7 +1,7 @@
 #!/bin/bash
 #
 
-export CSSVER=$(cat features/org.csstudio.ess.product.configuration.feature/rootfiles/ess-version.txt)
+export CSSVER=$(cat ../features/org.csstudio.ess.product.configuration.feature/rootfiles/ess-version.txt)
 export GITREPO=$1
 export JBUILD=$2
 
@@ -13,6 +13,6 @@ then
 	echo "--------------------------------------------------"
 
 	cd ..
-    ./prepare-next-release.sh ${CSSVER}b${JBUILD} false
+  ./prepare-next-release.sh ${CSSVER}b${JBUILD} false
 
 fi
