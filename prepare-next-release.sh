@@ -1,8 +1,6 @@
 #!/bin/bash
 set -e
 
-export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_172.jdk/Contents/Home
-
 # Check parameters
 if [ $# != 2 ]
 then
