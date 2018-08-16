@@ -32,8 +32,14 @@ echo ::: Updating plugin versions :::
 mvn -Dtycho.mode=maven org.eclipse.tycho:tycho-versions-plugin:1.0.0:set-version -DnewVersion=$VERSION -Dartifacts=se.ess.ics.csstudio,se.ess.ics.csstudio.features,org.csstudio.ess.product.configuration.feature,org.csstudio.ess.product.core.feature,org.csstudio.ess.product.eclipse.feature,se.ess.ics.csstudio.plugins,se.ess.ics.csstudio.display.builder,se.ess.ics.csstudio.fonts,se.ess.ics.csstudio.product,se.ess.ics.csstudio.startup.intro,se.ess.ics.csstudio.repository
 
 # update product because set-version doesn't
-echo ::: Updating product versions :::
+echo ::: Updating product versions in product files :::
+sed -i '' -e 's/\(<product[^>]* version="\)[^"]*\("[^>]*>\)/\1'${VERSION}'\2/g' ${PROJECT_PATH}/repository/alarm-config.product
+sed -i '' -e 's/\(<product[^>]* version="\)[^"]*\("[^>]*>\)/\1'${VERSION}'\2/g' ${PROJECT_PATH}/repository/alarm-notifier.product
+sed -i '' -e 's/\(<product[^>]* version="\)[^"]*\("[^>]*>\)/\1'${VERSION}'\2/g' ${PROJECT_PATH}/repository/alarm-server.product
 sed -i '' -e 's/\(<product[^>]* version="\)[^"]*\("[^>]*>\)/\1'${VERSION}'\2/g' ${PROJECT_PATH}/repository/cs-studio-ess.product
+sed -i '' -e 's/\(<product[^>]* version="\)[^"]*\("[^>]*>\)/\1'${VERSION}'\2/g' ${PROJECT_PATH}/repository/jms2rdb.product
+
+echo ::: Updating product versions in master POM file :::
 sed -i '' -e 's/\(<product\.version>\)[^<]*\(\<\/product\.version>\)/\1'${VERSION}'\2/g' ${PROJECT_PATH}/pom.xml
 
 if [ "$PUSH" = "true" ]
