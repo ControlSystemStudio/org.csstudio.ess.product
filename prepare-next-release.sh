@@ -34,18 +34,18 @@ mvn -Dtycho.mode=maven org.eclipse.tycho:tycho-versions-plugin:1.0.0:set-version
 # update product because set-version doesn't
 echo ::: Updating product versions in product files :::
 echo ::::: ${PROJECT_PATH}/repository/alarm-config.product
-sed -i '' -e 's/\(<product[^>]* version="\)[^"]*\("[^>]*>\)/\1'${VERSION}'\2/g' ${PROJECT_PATH}/repository/alarm-config.product
+sed -i '' -e 's/\(<product[^>]* version="\)[^"]*\("[^>]*>\)/\1'${VERSION}'\2/g' "${PROJECT_PATH}/repository/alarm-config.product"
 echo ::::: ${PROJECT_PATH}/repository/alarm-notifier.product
-sed -i '' -e 's/\(<product[^>]* version="\)[^"]*\("[^>]*>\)/\1'${VERSION}'\2/g' ${PROJECT_PATH}/repository/alarm-notifier.product
+sed -i '' -e 's/\(<product[^>]* version="\)[^"]*\("[^>]*>\)/\1'${VERSION}'\2/g' "${PROJECT_PATH}/repository/alarm-notifier.product"
 echo ::::: ${PROJECT_PATH}/repository/alarm-server.product
-sed -i '' -e 's/\(<product[^>]* version="\)[^"]*\("[^>]*>\)/\1'${VERSION}'\2/g' ${PROJECT_PATH}/repository/alarm-server.product
+sed -i '' -e 's/\(<product[^>]* version="\)[^"]*\("[^>]*>\)/\1'${VERSION}'\2/g' "${PROJECT_PATH}/repository/alarm-server.product"
 echo ::::: ${PROJECT_PATH}/repository/cs-studio-ess.product
-sed -i '' -e 's/\(<product[^>]* version="\)[^"]*\("[^>]*>\)/\1'${VERSION}'\2/g' ${PROJECT_PATH}/repository/cs-studio-ess.product
+sed -i '' -e 's/\(<product[^>]* version="\)[^"]*\("[^>]*>\)/\1'${VERSION}'\2/g' "${PROJECT_PATH}/repository/cs-studio-ess.product"
 echo ::::: ${PROJECT_PATH}/repository/jms2rdb.product
-sed -i '' -e 's/\(<product[^>]* version="\)[^"]*\("[^>]*>\)/\1'${VERSION}'\2/g' ${PROJECT_PATH}/repository/jms2rdb.product
+sed -i '' -e 's/\(<product[^>]* version="\)[^"]*\("[^>]*>\)/\1'${VERSION}'\2/g' "${PROJECT_PATH}/repository/jms2rdb.product"
 
 echo ::: Updating product versions in master POM file :::
-sed -i '' -e 's/\(<product\.version>\)[^<]*\(\<\/product\.version>\)/\1'${VERSION}'\2/g' ${PROJECT_PATH}/pom.xml
+sed -i '' -e 's/\(<product\.version>\)[^<]*\(\<\/product\.version>\)/\1'${VERSION}'\2/g' "${PROJECT_PATH}/pom.xml"
 
 if [ "$PUSH" = "true" ]
 then
