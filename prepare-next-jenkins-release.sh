@@ -12,6 +12,7 @@ then
 	echo "Adding build number ${JBUILD} to version ${CSSVER}..."
 	echo "----------------------------------------------------------------------"
 
+	pwd
 	source prepare-next-release.sh ${CSSVER}b${JBUILD} false
 
 	echo "----------------------------------------------------------------------"
