@@ -34,6 +34,7 @@ mvn -Dtycho.mode=maven org.eclipse.tycho:tycho-versions-plugin:1.0.0:set-version
 # update product because set-version doesn't
 echo ::: Updating product versions in product files :::
 COMMAND='s/\(<product[^>]* version="\)[^"]*\("[^>]*>\)/\1'${VERSION}'\2/g'
+echo ::::: sed command: ${COMMAND}
 echo ::::: repository/alarm-config.product
 sed -i '' -e "${COMMAND}" repository/alarm-config.product
 echo ::::: repository/alarm-notifier.product
@@ -47,6 +48,8 @@ sed -i '' -e "${COMMAND}" repository/jms2rdb.product
 
 echo ::: Updating product versions in master POM file :::
 COMMAND='s/\(<product\.version>\)[^<]*\(\<\/product\.version>\)/\1'${VERSION}'\2/g'
+echo ::::: sed command: ${COMMAND}
+echo ::::: pom.xml
 sed -i '' -e "${COMMAND}" pom.xml
 
 if [ "$PUSH" = "true" ]
