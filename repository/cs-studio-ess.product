@@ -21,14 +21,11 @@ openFile
 --launcher.GTK_version
 2
       </programArgsLin>
-<<<<<<< HEAD
-=======
       <programArgsMac>-share_link
 /Users/claudiorosati/Projects/GitHubX/ess-symbols=/ess-symbols,/Users/claudiorosati/Projects/GitHubX/ess-templates=/ess-templates
 -vm
 /Library/Java/JavaVirtualMachines/jdk1.8.0_181.jdk/Contents/Home/jre/bin
       </programArgsMac>
->>>>>>> cr-mac
       <vmArgs>-Xmx2048m
 -Xms160m
 -Dorg.eclipse.update.reconcile=false
