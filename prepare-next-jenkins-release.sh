@@ -1,9 +1,9 @@
 #!/bin/bash
 #
 
-ABSOLUTE_PATH="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/$(basename "${BASH_SOURCE[0]}")"
+PROJECT_PATH="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
-CSSVER=$(cat ${ABSOLUTE_PATH}/features/org.csstudio.ess.product.configuration.feature/rootfiles/ess-version.txt)
+CSSVER=$(cat ${PROJECT_PATH}/features/org.csstudio.ess.product.configuration.feature/rootfiles/ess-version.txt)
 GITREPO=$1
 JBUILD=$2
 
@@ -15,7 +15,7 @@ then
 	echo "----------------------------------------------------------------------"
 
 	pwd
-	${ABSOLUTE_PATH}/prepare-next-release.sh ${CSSVER}b${JBUILD} false
+	${PROJECT_PATH}/prepare-next-release.sh ${CSSVER}b${JBUILD} false
 
 	echo "----------------------------------------------------------------------"
 	echo "Version number ${CSSVER}b${JBUILD} succesfully updated."
