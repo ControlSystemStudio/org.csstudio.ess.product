@@ -14,11 +14,17 @@ then
 	echo "Adding build number ${JBUILD} to version ${CSSVER}..."
 	echo "----------------------------------------------------------------------"
 
-	pwd
 	${PROJECT_PATH}/prepare-next-release.sh ${CSSVER}b${JBUILD} false
 
-	echo "----------------------------------------------------------------------"
-	echo "Version number ${CSSVER}b${JBUILD} succesfully updated."
-	echo "----------------------------------------------------------------------"
+	if [ $? -eq 0 ]
+	then
+		echo "----------------------------------------------------------------------"
+		echo "Version number ${CSSVER}b${JBUILD} succesfully updated."
+		echo "----------------------------------------------------------------------"
+	else
+		echo "----------------------------------------------------------------------"
+		echo "Errors updating version number ${CSSVER}b${JBUILD}."
+		echo "----------------------------------------------------------------------"
+	fi
 
 fi
