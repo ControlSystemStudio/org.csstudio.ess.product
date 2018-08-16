@@ -17,7 +17,7 @@ then
 	echo "----------------------------------------------------------------------"
 
 	pwd
-	source prepare-next-release.sh ${CSSVER}b${JBUILD} false
+	./prepare-next-release.sh ${CSSVER}b${JBUILD} false
 
 	echo "----------------------------------------------------------------------"
 	echo "Version number ${CSSVER}b${JBUILD} succesfully updated."
