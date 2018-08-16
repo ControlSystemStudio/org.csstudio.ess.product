@@ -23,6 +23,7 @@ then
 		echo "----------------------------------------------------------------------"
 		echo "Errors updating version number ${CSSVER}b${JBUILD}."
 		echo "----------------------------------------------------------------------"
+		exit $? # terminate and indicate error
 	fi
 
 fi
