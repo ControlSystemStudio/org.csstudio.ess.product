@@ -1,9 +1,13 @@
 #!/bin/bash
 #
 
-export CSSVER=$(cat features/org.csstudio.ess.product.configuration.feature/rootfiles/ess-version.txt)
-export GITREPO=$1
-export JBUILD=$2
+ABSOLUTE_PATH="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/$(basename "${BASH_SOURCE[0]}")"
+
+cs ${ABSOLUTE_PATH}
+
+CSSVER=$(cat features/org.csstudio.ess.product.configuration.feature/rootfiles/ess-version.txt)
+GITREPO=$1
+JBUILD=$2
 
 if [ "$GITREPO" = "master" ]
 then
