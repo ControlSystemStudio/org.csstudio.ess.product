@@ -5,6 +5,14 @@ set -e
 #for debugging  each command...
 #set -x
 
+# ---- Functions Definition ----------------------------------------------------
+
+sedi () {
+  sed --version >/dev/null 2>&1 && sed -i -- "$@" || sed -i "" "$@"
+}
+
+# ------------------------------------------------------------------------------
+
 # Check parameters
 if [ $# != 2 ]
 then
@@ -40,21 +48,21 @@ echo ::: Updating product versions in product files :::
 COMMAND='s/\(<product[^>]* version="\)[^"]*\("[^>]*>\)/\1'${VERSION}'\2/g'
 echo ::::: sed command: ${COMMAND}
 echo ::::: repository/alarm-config.product
-sed -i '.bak' -e "${COMMAND}" repository/alarm-config.product
+sedi "${COMMAND}" repository/alarm-config.product
 echo ::::: repository/alarm-notifier.product
-sed -i '.bak' -e "${COMMAND}" repository/alarm-notifier.product
+sedi "${COMMAND}" repository/alarm-notifier.product
 echo ::::: repository/alarm-server.product
-sed -i '.bak' -e "${COMMAND}" repository/alarm-server.product
+sedi "${COMMAND}" repository/alarm-server.product
 echo ::::: repository/cs-studio-ess.product
-sed -i '.bak' -e "${COMMAND}" repository/cs-studio-ess.product
+sedi "${COMMAND}" repository/cs-studio-ess.product
 echo ::::: repository/jms2rdb.product
-sed -i '.bak' -e "${COMMAND}" repository/jms2rdb.product
+sedi "${COMMAND}" repository/jms2rdb.product
 
 echo ::: Updating product versions in master POM file :::
 COMMAND='s/\(<product\.version>\)[^<]*\(\<\/product\.version>\)/\1'${VERSION}'\2/g'
 echo ::::: sed command: ${COMMAND}
 echo ::::: pom.xml
-sed -i '.bak' -e "${COMMAND}" pom.xml
+sedi "${COMMAND}" pom.xml
 
 if [ "$PUSH" = "true" ]
 then
