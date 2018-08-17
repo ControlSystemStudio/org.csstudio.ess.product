@@ -3,3 +3,5 @@ plugins/se.ess.ics.csstudio.product/target/*
 plugins/se.ess.ics.csstudio.startup.intro/target/*
 workspace/.metadata/.log
 /plugins/se.ess.ics.csstudio.display.builder/target/
+/tools/jsed/target/
+/tools/jsed/nbproject/
