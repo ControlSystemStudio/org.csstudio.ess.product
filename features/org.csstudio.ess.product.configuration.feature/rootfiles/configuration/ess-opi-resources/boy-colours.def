@@ -71,7 +71,7 @@ IO Text Fg = 0, 0, 0
 # PV field colors
 
 # Read-only field: Black on light grey
-IO InputPV Bg = 235, 235, 235 
+IO InputPV Bg = 235, 235, 235
 IO InputPV Fg = 0, 0, 0
 
 # Entry field: Black on white
@@ -82,7 +82,7 @@ IO OutputPV Fg = 0, 0, 0
 IO Stick = 0, 0, 0
 
 # XY Graph Trace colors
-IO Trace 1 = 21, 21, 196 
+IO Trace 1 = 21, 21, 196
 IO Trace 2 = 242, 26, 26
 IO Trace 3 = 33, 179, 33
 IO Trace 4 = 0, 0, 0
@@ -130,3 +130,174 @@ IO Fire Protection System = 175,43,30
 IO Fuel and Oils = 149,95,32
 IO Acids = 249,86,2
 IO Alkalis = 160,81,117
+
+
+# ------- ESS 'light theme' colors ----------------
+
+BLACK = 0, 0, 0
+WHITE = 255, 255, 255
+
+BLUE = 79, 228, 250
+BLUE-BACKGROUND = 195, 226, 225
+BLUE-BORDER = 47, 135, 148
+BLUE-GROUP-BACKGROUND = 179, 209, 209
+BLUE-GROUP-BORDER = 138, 167, 167
+
+GRAY = 169, 169, 169
+GRAY-BORDER = 121, 121, 121
+
+GREEN = 61, 216, 61
+GREEN-BACKGROUND = 189, 208, 189
+GREEN-BORDER = 40, 140, 40
+GREEN-GROUP-BACKGROUND = 172, 191, 173
+GREEN-GROUP-BORDER = 131, 150, 131
+
+MAGENTA = 211, 45, 156
+MAGENTA-BACKGROUND = 218, 195, 209
+MAGENTA-BORDER = 135, 29, 100
+MAGENTA-GROUP-BACKGROUND = 201, 178, 193
+MAGENTA-GROUP-BORDER = 160, 137, 151
+
+ORANGE = 254, 194, 81
+ORANGE-BACKGROUND = 226, 207, 189
+ORANGE-BORDER = 153, 117, 49
+ORANGE-GROUP-BACKGROUND = 209, 190, 173
+ORANGE-GROUP-BORDER = 168, 149, 131
+
+RED = 252, 13, 27
+RED-BACKGROUND = 225, 192, 188
+RED-BORDER = 150, 8, 16
+RED-GROUP-BACKGROUND = 208, 175, 172
+RED-GROUP-BORDER = 167, 134, 130
+
+YELLOW = 252, 242, 17
+YELLOW-BACKGROUND = 226, 216, 193
+YELLOW-BORDER = 150, 144, 10
+YELLOW-GROUP-BACKGROUND = 209, 199, 177
+YELLOW-GROUP-BORDER = 168, 158, 135
+
+BACKGROUND = 220, 225, 221
+GROUP-BACKGROUND = 200, 205, 201
+GROUP-BORDER = 150, 155, 151
+
+PRIMARY = 0, 148, 202
+PRIMARY-DARK = 31, 83, 102
+PRIMARY-LIGHT = 151, 188, 202
+
+SECONDARY = 202, 0, 0
+SECONDARY-DARK = 102, 31, 32
+SECONDARY-LIGHT = 202, 151, 152
+
+TEXT-DARK = 25, 25, 25
+TEXT-LIGHT = 230, 230, 230
+
+RAL-2000 = 213, 111, 1
+RAL-2000-BORDER = 138, 72, 0
+RAL-4003 = 196, 96, 140
+RAL-4003-BORDER = 120, 59, 85
+
+LED-BLUE-ON = 81, 232, 255
+LED-BLUE-OFF = 90, 110, 110
+LED-GREEN-ON = 70, 255, 70
+LED-GREEN-OFF = 90, 110, 90
+LED-MAGENTA-ON = 255, 82, 218
+LED-MAGENTA-OFF = 110, 90, 109
+LED-ORANGE-ON = 255, 175, 81
+LED-ORANGE-OFF = 110, 105, 90
+LED-RED-ON = 255, 60, 46
+LED-RED-OFF = 110, 101, 90
+LED-YELLOW-ON = 255, 235, 17
+LED-YELLOW-OFF = 110, 108, 90
+
+# ------- Derived colors ----------------
+
+BLACK-BORDER = 121, 121, 121
+BLACK-TEXT = 255, 255, 255
+
+WHITE-BORDER = 121, 121, 121
+WHITE-TEXT = 0, 0, 0
+
+BLUE-TEXT = 0, 0, 0
+
+GRAY-TEXT = 255, 255, 255
+
+GREEN-TEXT = 0, 0, 0
+
+MAGENTA-TEXT = 255, 255, 255
+
+ORANGE-TEXT = 0, 0, 0
+
+RED-TEXT = 255, 255, 255
+
+YELLOW-TEXT = 0, 0, 0
+
+TEXT = 25, 25, 25
+GROUP-TEXT = 25, 25, 25
+PRIMARY-GROUP-BORDER = 151, 188, 202
+SECONDARY-GROUP-BORDER = 202, 151, 152
+
+HEADER-TEXT = 0, 0, 0
+PRIMARY-HEADER-BACKGROUND = 151, 188, 202
+SECONDARY-HEADER-BACKGROUND = 202, 151, 152
+
+ERROR = 252, 13, 27
+WARNING = 252, 242, 17
+
+PERSONNEL-SAFETY = RAL-2000
+PERSONNEL-SAFETY-BORDER = RAL-2000-BORDER
+MACHINE-PROTECTION = RAL-4003
+MACHINE-PROTECTION-BORDER = RAL-4003-BORDER
+
+# ------- Predefined colors ----------------
+
+# Alarm related
+OK = 61, 216, 61
+MINOR = 252, 242, 17
+MAJOR = 252, 13, 27
+INVALID = 211, 45, 156
+DISCONNECTED = 135, 29, 100
+
+# Default color for text
+Text = 25, 25, 25
+
+# Default color for 'active' text that's being edited
+ActiveText = 254, 194, 81
+
+# Display background
+Background = 220, 225, 221
+
+# Default color for widgets that read/write a value
+Read_Background = 230, 235, 232
+Write_Background = 224, 217, 202
+
+# Default color for buttons
+Button_Background = 236, 236, 236
+
+# Default color for grid
+Grid = 169, 169, 169
+
+# ------- Additional colors ----------------
+
+# Use alarm colors only when you mean to indicate an alarm.
+# Avoid using 'Red' which might suggest an alarm
+# just because you like the look of red.
+# STOP looks similar to red=MAJOR alarm, and is allowed
+# for 'STOP' type of buttons
+STOP = 222, 33, 22
+
+# Attention looks similar to a MINOR alarm.
+# It is meant to draw attention
+ATTENTION = 252, 242, 17
+
+# The colors for On/Off, Open/Close etc,.
+# "ON" does not necessarily mean 'device is turned on', but
+# stands for 'indicator is on, active, illuminated'.
+# For a 'motor is at target' type indicator, the motor would
+# actually be 'off' while the indicator uses the 'ON' color.
+#
+# If one of the states represents an alarm, the corresponding alarm color may be used.
+# For example, a limit switch indicator could use colors "OFF" and "MAJOR":
+# OFF when idle, MAJOR when the limit switch was hit and this is an abnormal situation
+# that requires attention.
+ON = 22, 222, 33
+OFF = 169, 169, 169
