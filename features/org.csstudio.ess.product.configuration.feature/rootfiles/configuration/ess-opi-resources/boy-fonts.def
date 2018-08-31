@@ -21,3 +21,120 @@ IO Output 2 = DejaVu Sans Mono-regular-11
 IO Scale 1 = DejaVu Sans Mono-regular-12
 IO Scale 2 = DejaVu Sans Mono-regular-11
 IO Scale 3 = DejaVu Sans Mono-regular-10
+
+
+# ------- ESS fonts -------------------------------
+
+UGE-MONO-BOLD           = Source Code Pro  - bold        - 36
+HUGE-MONO-BOLD-ITALIC    = Source Code Pro  - bold italic - 36
+HUGE-MONO-ITALIC         = Source Code Pro  - italic      - 36
+HUGE-MONO-PLAIN          = Source Code Pro  - regular     - 36
+HUGE-SANS-BOLD           = Source Sans Pro  - bold        - 36
+HUGE-SANS-BOLD-ITALIC    = Source Sans Pro  - bold italic - 36
+HUGE-SANS-ITALIC         = Source Sans Pro  - italic      - 36
+HUGE-SANS-PLAIN          = Source Sans Pro  - regular     - 36
+HUGE-SERIF-BOLD          = Source Serif Pro - bold        - 36
+HUGE-SERIF-BOLD-ITALIC   = Source Serif Pro - bold italic - 36
+HUGE-SERIF-ITALIC        = Source Serif Pro - italic      - 36
+HUGE-SERIF-PLAIN         = Source Serif Pro - regular     - 36
+
+LARGE-MONO-BOLD          = Source Code Pro  - bold        - 21
+LARGE-MONO-BOLD-ITALIC   = Source Code Pro  - bold italic - 21
+LARGE-MONO-ITALIC        = Source Code Pro  - italic      - 21
+LARGE-MONO-PLAIN         = Source Code Pro  - regular     - 21
+LARGE-SANS-BOLD          = Source Sans Pro  - bold        - 21
+LARGE-SANS-BOLD-ITALIC   = Source Sans Pro  - bold italic - 21
+LARGE-SANS-ITALIC        = Source Sans Pro  - italic      - 21
+LARGE-SANS-PLAIN         = Source Sans Pro  - regular     - 21
+LARGE-SERIF-BOLD         = Source Serif Pro - bold        - 21
+LARGE-SERIF-BOLD-ITALIC  = Source Serif Pro - bold italic - 21
+LARGE-SERIF-ITALIC       = Source Serif Pro - italic      - 21
+LARGE-SERIF-PLAIN        = Source Serif Pro - regular     - 21
+
+MEDIUM-MONO-BOLD         = Source Code Pro  - bold        - 18
+MEDIUM-MONO-BOLD-ITALIC  = Source Code Pro  - bold italic - 18
+MEDIUM-MONO-ITALIC       = Source Code Pro  - italic      - 18
+MEDIUM-MONO-PLAIN        = Source Code Pro  - regular     - 18
+MEDIUM-SANS-BOLD         = Source Sans Pro  - bold        - 18
+MEDIUM-SANS-BOLD-ITALIC  = Source Sans Pro  - bold italic - 18
+MEDIUM-SANS-ITALIC       = Source Sans Pro  - italic      - 18
+MEDIUM-SANS-PLAIN        = Source Sans Pro  - regular     - 18
+MEDIUM-SERIF-BOLD        = Source Serif Pro - bold        - 18
+MEDIUM-SERIF-BOLD-ITALIC = Source Serif Pro - bold italic - 18
+MEDIUM-SERIF-ITALIC      = Source Serif Pro - italic      - 18
+MEDIUM-SERIF-PLAIN       = Source Serif Pro - regular     - 18
+
+NORMAL-MONO-BOLD         = Source Code Pro  - bold        - 16
+NORMAL-MONO-BOLD-ITALIC  = Source Code Pro  - bold italic - 16
+NORMAL-MONO-ITALIC       = Source Code Pro  - italic      - 16
+NORMAL-MONO-PLAIN        = Source Code Pro  - regular     - 16
+NORMAL-SANS-BOLD         = Source Sans Pro  - bold        - 16
+NORMAL-SANS-BOLD-ITALIC  = Source Sans Pro  - bold italic - 16
+NORMAL-SANS-ITALIC       = Source Sans Pro  - italic      - 16
+NORMAL-SANS-PLAIN        = Source Sans Pro  - regular     - 16
+NORMAL-SERIF-BOLD        = Source Serif Pro - bold        - 16
+NORMAL-SERIF-BOLD-ITALIC = Source Serif Pro - bold italic - 16
+NORMAL-SERIF-ITALIC      = Source Serif Pro - italic      - 16
+NORMAL-SERIF-PLAIN       = Source Serif Pro - regular     - 16
+
+SMALL-MONO-BOLD          = Source Code Pro  - bold        - 14
+SMALL-MONO-BOLD-ITALIC   = Source Code Pro  - bold italic - 14
+SMALL-MONO-ITALIC        = Source Code Pro  - italic      - 14
+SMALL-MONO-PLAIN         = Source Code Pro  - regular     - 14
+SMALL-SANS-BOLD          = Source Sans Pro  - bold        - 14
+SMALL-SANS-BOLD-ITALIC   = Source Sans Pro  - bold italic - 14
+SMALL-SANS-ITALIC        = Source Sans Pro  - italic      - 14
+SMALL-SANS-PLAIN         = Source Sans Pro  - regular     - 14
+SMALL-SERIF-BOLD         = Source Serif Pro - bold        - 14
+SMALL-SERIF-BOLD-ITALIC  = Source Serif Pro - bold italic - 14
+SMALL-SERIF-ITALIC       = Source Serif Pro - italic      - 14
+SMALL-SERIF-PLAIN        = Source Serif Pro - regular     - 14
+
+TINY-MONO-BOLD           = Source Code Pro  - bold        - 12
+TINY-MONO-BOLD-ITALIC    = Source Code Pro  - bold italic - 12
+TINY-MONO-ITALIC         = Source Code Pro  - italic      - 12
+TINY-MONO-PLAIN          = Source Code Pro  - regular     - 12
+TINY-SANS-BOLD           = Source Sans Pro  - bold        - 12
+TINY-SANS-BOLD-ITALIC    = Source Sans Pro  - bold italic - 12
+TINY-SANS-ITALIC         = Source Sans Pro  - italic      - 12
+TINY-SANS-PLAIN          = Source Sans Pro  - regular     - 12
+TINY-SERIF-BOLD          = Source Serif Pro - bold        - 12
+TINY-SERIF-BOLD-ITALIC   = Source Serif Pro - bold italic - 12
+TINY-SERIF-ITALIC        = Source Serif Pro - italic      - 12
+TINY-SERIF-PLAIN         = Source Serif Pro - regular     - 12
+
+MICRO-MONO-BOLD          = Source Code Pro  - bold        - 10
+MICRO-MONO-BOLD-ITALIC   = Source Code Pro  - bold italic - 10
+MICRO-MONO-ITALIC        = Source Code Pro  - italic      - 10
+MICRO-MONO-PLAIN         = Source Code Pro  - regular     - 10
+MICRO-SANS-BOLD          = Source Sans Pro  - bold        - 10
+MICRO-SANS-BOLD-ITALIC   = Source Sans Pro  - bold italic - 10
+MICRO-SANS-ITALIC        = Source Sans Pro  - italic      - 10
+MICRO-SANS-PLAIN         = Source Sans Pro  - regular     - 10
+MICRO-SERIF-BOLD         = Source Serif Pro - bold        - 10
+MICRO-SERIF-BOLD-ITALIC  = Source Serif Pro - bold italic - 10
+MICRO-SERIF-ITALIC       = Source Serif Pro - italic      - 10
+MICRO-SERIF-PLAIN        = Source Serif Pro - regular     - 10
+
+DIGITAL-DOTS             = Elektra          - regular     - 21
+DIGITAL                  = Digital Readout Thick Upright Regular - regular - 21
+
+
+// ------- Derived fonts ----------------
+
+HEADER              = Source Sans Pro  - bold italic - 36
+GROUP-HEADER        = Source Sans Pro  - bold italic - 21
+SUB-GROUP-HEADER    = Source Sans Pro  - bold        - 18
+SUBSUB-GROUP-HEADER = Source Sans Pro  - bold        - 16
+CONSTANT-WIDTH      = Source Code Pro  - regular     - 16
+TYPEWRITER          = Source Code Pro  - regular     - 16
+
+
+// ------- Predefined ----------------
+Default      = Source Sans Pro  - regular     - 16
+Default Bold = Source Sans Pro  - bold        - 16
+Header 1     = Source Sans Pro  - bold italic - 36
+Header 2     = Source Sans Pro  - bold italic - 21
+Header 3     = Source Sans Pro  - bold italic - 18
+Comment      = Source Sans Pro  - italic      - 16
+Fine Print   = Source Sans Pro  - regular     - 14
