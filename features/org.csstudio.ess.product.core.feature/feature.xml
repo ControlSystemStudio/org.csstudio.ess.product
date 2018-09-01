@@ -2,7 +2,7 @@
 <feature
       id="org.csstudio.ess.product.core.feature"
       label="CS-Studio Plug-Ins Dependencies"
-      version="4.6.1.7"
+      version="4.6.1.8"
       provider-name="Claudio Rosati - European Spallation Source ERIC">
 
   <description url="http://www.example.com/description">
@@ -75,6 +75,7 @@ ESS CS-Studion core plug-ins needed to start the IDE.
   <plugin id="org.csstudio.navigator.applaunch" version="0.0.0"/>
   <plugin id="org.csstudio.openfile" version="0.0.0"/>
   <plugin id="org.csstudio.perspectives" version="0.0.0"/>
+  <plugin id="org.csstudio.phoebus.integration" version="0.0.0"/>
   <plugin id="org.csstudio.platform.libs.jdbc" version="0.0.0"/>
   <plugin id="org.csstudio.platform.libs.jms" version="0.0.0"/>
   <plugin id="org.csstudio.platform.utility.jms" version="0.0.0"/>
