@@ -130,11 +130,3 @@ CONSTANT-WIDTH      = Source Code Pro  - regular     - 16
 TYPEWRITER          = Source Code Pro  - regular     - 16
 
 
-// ------- Predefined ----------------
-Default      = Source Sans Pro  - regular     - 16
-Default Bold = Source Sans Pro  - bold        - 16
-Header 1     = Source Sans Pro  - bold italic - 36
-Header 2     = Source Sans Pro  - bold italic - 21
-Header 3     = Source Sans Pro  - bold italic - 18
-Comment      = Source Sans Pro  - italic      - 16
-Fine Print   = Source Sans Pro  - regular     - 14
