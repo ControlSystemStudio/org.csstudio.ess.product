@@ -33,6 +33,8 @@ ESS CS-Studio Product Configuration.
   <includes id="org.csstudio.archive.reader.appliance.feature" version="0.0.0"/>
   <includes id="org.csstudio.archive.reader.rdb.feature" version="0.0.0"/>
 
+  <includes id="org.csstudio.phoebus.integration.feature" version="0.0.0"/>
+
   <plugin id="org.csstudio.diag.epics.pvtree" download-size="0" install-size="0" version="0.0.0" unpack="false"/>
   <plugin id="org.csstudio.diag.pvmanager.probe" download-size="0" install-size="0" version="0.0.0" unpack="false"/>
   <plugin id="org.csstudio.display.pace" download-size="0" install-size="0" version="0.0.0" unpack="false"/>

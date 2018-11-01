@@ -112,6 +112,7 @@ For details, see http://www.eclipse.org/legal/epl-v10.html
       <feature id="org.csstudio.graphene.feature"/>
       <feature id="org.csstudio.graphene.opiwidgets.feature"/>
       <feature id="org.csstudio.perspectives.feature"/>
+      <feature id="org.csstudio.phoebus.integration.feature"/>
       <feature id="org.csstudio.pretune.feature"/>
       <feature id="org.csstudio.pvmanager.autocomplete.feature"/>
       <feature id="org.csstudio.saverestore.feature"/>
