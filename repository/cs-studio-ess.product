@@ -20,8 +20,6 @@
 openFile
 --launcher.GTK_version
 2
--vm
-/usr/java/jdk1.8.0_181-amd64/jre/bin
       </programArgsLin>
       <vmArgs>-Xmx2048m
 -Xms160m
@@ -107,6 +105,7 @@ For details, see http://www.eclipse.org/legal/epl-v10.html
       <feature id="org.csstudio.graphene.feature"/>
       <feature id="org.csstudio.graphene.opiwidgets.feature"/>
       <feature id="org.csstudio.perspectives.feature"/>
+      <feature id="org.csstudio.phoebus.integration.feature"/>
       <feature id="org.csstudio.pretune.feature"/>
       <feature id="org.csstudio.pvmanager.autocomplete.feature"/>
       <feature id="org.csstudio.saverestore.feature"/>

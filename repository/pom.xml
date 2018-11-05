@@ -58,7 +58,7 @@
               <archiveFileName>alarm-notifier-${product.version}</archiveFileName>
               <attachId>alarm-notifier</attachId>
             </product>
-            
+
             <product>
               <id>alarm-server</id>
               <rootFolder>alarm-server-${product.version}</rootFolder>
@@ -140,7 +140,7 @@
 					</property>
 					<property>
 						<name>NSHumanReadableCopyright</name>
-						<value>Copyright 2016 European Spallation Source ERIC. All rights reserved.</value>
+						<value>Copyright 2016-2018 European Spallation Source ERIC. All rights reserved.</value>
 					</property>
 					<property>
 						<name>CFBundleGetInfoString</name>
