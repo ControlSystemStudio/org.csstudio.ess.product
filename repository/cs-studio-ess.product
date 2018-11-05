@@ -20,8 +20,6 @@
 openFile
 --launcher.GTK_version
 2
--vm
-/usr/java/jdk1.8.0_181-amd64/jre/bin
       </programArgsLin>
       <programArgsMac>-share_link
 /Users/claudiorosati/Projects/GitHubX/ess-symbols=/ess-symbols,/Users/claudiorosati/Projects/GitHubX/ess-templates=/ess-templates
