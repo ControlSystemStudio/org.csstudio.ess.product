@@ -199,23 +199,29 @@
       <font name="Header 2" family="Source Sans Pro" style="BOLD_ITALIC" size="21.0">
       </font>
     </font>
+    <background_color use_class="true">
+      <color name="Background" red="220" green="225" blue="221">
+      </color>
+    </background_color>
+    <transparent use_class="true">true</transparent>
     <vertical_alignment>1</vertical_alignment>
   </widget>
   <widget type="label" version="2.0.0">
     <name>HEADER3</name>
-    <text use_class="true">&lt;header-3&gt;</text>
+    <text>&lt;header-3&gt;</text>
     <x>20</x>
     <y>350</y>
     <width>270</width>
     <height>25</height>
     <font use_class="true">
-      <font name="Header 3" family="Source Sans Pro" style="BOLD_ITALIC" size="16.0">
+      <font name="Header 3" family="Source Sans Pro" style="BOLD_ITALIC" size="18.0">
       </font>
     </font>
-    <foreground_color use_class="true">
-      <color name="Text" red="25" green="25" blue="25">
+    <background_color use_class="true">
+      <color name="Background" red="220" green="225" blue="221">
       </color>
-    </foreground_color>
+    </background_color>
+    <transparent use_class="true">true</transparent>
     <vertical_alignment>1</vertical_alignment>
   </widget>
   <widget type="label" version="2.0.0">

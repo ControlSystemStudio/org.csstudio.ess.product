@@ -2,7 +2,7 @@
 <feature
       id="org.csstudio.ess.product.configuration.feature"
       label="Product configuration feature"
-      version="4.6.1.10"
+      version="4.6.1.11"
       provider-name="Claudio Rosati - European Spallation Source ERIC">
 
   <description url="http://www.example.com/description">
@@ -32,6 +32,8 @@ ESS CS-Studio Product Configuration.
   <includes id="org.csstudio.applications.logbook.feature" version="0.0.0"/>
   <includes id="org.csstudio.archive.reader.appliance.feature" version="0.0.0"/>
   <includes id="org.csstudio.archive.reader.rdb.feature" version="0.0.0"/>
+
+  <includes id="org.csstudio.phoebus.integration.feature" version="0.0.0"/>
 
   <plugin id="org.csstudio.diag.epics.pvtree" download-size="0" install-size="0" version="0.0.0" unpack="false"/>
   <plugin id="org.csstudio.diag.pvmanager.probe" download-size="0" install-size="0" version="0.0.0" unpack="false"/>
