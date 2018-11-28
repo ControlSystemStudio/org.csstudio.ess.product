@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?pde version="3.5"?>
 
-<product name="ESS CS-Studio" uid="cs-studio-ess" id="se.ess.ics.csstudio.product.product" application="se.ess.ics.csstudio.product.application" version="4.6.1.10" useFeatures="true" includeLaunchers="true">
+<product name="ESS CS-Studio" uid="cs-studio-ess" id="se.ess.ics.csstudio.product.product" application="se.ess.ics.csstudio.product.application" version="4.6.1.11" useFeatures="true" includeLaunchers="true">
 
    <aboutInfo>
       <image path="/se.ess.ics.csstudio.product/icons/cs-studio-about.png"/>
@@ -67,7 +67,7 @@ openFile
    <license>
         <url>http://www.eclipse.org/legal/epl-v10.html</url>
         <text>
-You must accept this license agreement in order to install and use this software.
+   You must accept this license agreement in order to install and use this software.
 THIS SOFTWARE IS PROVIDED UNDER THIS LICENSE ON AN &quot;../AS IS&quot; BASIS.
 WITHOUT WARRANTY OF ANY KIND, EXPRESSED OR IMPLIED, INCLUDING
 BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
@@ -79,51 +79,52 @@ For details, see http://www.eclipse.org/legal/epl-v10.html
    <plugins>
    </plugins>
 
-  <features>
-	<feature id="org.csstudio.alarm.beast.ui.feature"/>
-    <feature id="org.csstudio.alarm.diirt.datasource.feature"/>
-    <feature id="org.csstudio.applications.channel.feature"/>
-    <feature id="org.csstudio.applications.channelfinder.feature"/>
-    <feature id="org.csstudio.applications.opibuilder.edm.feature"/>
-    <feature id="org.csstudio.applications.opibuilder.feature"/>
-    <feature id="org.csstudio.applications.opibuilder.medm.feature"/>
-    <feature id="org.csstudio.applications.pvmanager.diag.feature"/>
-    <feature id="org.csstudio.archive.diirt.datasource.feature"/>
-    <feature id="org.csstudio.archive.reader.appliance.feature"/>
-    <feature id="org.csstudio.archive.reader.influxdb.feature"/>
-    <feature id="org.csstudio.core.base.feature"/>
-    <feature id="org.csstudio.core.diirt.feature"/>
-    <feature id="org.csstudio.core.platform.feature"/>
-    <feature id="org.csstudio.core.ui.feature"/>
-    <feature id="org.csstudio.core.utility.feature"/>
-    <feature id="org.csstudio.display.builder.feature"/>
-    <feature id="org.csstudio.display.pvtable.feature"/>
-    <feature id="org.csstudio.email.feature"/>
-    <feature id="org.csstudio.ess.product.configuration.feature"/>
-    <feature id="org.csstudio.ess.product.core.feature"/>
-    <feature id="org.csstudio.ess.product.eclipse.feature"/>
-    <feature id="org.csstudio.graphene.feature"/>
-    <feature id="org.csstudio.graphene.opiwidgets.feature"/>
-    <feature id="org.csstudio.perspectives.feature"/>
-    <feature id="org.csstudio.pretune.feature"/>
-    <feature id="org.csstudio.pvmanager.autocomplete.feature"/>
-    <feature id="org.csstudio.saverestore.feature"/>
-    <feature id="org.csstudio.saverestore.git.feature"/>
-    <feature id="org.csstudio.saverestore.masar.feature"/>
-    <feature id="org.csstudio.trends.databrowser3.bobwidget.feature"/>
-    <feature id="org.csstudio.trends.databrowser3.feature"/>
-    <feature id="org.csstudio.trends.databrowser3.opiwidget.feature"/>
-    <feature id="org.csstudio.utilities.feature"/>
-    <feature id="org.eclipse.e4.rcp"/>
-    <feature id="org.eclipse.egit"/>
-    <feature id="org.eclipse.egit.mylyn"/>
-    <feature id="org.eclipse.equinox.p2.core.feature"/>
-    <feature id="org.eclipse.equinox.p2.extras.feature"/>
-    <feature id="org.eclipse.equinox.p2.rcp.feature"/>
-    <feature id="org.eclipse.equinox.p2.user.ui"/>
-    <feature id="org.eclipse.jgit"/>
-    <feature id="org.eclipse.platform"/>
-  </features>
+   <features>
+      <feature id="org.csstudio.alarm.beast.ui.feature"/>
+      <feature id="org.csstudio.alarm.diirt.datasource.feature"/>
+      <feature id="org.csstudio.applications.channel.feature"/>
+      <feature id="org.csstudio.applications.channelfinder.feature"/>
+      <feature id="org.csstudio.applications.opibuilder.edm.feature"/>
+      <feature id="org.csstudio.applications.opibuilder.feature"/>
+      <feature id="org.csstudio.applications.opibuilder.medm.feature"/>
+      <feature id="org.csstudio.applications.pvmanager.diag.feature"/>
+      <feature id="org.csstudio.archive.diirt.datasource.feature"/>
+      <feature id="org.csstudio.archive.reader.appliance.feature"/>
+      <feature id="org.csstudio.archive.reader.influxdb.feature"/>
+      <feature id="org.csstudio.core.base.feature"/>
+      <feature id="org.csstudio.core.diirt.feature"/>
+      <feature id="org.csstudio.core.platform.feature"/>
+      <feature id="org.csstudio.core.ui.feature"/>
+      <feature id="org.csstudio.core.utility.feature"/>
+      <feature id="org.csstudio.display.builder.feature"/>
+      <feature id="org.csstudio.display.pvtable.feature"/>
+      <feature id="org.csstudio.email.feature"/>
+      <feature id="org.csstudio.ess.product.configuration.feature"/>
+      <feature id="org.csstudio.ess.product.core.feature"/>
+      <feature id="org.csstudio.ess.product.eclipse.feature"/>
+      <feature id="org.csstudio.graphene.feature"/>
+      <feature id="org.csstudio.graphene.opiwidgets.feature"/>
+      <feature id="org.csstudio.perspectives.feature"/>
+      <feature id="org.csstudio.phoebus.integration.feature"/>
+      <feature id="org.csstudio.pretune.feature"/>
+      <feature id="org.csstudio.pvmanager.autocomplete.feature"/>
+      <feature id="org.csstudio.saverestore.feature"/>
+      <feature id="org.csstudio.saverestore.git.feature"/>
+      <feature id="org.csstudio.saverestore.masar.feature"/>
+      <feature id="org.csstudio.trends.databrowser3.bobwidget.feature"/>
+      <feature id="org.csstudio.trends.databrowser3.feature"/>
+      <feature id="org.csstudio.trends.databrowser3.opiwidget.feature"/>
+      <feature id="org.csstudio.utilities.feature"/>
+      <feature id="org.eclipse.e4.rcp"/>
+      <feature id="org.eclipse.egit"/>
+      <feature id="org.eclipse.egit.mylyn"/>
+      <feature id="org.eclipse.equinox.p2.core.feature"/>
+      <feature id="org.eclipse.equinox.p2.extras.feature"/>
+      <feature id="org.eclipse.equinox.p2.rcp.feature"/>
+      <feature id="org.eclipse.equinox.p2.user.ui"/>
+      <feature id="org.eclipse.jgit"/>
+      <feature id="org.eclipse.platform"/>
+   </features>
 
    <configurations>
       <plugin id="org.eclipse.core.runtime" autoStart="true" startLevel="4" />
