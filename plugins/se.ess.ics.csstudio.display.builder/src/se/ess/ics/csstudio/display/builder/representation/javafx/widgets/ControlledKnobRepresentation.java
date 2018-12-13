@@ -12,6 +12,7 @@ package se.ess.ics.csstudio.display.builder.representation.javafx.widgets;
 import java.util.Objects;
 
 import org.csstudio.display.builder.model.DirtyFlag;
+import org.csstudio.display.builder.model.UntypedWidgetPropertyListener;
 import org.csstudio.display.builder.model.WidgetProperty;
 import org.csstudio.display.builder.representation.javafx.widgets.BaseKnobRepresentation;
 
@@ -27,7 +28,8 @@ import se.europeanspallationsource.javafx.control.knobs.controller.Controllable.
  */
 public class ControlledKnobRepresentation extends BaseKnobRepresentation<ControlledKnob, ControlledKnobWidget> {
 
-    private final DirtyFlag dirtyControl = new DirtyFlag();
+    private final DirtyFlag                     dirtyControl           = new DirtyFlag();
+    private final UntypedWidgetPropertyListener controlChangedListener = this::controlChanged;
 
     @Override
     protected ControlledKnob createJFXNode ( ) throws Exception {
@@ -100,10 +102,22 @@ public class ControlledKnobRepresentation extends BaseKnobRepresentation<Control
 
         super.registerListeners();
 
-        model_widget.propChannel().addUntypedPropertyListener(this::controlChanged);
-        model_widget.propCoarseIncrement().addUntypedPropertyListener(this::controlChanged);
-        model_widget.propFineIncrement().addUntypedPropertyListener(this::controlChanged);
-        model_widget.propOperatingMode().addUntypedPropertyListener(this::controlChanged);
+        model_widget.propChannel().addUntypedPropertyListener(controlChangedListener);
+        model_widget.propCoarseIncrement().addUntypedPropertyListener(controlChangedListener);
+        model_widget.propFineIncrement().addUntypedPropertyListener(controlChangedListener);
+        model_widget.propOperatingMode().addUntypedPropertyListener(controlChangedListener);
+
+    }
+
+    @Override
+    protected void unregisterListeners ( ) {
+
+        model_widget.propChannel().removePropertyListener(controlChangedListener);
+        model_widget.propCoarseIncrement().removePropertyListener(controlChangedListener);
+        model_widget.propFineIncrement().removePropertyListener(controlChangedListener);
+        model_widget.propOperatingMode().removePropertyListener(controlChangedListener);
+
+        super.unregisterListeners();
 
     }
 
