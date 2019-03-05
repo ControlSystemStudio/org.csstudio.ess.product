@@ -26,8 +26,8 @@ openFile
 -vm
 /Library/Java/JavaVirtualMachines/jdk1.8.0_202.jdk/Contents/Home/jre/bin
       </programArgsMac>
-      <vmArgs>-Xmx2048m
--Xms160m
+      <vmArgs>-Xmx2g
+-XX:+PrintCommandLineFlags
 -Dorg.eclipse.update.reconcile=false
 -Dosgi.configuration.cascaded=true
 -Dosgi.sharedConfiguration.area.readOnly=true
