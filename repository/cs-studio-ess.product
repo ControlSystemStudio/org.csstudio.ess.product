@@ -42,6 +42,7 @@ openFile
 -Dorg.eclipse.swt.internal.gtk.useCairo=false
 -Dorg.eclipse.swt.browser.DefaultType=mozilla
 -Dorg.eclipse.swt.browser.XULRunnerPath=/opt/xulrunner/
+-Djdk.gtk.version=2
       </vmArgsLin>
       <vmArgsMac>-XstartOnFirstThread
 -Dorg.eclipse.swt.internal.carbon.smallFonts
