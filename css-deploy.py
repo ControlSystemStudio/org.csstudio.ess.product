@@ -145,7 +145,7 @@ def prepareRelease(path, release_url, version, ce_version):
     """
     prepare_release_cmd = str(
         'bash {}prepare-release.sh {} "{}" "PLACEHOLDER-TEXT-FOR-HTML-NOTES' \
-        '</li><li>Based on CS-Studio CE {}-SNAPSHOT" true'
+        '</li><li>Based on CS-Studio CE {}-SNAPSHOT" false'
     .format(path, version, release_url, ce_version))
 
     try:
