@@ -31,16 +31,36 @@ import requests
 from requests.auth import HTTPBasicAuth
 import json
 
-def checkJavaHome():
-    """Check if user has `JAVA8_HOME` environment variable set.
+def checkJiraDeployment(version, auth):
+    """Check if version is deployed in JIRA.
+
+    Args:
+        version: Full CSS version number to be released, e.g. 4.6.1.12
+        auth: Username and password pair for JIRA
+    """
+    # REST url for issues specific for the release
+    url = 'https://jira.esss.lu.se/rest/api/2/search?jql=project=CSSTUDIO AND fixVersion="ESS CS-Studio '+version+'"'
+
+    headers = {"Content-Type":"application/json"}
+    response = requests.get(url, auth=auth, headers=headers)
+    data = response.json()
+
+    if response.status_code == 400:
+        print("Could not find JIRA Release of version {}. "\
+                  "Please go to JIRA and press Release... before running this script.\n" \
+                  "Aborting" .format(version))
+        sys.exit(1)
+
+def checkJavaHome(): #TODO: check JAVA_HOME
+    """Check if user has `JAVA_HOME` environment variable set.
 
     The variable needed for the `prepare-release.sh` and
     `prepare-next-release.sh` scripts
     """
-    if "JAVA8_HOME" in os.environ:
+    if "JAVA_HOME" in os.environ:
         return # env var found, all good
     elif platform.system() == "Linux":
-        print("You don't seem to have a path in the JAVA8_HOME variable")
+        print("You don't seem to have a path in the JAVA_HOME variable")
         suggestion_cmd = "dirname $(readlink -f $(which java))"
     elif platform.system() == "Darwin":
         suggestion_cmd = "dirname $(readlink $(which java))"
@@ -51,16 +71,11 @@ def checkJavaHome():
     print("Put the following your `.profile` file or `.bashrc` file:\n{}"
                   .format(suggestion))
 
-    # Ask if user wants to try to continue even though `JAVA8_HOME` was not found
-    accepted = {"yes": True, "y": True, "no": False, "n": False}
-    while True:
-        choice = input("Would you still like to proceed? [y/n]").lower()
-        if choice not in accepted:
-            print("Please answer with 'y' or 'n'.")
-        elif accepted[choice]:
-            return
-        else:
-            sys.exit(0)
+    # Ask if user wants to try to continue even though `JAVA_HOME` was not found
+    if diagYes("Would you still like to proceed? [y/n]"):
+        return
+    else:
+        sys.exit(0)
 
 def checkVersion(user_input):
     """Checks the CSS version input against artifactory.
@@ -105,17 +120,11 @@ def checkVersion(user_input):
     # If user input version is not same as next nano version, prompt user
     if new_version != user_input:
         print("Suggested version number is {}" .format(new_version))
-        accepted = {"yes": True, "y": True, "no": False, "n": False}
-        while True:
-            choice = input("Are you sure you wish to use {}? [y/n]"
-                                   . format(user_input)).lower()
-            if choice not in accepted:
-                print("\x1b[31mPlease answer with 'y' or 'n'.\x1b[0m")
-            elif not accepted[choice]:
-                print("Aborting")
-                sys.exit()
-            else:
-                return
+        if diagYes("Are you sure you wish to use {}? [y/n]" .format(user_input)):
+            return
+        else:
+            print("Aborting")
+            sys.exit()
 
 def prepareRelease(path, release_url, version, notes, ce_version):
     """Run `prepare-release.sh`.
@@ -173,17 +182,8 @@ def prepareNextRelease(version): #TODO: Test function
     print("Suggested version number for next release is {}"
               .format(next_version))
 
-    accepted = {"yes": True, "y": True, "no": False, "n": False}
-    while True:
-        choice = input("Is this correct{}? [y/n]"
-                             . format(user_input)).lower()
-        if choice not in accepted:
-            print("\x1b[31mPlease answer with 'y' or 'n'.\x1b[0m")
-        elif not accepted[choice]:
-            next_version = input("Enter next version number?")
-            break
-        else:
-            break
+    if not diagYes("Is this correct{}? [y/n]" .format(user_input)):
+        next_version = input("Enter next version number?")
 
     path = os.path.dirname(os.path.abspath(__file__))+"/"
 
@@ -233,7 +233,9 @@ def getChangelogNotes(version, auth):
 
     Args:
         version: Full CSS version number to be released, e.g. 4.6.1.12
+        auth: Username and password pair for JIRA
     """
+    print(version)
     # REST url for issues specific for the release
     url = 'https://jira.esss.lu.se/rest/api/2/search?jql=project=CSSTUDIO AND fixVersion="ESS CS-Studio '+version+'"'
 
@@ -242,8 +244,8 @@ def getChangelogNotes(version, auth):
     data = response.json()
 
     if response.status_code == 400:
-        print("{} in Jira.\nCould not fetch changelog notes: missing JIRA release?\nAborting"
-                  .format(data["errorMessages"][0][:-1]))
+        print("{} in Jira. Could not fetch changelog notes: Missing JIRA " \
+                  "release?\nAborting" .format(data["errorMessages"][0][:-1]))
         sys.exit(1)
 
     note_list = []
@@ -334,20 +336,13 @@ def updateConfluence(css_version, ce_version, notes, auth):
     # ask user if they still want to update with the given information. If user
     # chooses 'no', skip the confluence update.
     if "Ver. " + css_version +"" in data["body"]["view"]["value"]:
-        accepted = {"yes": True, "y": True, "no": False, "n": False}
-        while True:
-            choice = input("A header for CSS version {} was found on " \
+        dialogMsg = "A header for CSS version {} was found on " \
                                "the confluence page. Are you sure you wish " \
-                               "to post your notes? [y/n]"
-                               .format(css_version)).lower()
+                               "to post your notes? [y/n]" .format(css_version)
 
-            if choice not in accepted:
-                print("\x1b[31mPlease answer with 'y' or 'n'.\x1b[0m")
-            elif not accepted[choice]:
-                print("Skipping confluence update")
-                return
-            else:
-                break
+        if not diagYes(dialogMsg):
+            print("Skipping confluence update")
+            return
 
     # Construct json payload
     payload = {}
@@ -374,12 +369,24 @@ def updateConfluence(css_version, ce_version, notes, auth):
         print("Response code {}\nAborting" .format(put_response.status_code))
         sys.exit(1)
 
+def diagYes(string):
+    accepted = {"yes": True, "y": True, "no": False, "n": False}
+    while True:
+        choice = input(string).lower()
+        if choice not in accepted:
+            print("\x1b[31mPlease answer with 'y' or 'n'.\x1b[0m")
+        elif not accepted[choice]:
+            return False
+        else:
+            return True
+
+
 def main(css_version, ce_version):
     """Main for automatic CSS deployment.
 
     This script performs the following steps:
 
-    1. Check if user has `JAVA8_HOME` environment variable set:
+    1. Check if user has `JAVA_HOME` environment variable set:
     The variable needed for the `prepare-release.sh` and
     `prepare-next-release.sh` scripts
 
@@ -414,14 +421,15 @@ def main(css_version, ce_version):
         css_version: New CSS release version.
         ce_version: CS-Studio CE version that new release is based on.
     """
+    user = input("ESS username: ")    # Used for Jira and Confluence
+    passw = getpass("ESS Password: ") # Used for Jira and Confluence
+    auth = (user, passw)              # Used for Jira and Confluence
+    checkJiraDeployment(css_version, auth)
     checkJavaHome()
     checkVersion(css_version)
     release_url = "https://jira.esss.lu.se/projects/CSSTUDIO/versions/23001"
     dir_path = os.path.dirname(os.path.abspath(__file__))+"/"
 
-    user = input("ESS username: ")    # Used for Jira and Confluence
-    passw = getpass("ESS Password: ") # Used for Jira and Confluence
-    auth = (user, passw)              # Used for Jira and Confluence
     notes = getChangelogNotes(css_version, auth)
     prepareRelease(dir_path, release_url, css_version, notes, ce_version)
     updatePom(dir_path+"pom.xml", css_version)
