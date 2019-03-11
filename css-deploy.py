@@ -205,7 +205,7 @@ def patReplace(path, pattern, repl):
         repl: Replacement text with which to replace text matching to `pattern`.
     """
     pat = re.compile(pattern)
-    with fileinput.FileInput(path, inplace=True, backup=".bak") as file:
+    with fileinput.FileInput(path, inplace=True) as file:
         for line in file:
             result = re.sub(pat, repl, line)
             print(result, end="")
