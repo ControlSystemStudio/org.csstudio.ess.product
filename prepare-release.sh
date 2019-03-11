@@ -75,11 +75,10 @@ sed -i '' -e '/<\/p>/ a\
 
 if [ "$PUSH" = "true" ]
 then
-  echo ::: Committing version $VERSION :::
+  echo ::: Committing version $VERSION and pushing :::
   git commit -a -m "Updating changelog, splash, manifests to version $VERSION"
-  echo ::: Tagging version $VERSION :::
-  git tag ESS-CSS-$VERSION
-  echo ::: Pushing changes :::
   git push origin
-  git push origin ESS-CS-Studio-$VERSION
+  # echo ::: Tagging version $VERSION :::
+  # git tag ESS-CSS-$VERSION
+  # git push origin ESS-CS-Studio-$VERSION
 fi
