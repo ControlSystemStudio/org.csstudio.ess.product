@@ -80,5 +80,5 @@ then
   git push origin
   # echo ::: Tagging version $VERSION :::
   # git tag ESS-CSS-$VERSION
-  # git push origin ESS-CS-Studio-$VERSION
+  # git push origin ESS-CSS-$VERSION
 fi
