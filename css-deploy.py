@@ -32,15 +32,15 @@ from requests.auth import HTTPBasicAuth
 import json
 
 def checkJavaHome():
-    """Check if user has `JAVA_HOME` environment variable set.
+    """Check if user has `JAVA8_HOME` environment variable set.
 
     The variable needed for the `prepare-release.sh` and
     `prepare-next-release.sh` scripts
     """
-    if "JAVA_HOME" in os.environ:
+    if "JAVA8_HOME" in os.environ:
         return # env var found, all good
     elif platform.system() == "Linux":
-        print("You don't seem to have a path in the JAVA_HOME variable")
+        print("You don't seem to have a path in the JAVA8_HOME variable")
         suggestion_cmd = "dirname $(readlink -f $(which java))"
     elif platform.system() == "Darwin":
         suggestion_cmd = "dirname $(readlink $(which java))"
@@ -51,7 +51,7 @@ def checkJavaHome():
     print("Put the following your `.profile` file or `.bashrc` file:\n{}"
                   .format(suggestion))
 
-    # Ask if user wants to try to continue even though `JAVA_HOME` was not found
+    # Ask if user wants to try to continue even though `JAVA8_HOME` was not found
     accepted = {"yes": True, "y": True, "no": False, "n": False}
     while True:
         choice = input("Would you still like to proceed? [y/n]").lower()
@@ -379,7 +379,7 @@ def main(css_version, ce_version):
 
     This script performs the following steps:
 
-    1. Check if user has `JAVA_HOME` environment variable set:
+    1. Check if user has `JAVA8_HOME` environment variable set:
     The variable needed for the `prepare-release.sh` and
     `prepare-next-release.sh` scripts
 
@@ -419,10 +419,9 @@ def main(css_version, ce_version):
     release_url = "https://jira.esss.lu.se/projects/CSSTUDIO/versions/23001"
     dir_path = os.path.dirname(os.path.abspath(__file__))+"/"
 
-    # user = input("ESS username: ")    # Used for Jira and Confluence
-    # passw = getpass("ESS Password: ") # Used for Jira and Confluence
-    # auth = (user, passw)              # Used for Jira and Confluence
-    auth = ("johanneskazantzidis", "Saraeva1")              # Used for Jira and Confluence
+    user = input("ESS username: ")    # Used for Jira and Confluence
+    passw = getpass("ESS Password: ") # Used for Jira and Confluence
+    auth = (user, passw)              # Used for Jira and Confluence
     notes = getChangelogNotes(css_version, auth)
     prepareRelease(dir_path, release_url, css_version, notes, ce_version)
     updatePom(dir_path+"pom.xml", css_version)
