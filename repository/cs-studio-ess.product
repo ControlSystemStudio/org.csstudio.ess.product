@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?pde version="3.5"?>
 
-<product name="ESS CS-Studio" uid="cs-studio-ess" id="se.ess.ics.csstudio.product.product" application="se.ess.ics.csstudio.product.application" version="4.6.1.12" useFeatures="true" includeLaunchers="true">
+<product name="ESS CS-Studio" uid="cs-studio-ess" id="se.ess.ics.csstudio.product.product" application="se.ess.ics.csstudio.product.application" version="4.6.1.13" useFeatures="true" includeLaunchers="true">
 
    <aboutInfo>
       <image path="/se.ess.ics.csstudio.product/icons/cs-studio-about.png"/>
@@ -21,8 +21,8 @@ openFile
 --launcher.GTK_version
 2
       </programArgsLin>
-      <vmArgs>-Xmx2048m
--Xms160m
+      <vmArgs>-Xmx2g
+-XX:+PrintCommandLineFlags
 -Dorg.eclipse.update.reconcile=false
 -Dosgi.configuration.cascaded=true
 -Dosgi.sharedConfiguration.area.readOnly=true
@@ -37,6 +37,7 @@ openFile
 -Dorg.eclipse.swt.internal.gtk.useCairo=false
 -Dorg.eclipse.swt.browser.DefaultType=mozilla
 -Dorg.eclipse.swt.browser.XULRunnerPath=/opt/xulrunner/
+-Djdk.gtk.version=2
       </vmArgsLin>
       <vmArgsMac>-XstartOnFirstThread
 -Dorg.eclipse.swt.internal.carbon.smallFonts
