@@ -13,7 +13,7 @@
 #  You should have received a copy of the GNU General Public License along with
 #  this program. If not, see https://www.gnu.org/licenses/gpl.txt
 
-__version__ = '0.1.1'
+__version__ = '0.1.4'
 __author__ = 'Johannes C. Kazantzidis'
 
 import argparse
@@ -319,7 +319,7 @@ def updateConfluence(css_version, ce_version, notes, auth):
         auth: Atlassian athentication (username, password) pair.
     """
     base_url = "https://confluence.esss.lu.se/rest/api/content/"
-    page_id = "295789998" # Use 129630590 for the real page
+    page_id = "129630590" # Use 295789998 for the dummy page
 
     # Pull data from the confluence page
     get_url = base_url + page_id + "?expand=body.view,version"
@@ -477,7 +477,7 @@ def main(css_version):
     prepareRelease(dir_path, release_url, css_version, ce_version)
     updateChangelog(dir_path+"/plugins/se.ess.ics.csstudio.startup.intro/html/changelog.html", notes)
     updatePom(dir_path+"pom.xml", css_version)
-    # mergeRepos(dir_path+"merge.sh", css_version)
+    mergeRepos(dir_path+"merge.sh", css_version)
     updateConfluence(css_version, ce_version, notes, auth)
 
     print("\nDone")
