@@ -2,16 +2,17 @@
 
 VERSION=$1
 
-declare -a repos=("https://github.com/ESSICS/org.csstudio.display.builder.git"
-                "https://github.com/ESSICS/cs-studio-thirdparty.git"
-                "https://github.com/ESSICS/ess-css-extra.git"
-                "https://github.com/ESSICS/cs-studio.git"
-                "https://github.com/ESSICS/maven-osgi-bundles.git"
-                "https://github.com/ESSICS/org.csstudio.ess.product.git"
+declare -a repos=("org.csstudio.display.builder"
+                "cs-studio-thirdparty"
+                "ess-css-extra"
+                "cs-studio"
+                "maven-osgi-bundles"
+                "org.csstudio.ess.product"
                )
 
 for i in "${repos[@]}"
 do
+    cd ../$i/
     git checkout production
     git pull origin production
     git merge master
