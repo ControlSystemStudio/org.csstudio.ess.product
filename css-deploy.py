@@ -26,13 +26,13 @@ import platform
 import re
 import subprocess
 import sys
+import json
 
 import requests
 from requests.auth import HTTPBasicAuth
-import json
 
-def checkJiraDeployment(version, auth):
-    """Check if version is deployed in JIRA.
+def checkJiraRelease(version, auth):
+    """Check if version is released in JIRA.
 
     Args:
         version: Full CSS version number to be released, e.g. 4.6.1.12
@@ -47,8 +47,8 @@ def checkJiraDeployment(version, auth):
 
     if response.status_code == 400:
         print("Could not find JIRA Release of version {}. "\
-                  "Please go to JIRA and press Release... before running this script.\n" \
-                  "Aborting" .format(version))
+                  "Please go to JIRA and press 'Release...' before running " \
+                  " this script.\nAborting" .format(version))
         sys.exit(1)
 
 def checkJavaHome(): #TODO: check JAVA_HOME
@@ -192,7 +192,7 @@ def prepareNextRelease(version): #TODO: Test function
 
     subprocess.check_call(prepare_next_release_cmd, shell=True)
 
-def replace(path, pattern, repl):
+def patReplace(path, pattern, repl):
     """Replace a pattern in a file.
 
     Inplace relpacement of text in a file. Original file will be backed
@@ -222,7 +222,7 @@ def updatePom(path, version):
     majmin = ".".join(split[0:2])
     pattern = "<cs-studio.version>[0-9]+\.[0-9]+</cs-studio.version>"
     replacement = "<cs-studio.version>" + majmin + "</cs-studio.version>"
-    replace(path, pattern, replacement)
+    patReplace(path, pattern, replacement)
 
 def getChangelogNotes(version, auth):
     """Get notes for changelog from Jira.
@@ -235,7 +235,6 @@ def getChangelogNotes(version, auth):
         version: Full CSS version number to be released, e.g. 4.6.1.12
         auth: Username and password pair for JIRA
     """
-    print(version)
     # REST url for issues specific for the release
     url = 'https://jira.esss.lu.se/rest/api/2/search?jql=project=CSSTUDIO AND fixVersion="ESS CS-Studio '+version+'"'
 
@@ -254,7 +253,8 @@ def getChangelogNotes(version, auth):
     # `CSS-CE #XXX` is a merge from the community version. Sort `note_list`
     # with CSS-CE merges first.
     for issue in data["issues"]:
-        summary = issue["fields"]["summary"]
+        summary = re.sub("`", "&apos;", issue["fields"]["summary"])
+        summary = re.sub('"', "&quot;", summary)
         if list(pattern.findall(summary)):
             note_list.insert(0,"<li>"+summary+"</li>")
         else:
@@ -380,57 +380,66 @@ def diagYes(string):
         else:
             return True
 
+def getCEVersion(version):
+    split = version.split(".")
+    return split[0] + "." + split[1] + "." + split[2]
 
-def main(css_version, ce_version):
+
+def main(css_version):
     """Main for automatic CSS deployment.
 
     This script performs the following steps:
 
-    1. Check if user has `JAVA_HOME` environment variable set:
+    1. Check if the desired version is redployed in JIRA
+
+    2. Check if user has `JAVA_HOME` environment variable set:
     The variable needed for the `prepare-release.sh` and
     `prepare-next-release.sh` scripts
 
-    2. Checks the CSS version input against artifactory:
+    3. Checks the CSS version input against artifactory:
     Grabs latest CSS version number from
     artifactory.esss.lu.se/artifactory/CS-Studio/production/
     and increments nano version (i.e. last number) by one. If the
     resulting number differs from user input, the user is prompted for
     verification to continue.
 
-    3. Get notes for changelog from Jira:
+    4. Get notes for changelog from Jira:
     Get notes from Jira via REST interface and format the notes to be
     accepted by the `prepare-release.sh` script.
 
-    4. Run `prepare-release.sh`:
+    5. Run `prepare-release.sh`:
     `prepare-release.sh` is a community developed script for creating
     new splash screen, change 'about' dialog, change Ansible reference
     file, update plugin versions, update product versions in product
     files, update product versions in master POM file and
     commit-tag-push changes.
 
-    5. Update pom.xml file:
+    6. Update pom.xml file:
     Update cs-studio major, and minor, version number in pom.xml file.
 
-    6. Merge all relevant repositories into production.
+    7. Merge all relevant repositories into production.
 
-    7. Update CSS confluence page's release notes:
+    8. Update CSS confluence page's release notes:
     Create a new linked header and add "Compatibility Notes" and
     "Updated Features".
 
     Args:
         css_version: New CSS release version.
-        ce_version: CS-Studio CE version that new release is based on.
     """
     user = input("ESS username: ")    # Used for Jira and Confluence
     passw = getpass("ESS Password: ") # Used for Jira and Confluence
     auth = (user, passw)              # Used for Jira and Confluence
-    checkJiraDeployment(css_version, auth)
+
+    checkJiraRelease(css_version, auth)
     checkJavaHome()
     checkVersion(css_version)
+
     release_url = "https://jira.esss.lu.se/projects/CSSTUDIO/versions/23001"
     dir_path = os.path.dirname(os.path.abspath(__file__))+"/"
 
     notes = getChangelogNotes(css_version, auth)
+    ce_version = getCEVersion(css_version)
+    ce_version = "4.6.1"
     prepareRelease(dir_path, release_url, css_version, notes, ce_version)
     updatePom(dir_path+"pom.xml", css_version)
     mergeRepos(dir_path+"merge.sh", css_version)
@@ -441,9 +450,7 @@ def main(css_version, ce_version):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="CSS release tool")
     parser.add_argument("css_version", type=str, help="New CSS release version")
-    parser.add_argument("ce_version", type=str, help="CS-Studio CE version " \
-                            "that new release is based on")
 
     args = parser.parse_args()
 
-    main(args.css_version, args.ce_version)
+    main(args.css_version)
