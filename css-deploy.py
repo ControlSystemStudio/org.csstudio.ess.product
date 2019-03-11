@@ -27,6 +27,7 @@ import re
 import subprocess
 import sys
 import json
+import html
 
 import requests
 from requests.auth import HTTPBasicAuth
@@ -151,14 +152,8 @@ def prepareRelease(path, release_url, version, notes, ce_version):
         subprocess.check_call(prepare_release_cmd, shell=True)
     except subprocess.CalledProcessError as e:
         print("")
-        print("Something went wrong when running the 'prepare-release.sh' " \
-                  "script. Check the line above this, it is likely that the " \
-                  "git tag (ESS-CSS-{}) already exists. If you still " \
-                  "want to run this deployment, type " \
-                  "'git tag --delete ESS-CSS-{}' and re-run this script"
-                  .format(version, version))
+        print("Oops, something went wrong when running 'prepare-release.sh'")
         print("\nAborting")
-        #TODO: automatic delete of tag if user wants to?
         sys.exit()
 
 def prepareNextRelease(version): #TODO: Test function
@@ -253,8 +248,10 @@ def getChangelogNotes(version, auth):
     # `CSS-CE #XXX` is a merge from the community version. Sort `note_list`
     # with CSS-CE merges first.
     for issue in data["issues"]:
-        summary = re.sub("`", "&apos;", issue["fields"]["summary"])
-        summary = re.sub('"', "&quot;", summary)
+        # summary = re.sub("`", "&apos;", issue["fields"]["summary"])
+        # summary = re.sub('"', "&quot;", summary)
+        # summary = issue["fields"]["summary"]
+        summary = htmlEscape(issue["fields"]["summary"])
         if list(pattern.findall(summary)):
             note_list.insert(0,"<li>"+summary+"</li>")
         else:
@@ -276,6 +273,21 @@ def getChangelogNotes(version, auth):
     formatted_notes = notes_str[4:-5]
 
     return formatted_notes
+
+def htmlEscape(text):
+    """Produce entities within text."""
+    html_escape_table = {
+        "&": "&amp;",
+        '"': "&quot;",
+        "'": "&apos;",
+        ">": "&gt;",
+        "<": "&lt;",
+        "`": "&apos;",
+        "´": "&apos;",
+        "\\": "&bsol;",
+        }
+
+    return "".join(html_escape_table.get(c,c) for c in text)
 
 def mergeRepos(path, version):
     """Merge all relevant repositories into production.
@@ -325,7 +337,7 @@ def updateConfluence(css_version, ce_version, notes, auth):
       + css_version + '(' + link_address_date +')"'
 
     # Create the new section to put on the confluence page
-    new_section = '<h2><a href=' + header_link + ' rel="nofollow">Ver.' \
+    new_section = '<h2><a href=' + header_link + ' rel="nofollow">Ver. ' \
       + css_version + '</a>    - ' + header_date + \
       '</h2><h3>Compatibility Notes</h3>' \
       '<ul><li>Based on the most recent source code of CS-Studio CE&nbsp;' \
@@ -366,10 +378,20 @@ def updateConfluence(css_version, ce_version, notes, auth):
                                     auth=auth, headers=headers)
 
     if put_response.status_code != 200:
-        print("Response code {}\nAborting" .format(put_response.status_code))
+        print("Confluence Response Code {}\nAborting"
+                  .format(put_response.status_code))
         sys.exit(1)
 
 def diagYes(string):
+    """Yes/No dialog prompt.
+
+    Args:
+        string: String to be printed (yes/no question).
+
+    Returns:
+        True if user accepts.
+        False if user rejects.
+    """
     accepted = {"yes": True, "y": True, "no": False, "n": False}
     while True:
         choice = input(string).lower()
@@ -381,9 +403,16 @@ def diagYes(string):
             return True
 
 def getCEVersion(version):
+    """Get CSS CE version based on the release version.
+
+    Args:
+        string: CSS version to be released
+
+    Returns:
+        CE version deduced by removing the nano version from the CSS version.
+    """
     split = version.split(".")
     return split[0] + "." + split[1] + "." + split[2]
-
 
 def main(css_version):
     """Main for automatic CSS deployment.
@@ -424,7 +453,7 @@ def main(css_version):
     "Updated Features".
 
     Args:
-        css_version: New CSS release version.
+        css_version: CSS version to be released.
     """
     user = input("ESS username: ")    # Used for Jira and Confluence
     passw = getpass("ESS Password: ") # Used for Jira and Confluence
@@ -439,10 +468,9 @@ def main(css_version):
 
     notes = getChangelogNotes(css_version, auth)
     ce_version = getCEVersion(css_version)
-    ce_version = "4.6.1"
     prepareRelease(dir_path, release_url, css_version, notes, ce_version)
     updatePom(dir_path+"pom.xml", css_version)
-    mergeRepos(dir_path+"merge.sh", css_version)
+    # mergeRepos(dir_path+"merge.sh", css_version)
     updateConfluence(css_version, ce_version, notes, auth)
 
     print("\nDone")
