@@ -13,7 +13,7 @@
 #  You should have received a copy of the GNU General Public License along with
 #  this program. If not, see https://www.gnu.org/licenses/gpl.txt
 
-__version__ = '0.0.1'
+__version__ = '0.1.1'
 __author__ = 'Johannes C. Kazantzidis'
 
 import argparse
@@ -127,7 +127,7 @@ def checkVersion(user_input):
             print("Aborting")
             sys.exit()
 
-def prepareRelease(path, release_url, version, notes, ce_version):
+def prepareRelease(path, release_url, version, ce_version):
     """Run `prepare-release.sh`.
 
     `prepare-release.sh` is a community developed script for creating
@@ -144,9 +144,9 @@ def prepareRelease(path, release_url, version, notes, ce_version):
         ce_version: CSS CE version of which the CSS release is based on.
     """
     prepare_release_cmd = str(
-        'bash {}prepare-release.sh {} "{}" "{}</li><li>' \
-        'Based on CS-Studio CE {}-SNAPSHOT" true'
-    .format(path, version, release_url, notes, ce_version))
+        'bash {}prepare-release.sh {} "{}" "PLACEHOLDER-TEXT-FOR-HTML-NOTES' \
+        '</li><li>Based on CS-Studio CE {}-SNAPSHOT" true'
+    .format(path, version, release_url, ce_version))
 
     try:
         subprocess.check_call(prepare_release_cmd, shell=True)
@@ -155,6 +155,12 @@ def prepareRelease(path, release_url, version, notes, ce_version):
         print("Oops, something went wrong when running 'prepare-release.sh'")
         print("\nAborting")
         sys.exit()
+
+def updateChangelog(path, notes):
+        pattern = "PLACEHOLDER-TEXT-FOR-HTML-NOTES"
+        replacement = notes
+        patReplace(path, pattern, notes)
+
 
 def prepareNextRelease(version): #TODO: Test function
     """Run `prepare-next-release.sh`.
@@ -468,7 +474,8 @@ def main(css_version):
 
     notes = getChangelogNotes(css_version, auth)
     ce_version = getCEVersion(css_version)
-    prepareRelease(dir_path, release_url, css_version, notes, ce_version)
+    prepareRelease(dir_path, release_url, css_version, ce_version)
+    updateChangelog(dir_path+"/plugins/se.ess.ics.csstudio.startup.intro/html/changelog.html", notes)
     updatePom(dir_path+"pom.xml", css_version)
     # mergeRepos(dir_path+"merge.sh", css_version)
     updateConfluence(css_version, ce_version, notes, auth)
