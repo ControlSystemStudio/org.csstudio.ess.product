@@ -78,7 +78,7 @@ then
   echo ::: Committing version $VERSION and pushing :::
   git commit -a -m "Updating changelog, splash, manifests to version $VERSION"
   git push origin
-  # echo ::: Tagging version $VERSION :::
-  # git tag ESS-CSS-$VERSION
-  # git push origin ESS-CSS-$VERSION
+  echo ::: Tagging version $VERSION :::
+  git tag ESS-CSS-$VERSION
+  git push origin ESS-CSS-$VERSION
 fi
