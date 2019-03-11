@@ -144,9 +144,9 @@ def prepareRelease(path, release_url, version, notes, ce_version):
         ce_version: CSS CE version of which the CSS release is based on.
     """
     prepare_release_cmd = str(
-        'bash {}prepare-release.sh {} "{}" "XXX</li><li>' \
+        'bash {}prepare-release.sh {} "{}" "{}</li><li>' \
         'Based on CS-Studio CE {}-SNAPSHOT" true'
-    .format(path, version, release_url, ce_version))
+    .format(path, version, release_url, notes, ce_version))
 
     try:
         subprocess.check_call(prepare_release_cmd, shell=True)
