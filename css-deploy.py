@@ -193,7 +193,7 @@ def prepareNextRelease(version):
 
     path = os.path.dirname(os.path.abspath(__file__))+"/"
 
-    prepare_next_release_cmd = str("bash {} prepare-next-release.sh {} false"
+    prepare_next_release_cmd = str("bash {}prepare-next-release.sh {} false"
                                        .format(path, version))
 
     subprocess.check_call(prepare_next_release_cmd, shell=True)
