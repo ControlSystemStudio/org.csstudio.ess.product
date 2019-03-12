@@ -642,28 +642,28 @@ def main(css_version):
     Args:
         css_version: CSS version to be released.
     """
-    # checkBranch()
+    checkBranch()
 
-    # user = input("ESS username: ")    # Used for Jira and Confluence
-    # passw = getpass("ESS Password: ") # Used for Jira and Confluence
-    # auth = (user, passw)              # Used for Jira and Confluence
+    user = input("ESS username: ")    # Used for Jira and Confluence
+    passw = getpass("ESS Password: ") # Used for Jira and Confluence
+    auth = (user, passw)              # Used for Jira and Confluence
 
-    # checkJiraRelease(css_version, auth)
-    # checkJavaHome()
-    # checkVersion(css_version)
-    # notes = getChangelogNotes(css_version, auth)
-    # ce_version = getCEVersion(css_version)
+    checkJiraRelease(css_version, auth)
+    checkJavaHome()
+    checkVersion(css_version)
+    notes = getChangelogNotes(css_version, auth)
+    ce_version = getCEVersion(css_version)
 
-    # release_url = "https://jira.esss.lu.se/projects/CSSTUDIO/versions/23001"
+    release_url = "https://jira.esss.lu.se/projects/CSSTUDIO/versions/23001"
     dir_path = os.path.dirname(os.path.abspath(__file__))+"/"
-    # prepareRelease(dir_path, release_url, css_version, ce_version)
-    # updateChangelog(dir_path+"/plugins/se.ess.ics.csstudio.startup.intro/html/changelog.html", notes)
-    # updatePom(dir_path+"pom.xml", css_version)
+    prepareRelease(dir_path, release_url, css_version, ce_version)
+    updateChangelog(dir_path+"/plugins/se.ess.ics.csstudio.startup.intro/html/changelog.html", notes)
+    updatePom(dir_path+"pom.xml", css_version)
     mergeRepos(dir_path+"merge.sh", css_version)
-    # updateConfluenceNotes(css_version, ce_version, notes, auth)
-    # next_version = getNextVersion(css_version)
-    # prepareNextRelease(next_version)
-    # updateConfluenceRelease(css_version, next_version, ce_version, auth)
+    updateConfluenceNotes(css_version, ce_version, notes, auth)
+    next_version = getNextVersion(css_version)
+    prepareNextRelease(next_version)
+    updateConfluenceRelease(css_version, next_version, ce_version, auth)
 
     print("\nDone")
 
