@@ -12,7 +12,7 @@
 #  You should have received a copy of the GNU General Public License along with
 #  this program. If not, see https://www.gnu.org/licenses/gpl.txt
 
-__version__ = '0.1.6'
+__version__ = '0.1.7'
 __author__ = 'Johannes C. Kazantzidis'
 
 import argparse
@@ -31,6 +31,22 @@ import html
 import requests
 from requests.auth import HTTPBasicAuth
 
+def checkBranch():
+    """Check current git branch.
+
+    User must be on master branch to deploy. If this is not the case,
+    the script will notify user and abort.
+    """
+    cmd = "git branch | grep \* | cut -d ' ' -f2"
+
+    branch = subprocess.check_output(cmd, shell=True).decode("utf8").split()[0]
+
+    if not "master" in branch:
+        print("You are on branch '{}'. " \
+                "Please checkout master branch before running this script."
+                .format(branch))
+        sys.exit(1)
+
 def checkJiraRelease(version, auth):
     """Check if version is released in JIRA.
 
@@ -38,7 +54,9 @@ def checkJiraRelease(version, auth):
         version: Full CSS version number to be released, e.g. 4.6.1.12
         auth: Username and password pair for JIRA
     """
-    print("\x1b[93m-- Checking if CSS version {} is released in Jira\x1b[0m" .format(version))
+    print("\x1b[93m-- Checking if CSS version {} is released in Jira\x1b[0m"
+              .format(version))
+
     # REST url for issues specific for the release
     url = 'https://jira.esss.lu.se/rest/api/2/search?jql=project=CSSTUDIO AND fixVersion="ESS CS-Studio '+version+'"'
 
@@ -463,8 +481,8 @@ def updateConfluenceRelease(css_version, next_version, ce_version, auth):
             return
 
     # Code for generating the TOC
-    toc = '<p>&nbsp;</p><p><ac:structured-macro ac:name="toc" ac:schema-version="1" ' \
-      'ac:macro-id="a3eac23d-3226-4292-a87e-156db912bc91"/></p>'
+    toc = '<p>&nbsp;</p><p><ac:structured-macro ac:name="toc" ac:schema-' \
+      'version="1" ac:macro-id="a3eac23d-3226-4292-a87e-156db912bc91"/></p>'
 
     # Remove old toc and add new
     break_string = '"toc"> </div></p>'
@@ -567,57 +585,61 @@ def main(css_version):
 
     This script performs the following steps:
 
-    1. Check if the desired version is redployed in JIRA
+    1. Make sure user is on master branch
 
-    2. Check if user has `JAVA_HOME` environment variable set:
+    2. Check if the desired version is redployed in JIRA
+
+    3. Check if user has `JAVA_HOME` environment variable set:
     The variable needed for the `prepare-release.sh` and
     `prepare-next-release.sh` scripts
 
-    3. Checks the CSS version input against artifactory:
+    4. Checks the CSS version input against artifactory:
     Grabs latest CSS version number from
     artifactory.esss.lu.se/artifactory/CS-Studio/production/
     and increments nano version (i.e. last number) by one. If the
     resulting number differs from user input, the user is prompted for
     verification to continue.
 
-    4. Get notes for changelog from Jira:
+    5. Get notes for changelog from Jira:
     Get notes from Jira via REST interface and format the notes to be
     accepted by the `prepare-release.sh` script.
 
-    5. Run `prepare-release.sh`:
+    6. Run `prepare-release.sh`:
     `prepare-release.sh` is a community developed script for creating
     new splash screen, change 'about' dialog, change Ansible reference
     file, update plugin versions, update product versions in product
     files, update product versions in master POM file and
     commit-tag-push changes.
 
-    6. Update changelog:
+    7. Update changelog:
     Update changelog with notes from Jira.
 
-    7. Update pom.xml file:
+    8. Update pom.xml file:
     Update cs-studio major, and minor, version number in pom.xml file.
 
-    8. Merge repositories:
+    9. Merge repositories:
     Merge all relevant repositories into production.
 
-    9. Update CSS confluence page's release notes:
+    10. Update CSS confluence page's release notes:
     Create a new linked header and add "Compatibility Notes" and
     "Updated Features".
 
-    10. Run `prepare-next-release.sh`:
+    11. Run `prepare-next-release.sh`:
     `prepare-next-release.sh` is a community developed script for creating
     new splash screen, change 'about' dialog, change Ansible reference
     file, update plugin versions, update product versions in product
     files, update product versions in master POM file and
     commit-tag-push changes.
 
-    11. Update CSS confluence release page:
+    12. Update CSS confluence release page:
     Update development version and add production version with link to
     Jira release page
 
     Args:
         css_version: CSS version to be released.
     """
+    checkBranch()
+
     user = input("ESS username: ")    # Used for Jira and Confluence
     passw = getpass("ESS Password: ") # Used for Jira and Confluence
     auth = (user, passw)              # Used for Jira and Confluence
