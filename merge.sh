@@ -28,7 +28,6 @@ for i in "${repos[@]}"; do
     for k in "${gitcmds[@]}"; do
         $k
         if [[ $? != 0 ]]; then
-            echo "An error occured when running $k"
             exit 1
         fi
     done
