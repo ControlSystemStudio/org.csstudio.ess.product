@@ -12,7 +12,7 @@
 #  You should have received a copy of the GNU General Public License along with
 #  this program. If not, see https://www.gnu.org/licenses/gpl.txt
 
-__version__ = '0.1.7'
+__version__ = '0.2.0'
 __author__ = 'Johannes C. Kazantzidis'
 
 import argparse
