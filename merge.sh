@@ -2,8 +2,8 @@
 
 VERSION=$1
 
+# "org.csstudio.display.builder"
 declare -a repos=(
-    "org.csstudio.display.builder"
     "cs-studio-thirdparty"
     "ess-css-extra"
     "cs-studio"
@@ -25,6 +25,7 @@ git push origin
 
 for i in "${repos[@]}"; do
     cd ../$i/
+    echo `pwd`
     for k in "${gitcmds[@]}"; do
         $k
         ERROR_CODE_RETURNED=$?
