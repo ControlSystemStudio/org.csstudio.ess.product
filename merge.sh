@@ -30,7 +30,7 @@ for i in "${repos[@]}"; do
         ERROR_CODE_RETURNED=$?
         echo $ERROR_CODE_RETURNED
         if [[ $ERROR_CODE_RETURNED != 0 ]]; then
-            echo "ERROR occurred!"
+            echo "ERROR occurred running: $k"
             exit 1
         fi
     done
