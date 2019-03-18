@@ -25,7 +25,6 @@ git push origin
 
 for i in "${repos[@]}"; do
     cd ../$i/
-    echo `pwd`
     for k in "${gitcmds[@]}"; do
         $k
         if [[ $? != 0 ]]; then
