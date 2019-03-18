@@ -12,7 +12,7 @@
 #  You should have received a copy of the GNU General Public License along with
 #  this program. If not, see https://www.gnu.org/licenses/gpl.txt
 
-__version__ = '0.1.7'
+__version__ = '0.2.1'
 __author__ = 'Johannes C. Kazantzidis'
 
 import argparse
@@ -20,16 +20,33 @@ import datetime
 import distutils
 import fileinput
 from getpass import getpass
+import html
+import json
 import os
 import platform
 import re
 import subprocess
 import sys
-import json
-import html
 
 import requests
-from requests.auth import HTTPBasicAuth
+
+def checkBranch():
+    """Check current git branch.
+
+    User must be on master branch to deploy. If this is not the case,
+    the script will notify user and abort.
+    """
+    inform("Verifying git branch")
+
+    cmd = "git branch | grep \* | cut -d ' ' -f2"
+
+    branch = subprocess.check_output(cmd, shell=True).decode("utf8").split()[0]
+
+    if not "master" in branch:
+        msg = "You are on branch '{}'." .format(branch)
+        msg += " Please checkout master branch before running this script."
+        print(msg)
+        sys.exit(1)
 
 def checkBranch():
     """Check current git branch.
@@ -48,16 +65,15 @@ def checkBranch():
         sys.exit(1)
 
 def checkJiraRelease(version, auth):
-    """Check if version is released in JIRA.
+    """Check if version is released in Jira.
 
     Args:
         version: Full CSS version number to be released, e.g. 4.6.1.12
-        auth: Username and password pair for JIRA
+        auth: Username and password pair for Jira
     """
-    print("\x1b[93m-- Checking if CSS version {} is released in Jira\x1b[0m"
-              .format(version))
+    inform("Checking if CSS version {} is released in Jira" .format(version))
 
-    # REST url for issues specific for the release
+    # REST url for the release version
     url = 'https://jira.esss.lu.se/rest/api/2/search?jql=project=CSSTUDIO AND fixVersion="ESS CS-Studio '+version+'"'
 
     headers = {"Content-Type":"application/json"}
@@ -65,18 +81,20 @@ def checkJiraRelease(version, auth):
     data = response.json()
 
     if response.status_code == 400:
-        print("Could not find JIRA Release of version {}. "\
-                  "Please go to JIRA and press 'Release...' before running " \
-                  " this script.\nAborting" .format(version))
+        msg = "Could not find Jira Release of version {}." .format(version)
+        msg += "Please go to Jira Kanban Board and press 'Release...' "
+        msg += "before running this script.\nAborting"
+        print(msg)
         sys.exit(1)
 
-def checkJavaHome(): #TODO: check JAVA_HOME
+def checkJavaHome():
     """Check if user has `JAVA_HOME` environment variable set.
 
     The variable needed for the `prepare-release.sh` and
     `prepare-next-release.sh` scripts
     """
-    print("\x1b[93m-- Checking Java environment\x1b[0m")
+    inform("Checking Java environment")
+
     if "JAVA_HOME" in os.environ:
         return # env var found, all good
     elif platform.system() == "Linux":
@@ -109,7 +127,7 @@ def checkVersion(user_input):
     Args:
         user_input: Version number as string, input by user.
     """
-    print("\x1b[93m-- Checking CSS version against artifactory\x1b[0m")
+    inform("Checking CSS version against artifactory")
 
     url = "https://artifactory.esss.lu.se/artifactory/CS-Studio/production/"
     pattern = re.compile("[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+") # version pattern
@@ -148,7 +166,7 @@ def checkVersion(user_input):
             print("Aborting")
             sys.exit()
 
-def prepareRelease(path, release_url, version, ce_version):
+def prepareRelease(path, version, ce_version):
     """Run `prepare-release.sh`.
 
     `prepare-release.sh` is a community developed script for creating
@@ -159,26 +177,24 @@ def prepareRelease(path, release_url, version, ce_version):
 
     Args:
         path: Path to `prepare-release.sh`.
-        release_url: Url to Jira release page.
         version: CSS release version to prepare.
         ce_version: CSS CE version of which the CSS release is based on.
     """
-    print("\x1b[93m-- Running prepare-release.sh\x1b[0m")
+    inform("Running prepare-release.sh")
 
-    prepare_release_cmd = str(
-        'bash {}prepare-release.sh {} "{}" "PLACEHOLDER-TEXT-FOR-HTML-NOTES' \
-        '</li><li>Based on CS-Studio CE {}-SNAPSHOT" false'
-    .format(path, version, release_url, ce_version))
+    url = "https://jira.esss.lu.se/projects/CSSTUDIO/versions/23001"
+    cmd = 'bash {}prepare-release.sh {} "{}" ' .format(path, version, url)
+    cmd += '"PLACEHOLDER-TEXT-FOR-HTML-NOTES</li><li>'
+    cmd += 'Based on CS-Studio CE {}-SNAPSHOT" false' .format(ce_version)
 
     try:
-        subprocess.check_call(prepare_release_cmd, shell=True)
+        subprocess.check_call(cmd, shell=True)
     except subprocess.CalledProcessError as e:
-        print("")
-        print("Oops, something went wrong when running 'prepare-release.sh'")
-        print("\nAborting")
-        sys.exit()
+        print("\nOops, something went wrong when running 'prepare-release.sh'")
+        print("Aborting")
+        sys.exit(1)
 
-def updateChangelog(path, notes):
+def updateChangelog(dir_path, notes):
     """Update changelog.
 
     The prepare-release.sh script has some `sed` calls on the changelog
@@ -187,13 +203,14 @@ def updateChangelog(path, notes):
     replaced by this method.
 
     Args:
-        path: Path to changelog.
+        dir_path: Path to changelog.
         notes: Notes to replace the placeholder text with.
     """
-    print("\x1b[93m-- Updating changelog\x1b[0m")
+    inform("Updating changelog")
 
     pattern = "PLACEHOLDER-TEXT-FOR-HTML-NOTES"
     replacement = notes
+    path = "{}/plugins/se.ess.ics.csstudio.startup.intro/html/changelog.html" .format(dir_path)
     patReplace(path, pattern, notes)
 
 def prepareNextRelease(version):
@@ -207,14 +224,13 @@ def prepareNextRelease(version):
     Args:
         version: CSS version of next release.
     """
-    print("\x1b[93m-- Running prepare-next-release.sh\x1b[0m")
+    inform("Running prepare-next-release.sh")
 
     path = os.path.dirname(os.path.abspath(__file__))+"/"
 
-    prepare_next_release_cmd = str("bash {}prepare-next-release.sh {} false"
-                                       .format(path, version))
+    cmd = "bash {}prepare-next-release.sh {} false" .format(path, version)
 
-    subprocess.check_call(prepare_next_release_cmd, shell=True)
+    subprocess.check_call(cmd, shell=True)
 
 def getNextVersion(version):
     """Get next CSS version based on the current deployment version.
@@ -270,7 +286,7 @@ def updatePom(path, version):
         path: Path to pom.xml file
         version: Full CSS version number to be released, e.g. 4.6.1.12
     """
-    print("\x1b[93m-- Updating POM.xml\x1b[0m")
+    inform("Updating POM.xml")
 
     split = version.split(".")
     majmin = ".".join(split[0:2])
@@ -287,9 +303,9 @@ def getChangelogNotes(version, auth):
 
     Args:
         version: Full CSS version number to be released, e.g. 4.6.1.12
-        auth: Username and password pair for JIRA
+        auth: Username and password pair for Jira
     """
-    print("\x1b[93m-- Fetching changelog notes\x1b[0m")
+    inform("Fetching changelog notes")
 
     # REST url for issues specific for the release
     url = 'https://jira.esss.lu.se/rest/api/2/search?jql=project=CSSTUDIO AND fixVersion="ESS CS-Studio '+version+'"'
@@ -297,21 +313,12 @@ def getChangelogNotes(version, auth):
     headers = {"Content-Type":"application/json"}
     response = requests.get(url, auth=auth, headers=headers)
     data = response.json()
-
-    if response.status_code == 400:
-        print("{} in Jira. Could not fetch changelog notes: Missing JIRA " \
-                  "release?\nAborting" .format(data["errorMessages"][0][:-1]))
-        sys.exit(1)
-
     note_list = []
     pattern = re.compile("CSS-CE #[0-9]+")
 
     # `CSS-CE #XXX` is a merge from the community version. Sort `note_list`
     # with CSS-CE merges first.
     for issue in data["issues"]:
-        # summary = re.sub("`", "&apos;", issue["fields"]["summary"])
-        # summary = re.sub('"', "&quot;", summary)
-        # summary = issue["fields"]["summary"]
         summary = htmlEscape(issue["fields"]["summary"])
         if list(pattern.findall(summary)):
             note_list.insert(0,"<li>"+summary+"</li>")
@@ -357,11 +364,15 @@ def mergeRepos(path, version):
         path: Path to `merge.sh`.
         version: CSS version for this release.
     """
-    print("\x1b[93m-- Merging git repositories\x1b[0m")
+    inform("Merging git repositories")
 
     merge_cmd = str("bash {} {}" .format(path, version))
 
-    subprocess.check_call(merge_cmd, shell=True)
+    try:
+        subprocess.check_call(merge_cmd, shell=True)
+    except subprocess.CalledProcessError as e:
+        print("\nAn error occured when running merge.sh\nAborting")
+        sys.exit()
 
 def updateConfluenceNotes(css_version, ce_version, notes, auth):
     """Update CSS confluence page's release notes.
@@ -375,7 +386,7 @@ def updateConfluenceNotes(css_version, ce_version, notes, auth):
         notes: Notes to be inserted into the changelog.
         auth: Atlassian athentication (username, password) pair.
     """
-    print("\x1b[93m-- Updating Confluence release notes\x1b[0m")
+    inform("Updating Confluence release notes")
 
     base_url = "https://confluence.esss.lu.se/rest/api/content/"
     page_id = "129630590" # Use 295789998 for the dummy page
@@ -435,10 +446,110 @@ def updateConfluenceNotes(css_version, ce_version, notes, auth):
     payload["body"] = {}
     payload["body"]["storage"] = {}
     payload["body"]["storage"]["value"] = toc + new_section + content[1]
-
-    payload["body"]["storage"]["representation"] = data["body"]["view"]["representation"]
+    representation = data["body"]["view"]["representation"]
+    payload["body"]["storage"]["representation"] = representation
 
     # Post to confluence and verify response
+    put_response = requests.put(put_url, data=json.dumps(payload),
+                                    auth=auth, headers=headers)
+
+    if put_response.status_code != 200:
+        print("Confluence Response Code {}" .format(put_response.status_code))
+        print("Aborting")
+        sys.exit(1)
+
+def updateConfluenceRelease(css_version, next_version, ce_version, auth):
+    """Update CSS confluence page's release notes.
+
+    Create a new linked header and add "Compatibility Notes" and
+    "Updated Features".
+
+    Args:
+        css_version: New CSS release version.
+        ce_version: CSS CE version of which the CSS release is based on.
+        auth: Atlassian athentication (username, password) pair.
+    """
+    inform("Updating Confluence release page")
+
+    base_url = "https://confluence.esss.lu.se/rest/api/content/"
+    page_id = "186483068" # Use 295789998 for the dummy page
+
+    # Pull data from the confluence page
+    get_url = base_url + page_id + "?expand=body.view,version"
+    get_response = requests.get(get_url, auth=auth)
+    data = get_response.json()
+
+    # Check if this version has already been put on the confluence page. If so,
+    # ask user if they still want to update with the given information. If user
+    # chooses 'no', skip the confluence update.
+    if "Ver. " + next_version +"" in data["body"]["view"]["value"]:
+        msg = "A header for CSS version {} was found on " .format(css_version)
+        msg += "the confluence page. Are you sure you wish to update the page? "
+        msg += "[y/n]"
+
+        if not diagYes(msg):
+            print("Skipping confluence update")
+            return
+
+    # Code for generating the TOC
+    toc = '<p>&nbsp;</p><p><ac:structured-macro ac:name="toc" ac:schema-' \
+      'version="1" ac:macro-id="a3eac23d-3226-4292-a87e-156db912bc91"/></p>'
+
+    # Remove old toc and add new
+    break_string = '"toc"> </div></p>'
+    toc_stop = str(data["body"]["view"]["value"]).split(break_string)
+    result = toc + toc_stop[1]
+
+    # Update Development section
+    result = re.sub(css_version, next_version, result)
+    what_changed_start = result.split("What Is Changed</h4>")
+    what_changed_stop = result.split("Production</h2>")
+    result = what_changed_start[0] \
+      + "What Is Changed</h4>" \
+      + '<ul><li><span style="color: rgb(0,0,0);">Nothing yet</span>.</li></ul>' \
+      +"<h2>Production</h2>" \
+      + what_changed_stop[1]
+
+    # Get url for the release
+    url = 'https://jira.esss.lu.se/rest/api/2/search?jql=project=CSSTUDIO AND fixVersion="ESS CS-Studio '+css_version+'"'
+    headers = {"Content-Type":"application/json"}
+    response = requests.get(url, auth=auth, headers=headers)
+    release_data = response.json()
+
+    if response.status_code == 400:
+        print("{} in Jira. Could not fetch changelog notes: Missing Jira " \
+                  "release?\nAborting"
+                  .format(release_data["errorMessages"][0][:-1]))
+        sys.exit(1)
+
+    release_id = release_data["issues"][0]["fields"]["fixVersions"][0]["id"]
+    release_url = "https://jira.esss.lu.se/projects/CSSTUDIO/versions/" + release_id
+
+    # Update Production section
+    d = datetime.date.today()
+    link_address_date = d.strftime("%d.%m.%Y")
+    date = d.strftime("%d.%m.%Y")
+    production = result.split("Production</h2>")
+    result = production[0] \
+      + "Production</h2>" \
+      + '<h3>Ver. ' + css_version + ' (' + date + ')</h3><ul><li><a rel="nofollow" href="' + release_url + '" class="external-link">Release Details</a></li><li><a href="https://artifactory.esss.lu.se/artifactory/CS-Studio/production/' + css_version + '/cs-studio-ess-' + css_version + '-linux.gtk.x86_64.tar.gz" rel="nofollow" class="external-link">Linux Download</a></li><li><a class="external-link" href="https://artifactory.esss.lu.se/artifactory/CS-Studio/production/' + css_version + '/cs-studio-ess-' + css_version + '-macosx.cocoa.x86_64.zip" rel="nofollow">MacOS X Download</a></li><li><a href="https://artifactory.esss.lu.se/artifactory/CS-Studio/production/' + css_version + '/cs-studio-ess-' + css_version + '-win32.win32.x86_64.zip" rel="nofollow" class="external-link">Windows Download</a></li></ul>' \
+      + production[1]
+
+    # Construct json payload
+    payload = {}
+    payload["type"] = data["type"]
+    payload["title"] = data["title"]
+    payload["version"] = {}
+    payload["version"]["number"] = data["version"]["number"]+1
+    payload["body"] = {}
+    payload["body"]["storage"] = {}
+    payload["body"]["storage"]["value"] = result
+    representation = data["body"]["view"]["representation"]
+    payload["body"]["storage"]["representation"] = representation
+
+    # Post to confluence and verify response
+    put_url = base_url + page_id
+    headers = {"Content-type": "application/json"}
     put_response = requests.put(put_url, data=json.dumps(payload),
                                     auth=auth, headers=headers)
 
@@ -575,54 +686,21 @@ def getCEVersion(version):
     Returns:
         CE version deduced by removing the nano version from the CSS version.
     """
-    print("\x1b[93m-- Getting CE version\x1b[0m")
+    inform("Getting CE version")
 
     split = version.split(".")
     return split[0] + "." + split[1] + "." + split[2]
 
+def inform(text):
+    """Inform user about what the script is currently working on.
+
+    Args:
+        text: Text to print
+    """
+    print("\x1b[93m-- " + text + "\x1b[0m")
+
 def main(css_version):
     """Main for automatic CSS deployment.
-
-    This script performs the following steps:
-
-    1. Make sure user is on master branch
-
-    2. Check if the desired version is redployed in JIRA
-
-    3. Check if user has `JAVA_HOME` environment variable set:
-    The variable needed for the `prepare-release.sh` and
-    `prepare-next-release.sh` scripts
-
-    4. Checks the CSS version input against artifactory:
-    Grabs latest CSS version number from
-    artifactory.esss.lu.se/artifactory/CS-Studio/production/
-    and increments nano version (i.e. last number) by one. If the
-    resulting number differs from user input, the user is prompted for
-    verification to continue.
-
-    5. Get notes for changelog from Jira:
-    Get notes from Jira via REST interface and format the notes to be
-    accepted by the `prepare-release.sh` script.
-
-    6. Run `prepare-release.sh`:
-    `prepare-release.sh` is a community developed script for creating
-    new splash screen, change 'about' dialog, change Ansible reference
-    file, update plugin versions, update product versions in product
-    files, update product versions in master POM file and
-    commit-tag-push changes.
-
-    7. Update changelog:
-    Update changelog with notes from Jira.
-
-    8. Update pom.xml file:
-    Update cs-studio major, and minor, version number in pom.xml file.
-
-    9. Merge repositories:
-    Merge all relevant repositories into production.
-
-    10. Update CSS confluence page's release notes:
-    Create a new linked header and add "Compatibility Notes" and
-    "Updated Features".
 
     11. Run `prepare-next-release.sh`:
     `prepare-next-release.sh` is a community developed script for creating
@@ -638,28 +716,32 @@ def main(css_version):
     Args:
         css_version: CSS version to be released.
     """
-    checkBranch()
+    checkBranch()                       # Ensure user is on master branch
+    inform("Autenticating user")        # Output to inform user of progress
+    user = input("ESS username: ")      # Used for Jira and Confluence
+    passw = getpass("ESS Password: ")   # Used for Jira and Confluence
+    auth = (user, passw)                # Used for Jira and Confluence
+    checkJiraRelease(css_version, auth) # Check if release exists on Jira
+    checkJavaHome()                     # Check if JAVA_HOME env var exists
+    checkVersion(css_version)           # Check if user entered correct version
 
-    user = input("ESS username: ")    # Used for Jira and Confluence
-    passw = getpass("ESS Password: ") # Used for Jira and Confluence
-    auth = (user, passw)              # Used for Jira and Confluence
+    notes = getChangelogNotes(css_version, auth) # Get chengelog notes
+    ce_version = getCEVersion(css_version)       # Get CSS CE version
 
-    checkJiraRelease(css_version, auth)
-    checkJavaHome()
-    checkVersion(css_version)
+    dir_path = os.path.dirname(os.path.abspath(__file__))+"/" # path to dir
 
-    release_url = "https://jira.esss.lu.se/projects/CSSTUDIO/versions/23001"
-    dir_path = os.path.dirname(os.path.abspath(__file__))+"/"
+    prepareRelease(dir_path, css_version, ce_version) # Run prepare-release.sh
+    updateChangelog(dir_path, notes)                  # Update changelog
+    updatePom(dir_path+"pom.xml", css_version)        # Update pom.xml
+    mergeRepos(dir_path+"merge.sh", css_version)      # Merge all repositories
 
-    notes = getChangelogNotes(css_version, auth)
-    ce_version = getCEVersion(css_version)
-    prepareRelease(dir_path, release_url, css_version, ce_version)
-    updateChangelog(dir_path+"/plugins/se.ess.ics.csstudio.startup.intro/html/changelog.html", notes)
-    updatePom(dir_path+"pom.xml", css_version)
-    mergeRepos(dir_path+"merge.sh", css_version)
+    # Updated Confluence page with new release notes
     updateConfluenceNotes(css_version, ce_version, notes, auth)
-    next_version = getNextVersion(css_version)
-    prepareNextRelease(next_version)
+
+    next_version = getNextVersion(css_version) # Get next version number
+    prepareNextRelease(next_version)           # Run prepare-next-release.sh
+
+    # Updated Confluence release page with new production and dev. versions
     updateConfluenceRelease(css_version, next_version, ce_version, auth)
 
     print("\nDone")
@@ -667,7 +749,5 @@ def main(css_version):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="CSS release tool")
     parser.add_argument("css_version", type=str, help="New CSS release version")
-
     args = parser.parse_args()
-
     main(args.css_version)
