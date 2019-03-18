@@ -27,8 +27,10 @@ for i in "${repos[@]}"; do
     cd ../$i/
     for k in "${gitcmds[@]}"; do
         $k
-        # if [[ $? != 0 ]]; then
-        #     exit 1
-        # fi
+        ERROR_CODE_RETURNED=$?
+        echo $ERROR_CODE_RETURNED
+        if [[ $ERROR_CODE_RETURNED != 0 ]]; then
+            exit 1
+        fi
     done
 done
