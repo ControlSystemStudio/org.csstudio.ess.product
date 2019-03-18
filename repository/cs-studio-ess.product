@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?pde version="3.5"?>
 
-<product name="ESS CS-Studio" uid="cs-studio-ess" id="se.ess.ics.csstudio.product.product" application="se.ess.ics.csstudio.product.application" version="4.6.1.17" useFeatures="true" includeLaunchers="true">
+<product name="ESS CS-Studio" uid="cs-studio-ess" id="se.ess.ics.csstudio.product.product" application="se.ess.ics.csstudio.product.application" version="4.6.1.18" useFeatures="true" includeLaunchers="true">
 
    <aboutInfo>
       <image path="/se.ess.ics.csstudio.product/icons/cs-studio-about.png"/>
