@@ -161,10 +161,12 @@ Grid = GRAY
 # STOP looks similar to red=MAJOR alarm, and is allowed
 # for 'STOP' type of buttons
 STOP = 222, 33, 22
+Stop = 222, 33, 22
 
 # Attention looks similar to a MINOR alarm.
 # It is meant to draw attention
 ATTENTION = YELLOW
+Attention = YELLOW
 
 # The colors for On/Off, Open/Close etc,.
 # "ON" does not necessarily mean 'device is turned on', but
@@ -176,5 +178,7 @@ ATTENTION = YELLOW
 # For example, a limit switch indicator could use colors "OFF" and "MAJOR":
 # OFF when idle, MAJOR when the limit switch was hit and this is an abnormal situation
 # that requires attention.
-ON = 22, 222, 33
-OFF = GRAY
+ON = LED-GREEN-ON
+On = LED-GREEN-ON
+OFF = LED-GREEN-OFF
+Off = LED-GREEN-OFF
