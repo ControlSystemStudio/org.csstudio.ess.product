@@ -699,7 +699,7 @@ def inform(text):
     """
     print("\x1b[93m-- " + text + "\x1b[0m")
 
-def main(css_version):
+def main(css_version, ignore_merge):
     """Main for automatic CSS deployment.
 
     Ensure user is on master branch.
@@ -736,7 +736,9 @@ def main(css_version):
     prepareRelease(dir_path, css_version, ce_version) # Run prepare-release.sh
     updateChangelog(dir_path, notes)                  # Update changelog
     updatePom(dir_path+"pom.xml", css_version)        # Update pom.xml
-    mergeRepos(dir_path+"merge.sh", css_version)      # Merge all repositories
+
+    if not ignore_merge:
+        mergeRepos(dir_path+"merge.sh", css_version)  # Merge all repositories
 
     # Updated Confluence page with new release notes
     updateConfluenceNotes(css_version, ce_version, notes, auth)
@@ -751,6 +753,9 @@ def main(css_version):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="CSS release tool")
-    parser.add_argument("css_version", type=str, help="New CSS release version")
+    parser.add_argument("css_version", type=str, help="new CSS release version")
+    parser.add_argument("-i", "--ignore-merge", action="store_true",
+                            help="ignore git merge")
+
     args = parser.parse_args()
-    main(args.css_version)
+    main(args.css_version, args.ignore_merge)
