@@ -2,7 +2,7 @@
 <feature
       id="org.csstudio.ess.product.configuration.feature"
       label="Product configuration feature"
-      version="4.6.1.18"
+      version="4.6.1.19"
       provider-name="Claudio Rosati - European Spallation Source ERIC">
 
   <description url="http://www.example.com/description">
