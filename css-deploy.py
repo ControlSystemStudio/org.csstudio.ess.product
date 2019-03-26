@@ -749,6 +749,11 @@ def main(css_version, ignore_merge):
     # Updated Confluence release page with new production and dev. versions
     updateConfluenceRelease(css_version, next_version, ce_version, auth)
 
+    # Inform user that master branch now contains uncommited changes
+    msg = "NOTE: Master branch contains uncommited changes. "
+    msg += "Please revise and commit manually"
+    inform(msg)
+
     print("\nDone")
 
 if __name__ == "__main__":
