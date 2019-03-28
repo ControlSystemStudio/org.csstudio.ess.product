@@ -30,7 +30,6 @@ openFile
 -XX:+PrintCommandLineFlags
 -XX:+UnlockExperimentalVMOptions
 -XX:+UnlockDiagnosticVMOptions
---enable-preview
 -Dorg.eclipse.update.reconcile=false
 -Dosgi.configuration.cascaded=true
 -Dosgi.sharedConfiguration.area.readOnly=true
