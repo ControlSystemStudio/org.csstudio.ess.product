@@ -21,6 +21,11 @@ openFile
 --launcher.GTK_version
 2
       </programArgsLin>
+      <programArgsMac>-share_link
+/Users/claudiorosati/Projects/GitHubX/ess-symbols=/ess-symbols,/Users/claudiorosati/Projects/GitHubX/ess-templates=/ess-templates
+-vm
+/Library/Java/JavaVirtualMachines/jdk1.8.0_202.jdk/Contents/Home/jre/bin
+      </programArgsMac>
       <vmArgs>-Xmx2g
 -XX:+PrintCommandLineFlags
 -XX:+UnlockExperimentalVMOptions
