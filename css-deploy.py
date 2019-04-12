@@ -268,7 +268,7 @@ def patReplace(path, pattern, repl):
 
     Args:
         path: Path to file in which to replace text.
-        pattern: Regular expression pattern to search fore.
+        pattern: Regular expression pattern to search for.
         repl: Replacement text with which to replace text matching to `pattern`.
     """
     pat = re.compile(pattern)
@@ -506,8 +506,8 @@ def updateConfluenceRelease(css_version, next_version, ce_version, auth):
     what_changed_stop = result.split("Production</h2>")
     result = what_changed_start[0] \
       + "What Is Changed</h4>" \
-      + '<ul><li><span style="color: rgb(0,0,0);">Nothing yet</span>.</li></ul>' \
-      +"<h2>Production</h2>" \
+      + '<ul><li><span style="color: rgb(0,0,0);">Nothing yet</span>.</li>' \
+      +"</ul><h2>Production</h2>" \
       + what_changed_stop[1]
 
     # Get url for the release
@@ -699,19 +699,22 @@ def inform(text):
     """
     print("\x1b[93m-- " + text + "\x1b[0m")
 
-def main(css_version):
+def main(css_version, ignore_merge):
     """Main for automatic CSS deployment.
 
-    11. Run `prepare-next-release.sh`:
-    `prepare-next-release.sh` is a community developed script for creating
-    new splash screen, change 'about' dialog, change Ansible reference
-    file, update plugin versions, update product versions in product
-    files, update product versions in master POM file and
-    commit-tag-push changes.
-
-    12. Update CSS confluence release page:
-    Update development version and add production version with link to
-    Jira release page
+    Ensure user is on master branch.
+    Check if release exists on Jira.
+    Check if JAVA_HOME env var exists.
+    Compare deploy version against artifactory and verify with user.
+    Get chengelog notes by parsing all closed jira tickets for release.
+    Deduce CSS CE version.
+    Prepare-release (Update splash, 'about' dialog and plugin versions).
+    Update changelog.
+    update pom.xml.
+    Merge all repositories into production.
+    Update confluence Release Notes page.
+    Prepare-next-release (splash, 'about' dialog and plugin, ansible reference).
+    Update confluence Release page.
 
     Args:
         css_version: CSS version to be released.
@@ -725,7 +728,7 @@ def main(css_version):
     checkJavaHome()                     # Check if JAVA_HOME env var exists
     checkVersion(css_version)           # Check if user entered correct version
 
-    notes = getChangelogNotes(css_version, auth) # Get chengelog notes
+    notes = getChangelogNotes(css_version, auth) # Get changelog notes
     ce_version = getCEVersion(css_version)       # Get CSS CE version
 
     dir_path = os.path.dirname(os.path.abspath(__file__))+"/" # path to dir
@@ -733,7 +736,9 @@ def main(css_version):
     prepareRelease(dir_path, css_version, ce_version) # Run prepare-release.sh
     updateChangelog(dir_path, notes)                  # Update changelog
     updatePom(dir_path+"pom.xml", css_version)        # Update pom.xml
-    mergeRepos(dir_path+"merge.sh", css_version)      # Merge all repositories
+
+    if not ignore_merge:
+        mergeRepos(dir_path+"merge.sh", css_version)  # Merge all repositories
 
     # Updated Confluence page with new release notes
     updateConfluenceNotes(css_version, ce_version, notes, auth)
@@ -744,10 +749,18 @@ def main(css_version):
     # Updated Confluence release page with new production and dev. versions
     updateConfluenceRelease(css_version, next_version, ce_version, auth)
 
+    # Inform user that master branch now contains uncommited changes
+    msg = "NOTE: Master branch contains uncommited changes. "
+    msg += "Please revise and commit manually"
+    inform(msg)
+
     print("\nDone")
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="CSS release tool")
-    parser.add_argument("css_version", type=str, help="New CSS release version")
+    parser.add_argument("css_version", type=str, help="new CSS release version")
+    parser.add_argument("-i", "--ignore-merge", action="store_true",
+                            help="ignore git merge")
+
     args = parser.parse_args()
-    main(args.css_version)
+    main(args.css_version, args.ignore_merge)
