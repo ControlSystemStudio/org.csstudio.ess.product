@@ -40,6 +40,16 @@
             </product>
 
             <product>
+              <id>alarm-annunciator</id>
+              <rootFolder>alarm-annunciator-${product.version}</rootFolder>
+              <rootFolders>
+                <macosx>AlarmAnnunciator.app</macosx>
+              </rootFolders>
+              <archiveFileName>alarm-annunciator-${product.version}</archiveFileName>
+              <attachId>alarm-annunciator</attachId>
+            </product>
+
+            <product>
               <id>alarm-config</id>
               <rootFolder>alarm-config-${product.version}</rootFolder>
               <rootFolders>
