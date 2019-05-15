@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?pde version="3.5"?>
 
-<product name="Alarm Notification" uid="alarm-notifier" id="org.csstudio.alarm.beast.notifier.product" application="org.csstudio.alarm.beast.notifier.application" version="4.6.1.21" useFeatures="false" includeLaunchers="true">
+<product name="Alarm Notification" uid="alarm-notifier" id="org.csstudio.alarm.beast.notifier.product" application="org.csstudio.alarm.beast.notifier.application" version="4.6.1.22" useFeatures="false" includeLaunchers="true">
 
    <configIni use="default">
    </configIni>
