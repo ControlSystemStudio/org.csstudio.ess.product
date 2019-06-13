@@ -5,7 +5,7 @@
   <parent>
     <groupId>org.csstudio</groupId>
     <artifactId>se.ess.ics.csstudio.plugins</artifactId>
-    <version>4.6.1.22</version>
+    <version>4.6.1.23</version>
   </parent>
   <artifactId>se.ess.ics.csstudio.fonts</artifactId>
   <packaging>eclipse-plugin</packaging>

@@ -3,7 +3,7 @@ Bundle-ManifestVersion: 2
 Bundle-Name: ESS Display Builder
 Bundle-Description: ESS Display Builder Additions
 Bundle-SymbolicName: se.ess.ics.csstudio.display.builder;singleton:=true
-Bundle-Version: 4.6.1.22
+Bundle-Version: 4.6.1.23
 Bundle-Activator: se.ess.ics.csstudio.display.builder.Activator
 Bundle-Vendor: Claudio Rosati - European Spallation Source ERIC
 Require-Bundle: org.diirt.vtype,
