@@ -4,7 +4,7 @@
   <parent>
     <groupId>org.csstudio</groupId>
     <artifactId>se.ess.ics.csstudio</artifactId>
-    <version>4.6.1.21</version>
+    <version>4.6.1.26</version>
   </parent>
   <artifactId>se.ess.ics.csstudio.repository</artifactId>
   <packaging>eclipse-repository</packaging>
@@ -37,6 +37,16 @@
                   <macosx>ESS CS-Studio.app</macosx>
                 </rootFolders>
               <archiveFileName>cs-studio-ess-${product.version}</archiveFileName>
+            </product>
+
+            <product>
+              <id>alarm-annunciator</id>
+              <rootFolder>alarm-annunciator-${product.version}</rootFolder>
+              <rootFolders>
+                <macosx>AlarmAnnunciator.app</macosx>
+              </rootFolders>
+              <archiveFileName>alarm-annunciator-${product.version}</archiveFileName>
+              <attachId>alarm-annunciator</attachId>
             </product>
 
             <product>
